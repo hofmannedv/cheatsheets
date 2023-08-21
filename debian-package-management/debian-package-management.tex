@@ -1,0 +1,319 @@
+% Debian Package Management
+% Version 0.1
+% (C) 2023 Frank Hofmann <info@efho.de>
+% Available from https://github.com/hofmannedv/cheatsheets
+
+% Published under Creative Commons CC-BY-SA 4.0 International License
+% https://creativecommons.org/licenses/by-sa/4.0/
+
+\documentclass[10pt]{article}
+\usepackage{cheatsheet}
+
+\renewcommand{\cheatsheetTitle}{Debian Package \newline Management Cheatsheet}
+\renewcommand{\cheatsheetVersion}{Version 0.1}
+\renewcommand{\cheatsheetCopyright}{
+  \copyright~ 2023 Frank Hofmann \faIcon{envelope} \href{mailto:info@efho.de}{info@efho.de} \\ Published under 
+ \href{https://creativecommons.org/licenses/by-sa/4.0/}{Creative Commons CC-BY-SA 4.0 \\ International License}. Created with \LaTeX. \\ \faIcon{github} \href{https://github.com/hofmannedv/cheatsheets}{https://github.com/hofmannedv/cheatsheets}~.
+}
+\begin{document}
+
+\cheatsheet
+
+\section{Install software packages}
+\begin{tabular}{ p{3.5cm} p{9cm} p{11cm}}
+  \hline
+  \rowcolor{Gray}
+  \textbf{Tool} & \textbf{Command} & \textbf{Notes} \\
+  \hline 
+  \textbf{APT} & \texttt{apt install \textit{package}} & Package is obtained from the package repository \\
+  \rowcolor{Gray}
+   & \texttt{apt --no-download install \textit{package}} & Package is not obtained from the package mirror, but is instead taken from the package cache \\ 
+   & \texttt{apt-get install \textit{package}} & Package is obtained from the package repository \\
+  \rowcolor{Gray}
+   & \texttt{apt-get --no-download install \textit{package}} & Package is not obtained from the package mirror, but is instead taken from the package cache \\
+  \textbf{Aptitude} & \texttt{aptitude install \textit{package}} & Package is obtained from the package repository \\
+  \rowcolor{Gray}
+  \textbf{Dpkg} & \texttt{dpkg -i \textit{filename}} & Filename refers to a local package file in \texttt{.deb} format \\
+  \hline
+\end{tabular}
+
+\section{Renew software packages}
+\begin{tabular}{ p{3.5cm} p{9cm} p{11cm}}
+  \hline
+  \rowcolor{Gray}
+  \textbf{Tool} & \textbf{Command} & \textbf{Notes} \\
+  \hline 
+  \textbf{APT} & \texttt{apt install \textit{package}} & Install an updated version of the same package if this package is already installed. Package is obtained from the package repository. \\
+  \rowcolor{Gray}
+   & \texttt{apt safe-upgrade \textit{package}} &  Install a newer version of the package. Package is obtained from the package repository. \\
+   & \texttt{apt-get install \textit{package}} & Install an updated version of the same package if this package is already installed. Package is obtained from the package repository. \\
+  \rowcolor{Gray}
+   & \texttt{apt-get upgrade \textit{package}} & Install a newer version of the package. Package is obtained from the package repository. \\
+  \textbf{Aptitude} & \texttt{aptitude safe-upgrade \textit{package}} & Install a newer version of the package. Package is obtained from the package repository \\
+  \hline
+\end{tabular}
+
+\section{Remove software packages, and keep the configuration files}
+\begin{tabular}{ p{3.5cm} p{9cm} p{11cm}}
+  \hline
+  \rowcolor{Gray}
+  \textbf{Tool} & \textbf{Command} & \textbf{Notes} \\
+  \hline 
+  \textbf{APT} & \texttt{apt remove \textit{package}} & \\
+  \rowcolor{Gray}
+  & \texttt{apt-get remove \textit{package}} & \\
+  \textbf{Aptitude} & \texttt{aptitude remove \textit{package}} & \\
+  \rowcolor{Gray}
+  \textbf{Dpkg} & \texttt{dpkg -r \textit{package}} & \\
+  & \texttt{dpkg --remove \textit{package}} & \\
+  \hline
+\end{tabular}
+
+\newpage
+
+\cheatsheet
+
+\section{Remove software packages as well as the configuration files}
+\begin{tabular}{ p{3.5cm} p{9cm} p{11cm}}
+  \hline
+  \rowcolor{Gray}
+  \textbf{Tool} & \textbf{Command} & \textbf{Notes} \\
+  \hline 
+  \textbf{APT}& \texttt{apt purge \textit{package}} & \\
+  \rowcolor{Gray}
+  & \texttt{apt-get purge \textit{package}} & \\
+  & \texttt{apt-get --purge remove \textit{package}} & \\
+  \rowcolor{Gray}
+  \textbf{Aptitude} & \texttt{aptitude purge \textit{package}} & \\
+  \textbf{Dpkg} & \texttt{dpkg -P \textit{package}} & \\
+  \rowcolor{Gray}
+  & \texttt{dpkg --purge \textit{package}} & \\
+  \hline
+\end{tabular}
+
+\section{List installed software packages}
+\begin{tabular}{ p{3.5cm} p{9cm} p{11cm}}
+  \hline
+  \rowcolor{Gray}
+  \textbf{Tool} & \textbf{Command} & \textbf{Notes} \\
+  \hline 
+  \textbf{APT}& \texttt{apt list --installed} & List all installed packages\\
+  \rowcolor{Gray}
+  \textbf{Apt-cache} & \texttt{apt-cache search \textit{package}} & List all available packages for the given package name; search includes package name as well as the package description \\
+  & \texttt{apt-cache search --names-only \textit{package}} & List all available packages for the given package name; search includes package names, only \\
+  \rowcolor{Gray}
+  \textbf{Aptitude} & \texttt{aptitude search '\textasciitilde{}i'} & List all installed packages \\
+  \textbf{Dpkg} & \texttt{dpkg -l} & List all installed packages \\
+  \rowcolor{Gray}
+  & \texttt{dpkg --list} & List all installed packages \\
+  \hline
+\end{tabular}
+
+\section{Display information about a single software package}
+\begin{tabular}{ p{3.5cm} p{9cm} p{11cm}}
+  \hline
+  \rowcolor{Gray}
+  \textbf{Tool} & \textbf{Command} & \textbf{Notes} \\
+  \hline 
+  \textbf{APT} & \texttt{apt list \textit{package}} & Display package information, and installation status \\
+  \rowcolor{Gray}
+  & \texttt{apt show \textit{package}} & Display detailed package information, and installation status \\
+  \textbf{Aptitude} & \texttt{aptitude show \textit{package}} &  Display detailed package information, and installation status \\
+  \textbf{Dpkg} & \texttt{dpkg -l \textit{package} } & Display installation status \\
+  \rowcolor{Gray}
+  & \texttt{dpkg --list \textit{package} } & Display installation status \\
+  & \texttt{dpkg -s \textit{package} } & Display package information\\
+  \rowcolor{Gray}
+  & \texttt{dpkg --status \textit{package} } & Display package information \\
+  \hline
+\end{tabular}
+
+\newpage
+
+\cheatsheet
+
+\section{Display package dependencies}
+\begin{tabular}{ p{3.5cm} p{9cm} p{11cm}}
+  \hline
+  \rowcolor{Gray}
+  \textbf{Tool} & \textbf{Command} & \textbf{Notes} \\
+  \hline 
+  \textbf{Apt-cache} & \texttt{apt-cache depends \textit{package}} & Display reverse dependencies \\
+  \rowcolor{Gray}
+  & \texttt{apt-cache rdepends \textit{package}} & Display dependencies \\
+  \textbf{Aptitude} & \texttt{aptitude search '\textasciitilde{R}' \textit{package}} & Display dependencies \\
+  \rowcolor{Gray}
+  & \texttt{aptitude search '\textasciitilde{D}' \textit{package}} & Display reverse dependencies \\
+  \textbf{Apt-rdepends} & \texttt{apt-rdepends -r \textit{package}} & Display dependencies \\
+  \rowcolor{Gray}
+  & \texttt{apt-rdepends \textit{package}} & Display reverse dependencies \\
+  \textbf{Dpkg} & \texttt{dpkg -f \textit{filename}} Depends & Filename refers to a local \texttt{.deb} file; Display dependencies \\
+  \rowcolor{Gray}
+  & \texttt{dpkg-deb -f \textit{filename}} Depends & Filename refers to a local \texttt{.deb} file; Display dependencies \\
+  \textbf{Grep-status} & \texttt{grep-status -F Package -s Depends \textit{package}} & Display dependencies \\
+  \rowcolor{Gray}
+  & \texttt{grep-status -P -s Depends \textit{package}} & Display dependencies \\
+  \hline
+\end{tabular}
+
+\section{List files of a package prior to installation}
+\begin{tabular}{ p{3.5cm} p{9cm} p{11cm}}
+  \hline
+  \rowcolor{Gray}
+  \textbf{Tool} & \textbf{Command} & \textbf{Notes} \\
+  \hline 
+  \textbf{Dpkg} & \texttt{dpkg -c \textit{package}} & \\
+  \rowcolor{Gray}
+  & \texttt{dpkg --contents \textit{package}} & \\
+  \textbf{Dpkg-deb} & \texttt{dpkg-deb -c \textit{package}} & \\
+  \rowcolor{Gray}
+  & \texttt{dpkg-deb --contents \textit{package}} & \\
+  \hline
+\end{tabular}
+
+\section{List files of an installed package}
+\begin{tabular}{ p{3.5cm} p{9cm} p{11cm}}
+  \hline
+  \rowcolor{Gray}
+  \textbf{Tool} & \textbf{Command} & \textbf{Notes} \\
+  \hline 
+  \textbf{Apt-file} & \texttt{apt-file -list \textit{package}} & \\
+  \rowcolor{Gray}
+  & \texttt{apt-file -show \textit{package}} & \\
+  \textbf{Dpkg} & \texttt{dpkg -L \textit{package}} & \\
+  \rowcolor{Gray}
+  & \texttt{dpkg --listfiles \textit{package}} & \\
+  \textbf{Dpkg-query} & \texttt{dpkg-query -L \textit{package}} & \\
+  \rowcolor{Gray}
+  & \texttt{dpkg-query --listfiles \textit{package}} & \\
+  \hline
+\end{tabular}
+
+\newpage
+
+\cheatsheet
+\section{List configuration files of a package}
+\begin{tabular}{ p{3.5cm} p{9cm} p{11cm}}
+  \hline
+  \rowcolor{Gray}
+  \textbf{Tool} & \textbf{Command} & \textbf{Notes} \\
+  \hline 
+  \textbf{Dpkg} & \texttt{dpkg -s \textit{package}} & \\
+  \rowcolor{Gray}
+  & \texttt{dpkg --status \textit{package}} & \\
+  \textbf{Dpkg-query} & \texttt{dpkg-query -s \textit{package}} & \\
+  \rowcolor{Gray}
+  & \texttt{dpkg-query --status \textit{package}} & \\
+  \hline
+\end{tabular}
+
+\section{Identify the package from which a file originates}
+\begin{tabular}{ p{3.5cm} p{9cm} p{11cm}}
+  \hline
+  \rowcolor{Gray}
+  \textbf{Tool} & \textbf{Command} & \textbf{Notes} \\
+  \hline 
+  \textbf{Apt-file} & \texttt{apt-file find \textit{filename}} & Search in all available packages\\
+  \rowcolor{Gray}
+  & \texttt{apt-file search \textit{filename}} & Search in all available packages\\
+  \textbf{Dpkg} & \texttt{dpkg -S \textit{filename}} & Search in all installed packages\\
+  \rowcolor{Gray}
+  & \texttt{dpkg --search \textit{filename}} & Search in all installed packages \\
+  \textbf{Dpkg-query} & \texttt{dpkg-query -S \textit{filename}} & Search in all installed packages\\
+  \rowcolor{Gray}
+  & \texttt{dpkg-query --search \textit{filename}} & Search in all installed packages \\
+  \hline
+\end{tabular}
+
+\section{Display package status}
+\begin{tabular}{ p{3.5cm} p{9cm} p{11cm}}
+  \hline
+  \rowcolor{Gray}
+  \textbf{Tool} & \textbf{Command} & \textbf{Notes} \\
+  \hline 
+  \textbf{Apt-cache} & \texttt{apt-cache show \textit{package}} & Search in all available packages\\
+  \rowcolor{Gray}
+  \textbf{Aptitude} & \texttt{aptitude show \textit{package}} & Search in all available packages\\
+  \textbf{Dpkg} & \texttt{dpkg -s \textit{package}} & Package has to be installed locally\\
+  \rowcolor{Gray}
+  & \texttt{dpkg --status \textit{package}} & Package has to be installed locally\\
+  & \texttt{dpkg -I \textit{filename}} & Filename refers to a local \texttt{.deb} file \\
+  \rowcolor{Gray}
+  & \texttt{dpkg --info \textit{filename}} & Filename refers to a local \texttt{.deb} file \\
+  \textbf{Dpkg-query} & \texttt{dpkg-query -s \textit{package}} & Package has to be installed locally\\
+  \rowcolor{Gray}
+  & \texttt{dpkg-query --status \textit{package}} & Package has to be installed locally \\
+  \hline
+\end{tabular}
+
+\section{Display available packages}
+\begin{tabular}{ p{3.5cm} p{9cm} p{11cm}}
+  \hline
+  \rowcolor{Gray}
+  \textbf{Tool} & \textbf{Command} & \textbf{Notes} \\
+  \hline 
+  \textbf{APT} & \texttt{apt list} & List all known, and available packages with its status\\
+  \rowcolor{Gray}
+  \textbf{Apt-cache} & \texttt{apt-cache pkgnames} & List all known, and available packages\\
+  \hline
+\end{tabular}
+
+\newpage
+
+\cheatsheet
+
+\section{Display renewable packages}
+\begin{tabular}{ p{3.5cm} p{9cm} p{11cm}}
+  \hline
+  \rowcolor{Gray}
+  \textbf{Tool} & \textbf{Command} & \textbf{Notes} \\
+  \hline 
+  \textbf{Apt} & \texttt{apt list --upgradable} & List available packages with a new version\\
+  \rowcolor{Gray}
+  & \texttt{apt list --upgradable \textit{package}} & List new versions for this package\\
+  & \texttt{apt-get upgrade -u} & List available packages with a new version \\
+  \rowcolor{Gray}
+  & \texttt{apt-get upgrade --show-upgraded} & List available packages with a new version \\
+  & \texttt{apt-get upgrade -u -s} & Simulate upgrading available packages with a new version \\
+  \rowcolor{Gray}
+  & \texttt{apt-get upgrade --show-upgraded --simulate} & Simulate upgrading available packages with a new version \\
+  \textbf{Aptitude} & \texttt{aptitude search '\textasciitilde{U}'} & List available packages with a new version \\
+  \rowcolor{Gray}
+  & \texttt{aptitude search ?upgradable} & List available packages with a new version \\
+  \hline
+\end{tabular}
+
+\section{Validate package signature}
+\begin{tabular}{ p{3.5cm} p{9cm} p{11cm}}
+  \hline
+  \rowcolor{Gray}
+  \textbf{Tool} & \textbf{Command} & \textbf{Notes} \\
+  \hline 
+  \textbf{Debsums} & \texttt{debsums \textit{package}} & Validate all files from the package (except configuration files)\\
+  \rowcolor{Gray}
+  \textbf{Debsums} & \texttt{debsums} & Validate all files for all packages (except configuration files) \\
+  \textbf{Dpkg} & \texttt{dpkg -V \textit{package}} & Validate all files from the package \\
+  \rowcolor{Gray}
+  & \texttt{dpkg --verify \textit{package}} & Validate all files from the package \\
+  \textbf{Dpkg-sig} & \texttt{dpkg-sig --verify \textit{package}} & Validate the GPG signature of the package \\
+  \rowcolor{Gray}
+  \textbf{Gpg} & \texttt{gpg --verify \textit{package}} & Validate the GPG signature of the package \\
+  \hline
+\end{tabular}
+
+\section{Check package for changes}
+\begin{tabular}{ p{3.5cm} p{9cm} p{11cm}}
+  \hline
+  \rowcolor{Gray}
+  \textbf{Tool} & \textbf{Command} & \textbf{Notes} \\
+  \hline 
+  \textbf{Dpkg} & \texttt{dpkg --verify \textit{package}} & Check this package, only \\
+  \rowcolor{Gray}
+  & \texttt{dpkg --verify} & Check all packages \\
+  \hline
+\end{tabular}
+
+\section*{Recommended books}
+
+\noindent Axel Beckert, Frank Hofmann: Das Debian-Paketmanagement-Buch \\ \faIcon{github} \href{https://github.com/dpmb}{https://github.com/dpmb}
+\end{document}
