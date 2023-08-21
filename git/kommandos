@@ -1,0 +1,7 @@
+git add
+git commit -m
+git rm
+git push
+git pull
+git blame
+git clone
