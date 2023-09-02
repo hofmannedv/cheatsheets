@@ -1,5 +1,5 @@
 % Debian Package Management
-% Version 0.1
+% Version 0.3
 % (C) 2023 Frank Hofmann <info@efho.de>
 % Available from https://github.com/hofmannedv/cheatsheets
 
@@ -10,7 +10,7 @@
 \usepackage{cheatsheet}
 
 \renewcommand{\cheatsheetTitle}{Debian Package \newline Management Cheatsheet}
-\renewcommand{\cheatsheetVersion}{Version 0.1}
+\renewcommand{\cheatsheetVersion}{Version 0.3}
 \renewcommand{\cheatsheetCopyright}{
   \copyright~ 2023 Frank Hofmann \faIcon{envelope} \href{mailto:info@efho.de}{info@efho.de} \\ Published under 
  \href{https://creativecommons.org/licenses/by-sa/4.0/}{Creative Commons CC-BY-SA 4.0 \\ International License}. Created with \LaTeX. \\ \faIcon{github} \href{https://github.com/hofmannedv/cheatsheets}{https://github.com/hofmannedv/cheatsheets}~.
@@ -19,7 +19,21 @@
 
 \cheatsheet
 
-\section{Install software packages}
+\section{Update the local package list}
+
+\begin{tabular}{ p{3.5cm} p{9cm} p{11cm}}
+  \hline
+  \rowcolor{Gray}
+  \textbf{Tool} & \textbf{Command} & \textbf{Notes} \\
+  \hline 
+  \textbf{APT} & \texttt{apt update} & \\
+  \rowcolor{Gray}
+  & \texttt{apt-get update} & \\
+  \textbf{Aptitude} & \texttt{aptitude update} & \\
+  \hline 
+\end{tabular}
+
+\section{Install new software packages}
 \begin{tabular}{ p{3.5cm} p{9cm} p{11cm}}
   \hline
   \rowcolor{Gray}
@@ -37,7 +51,7 @@
   \hline
 \end{tabular}
 
-\section{Renew software packages}
+\section{Renew existing software packages}
 \begin{tabular}{ p{3.5cm} p{9cm} p{11cm}}
   \hline
   \rowcolor{Gray}
@@ -50,6 +64,37 @@
   \rowcolor{Gray}
    & \texttt{apt-get upgrade \textit{package}} & Install a newer version of the package. Package is obtained from the package repository. \\
   \textbf{Aptitude} & \texttt{aptitude safe-upgrade \textit{package}} & Install a newer version of the package. Package is obtained from the package repository \\
+  \hline
+\end{tabular}
+
+\newpage
+
+\cheatsheet
+
+\section{Reinstall an existing software package}
+\begin{tabular}{ p{3.5cm} p{9cm} p{11cm}}
+  \hline
+  \rowcolor{Gray}
+  \textbf{Tool} & \textbf{Command} & \textbf{Notes} \\
+  \hline 
+  \textbf{APT} & \texttt{apt reinstall \textit{package}} & Package is obtained from the package repository \\
+  \rowcolor{Gray}
+  & \texttt{apt-get install --reinstall \textit{package}} & Package is obtained from the package repository \\
+  & \texttt{apt-get reinstall \textit{package}} & Package is obtained from the package repository \\
+  \rowcolor{Gray}
+  \textbf{Aptitude} & \texttt{aptitude reinstall \textit{package}} &Package is obtained from the package repository \\
+  \hline
+\end{tabular}
+
+\section{Download software packages, only}
+\begin{tabular}{ p{3.5cm} p{9cm} p{11cm}}
+  \hline
+  \rowcolor{Gray}
+  \textbf{Tool} & \textbf{Command} & \textbf{Notes} \\
+  \hline 
+  \textbf{APT} & \texttt{apt download \textit{package}} & The package is obtained from the package repository, saved in the current directory. After that it can be installed using the command \newline \texttt{dpkg -i \textit{filename}}\\
+  \rowcolor{Gray}
+  \textbf{Aptitude} & \texttt{aptitude download \textit{package}} & The package is obtained from the package repository, saved in the current directory. After that it can be installed using the command \newline \texttt{dpkg -i \textit{filename}} \\
   \hline
 \end{tabular}
 
@@ -69,10 +114,6 @@
   \hline
 \end{tabular}
 
-\newpage
-
-\cheatsheet
-
 \section{Remove software packages as well as the configuration files}
 \begin{tabular}{ p{3.5cm} p{9cm} p{11cm}}
   \hline
@@ -90,6 +131,10 @@
   & \texttt{dpkg --purge \textit{package}} & \\
   \hline
 \end{tabular}
+
+\newpage
+
+\cheatsheet
 
 \section{List installed software packages}
 \begin{tabular}{ p{3.5cm} p{9cm} p{11cm}}
@@ -128,10 +173,6 @@
   \hline
 \end{tabular}
 
-\newpage
-
-\cheatsheet
-
 \section{Display package dependencies}
 \begin{tabular}{ p{3.5cm} p{9cm} p{11cm}}
   \hline
@@ -155,6 +196,10 @@
   & \texttt{grep-status -P -s Depends \textit{package}} & Display dependencies \\
   \hline
 \end{tabular}
+
+\newpage
+
+\cheatsheet
 
 \section{List files of a package prior to installation}
 \begin{tabular}{ p{3.5cm} p{9cm} p{11cm}}
@@ -189,9 +234,6 @@
   \hline
 \end{tabular}
 
-\newpage
-
-\cheatsheet
 \section{List configuration files of a package}
 \begin{tabular}{ p{3.5cm} p{9cm} p{11cm}}
   \hline
@@ -225,6 +267,10 @@
   \hline
 \end{tabular}
 
+\newpage
+
+\cheatsheet
+
 \section{Display package status}
 \begin{tabular}{ p{3.5cm} p{9cm} p{11cm}}
   \hline
@@ -243,43 +289,6 @@
   \textbf{Dpkg-query} & \texttt{dpkg-query -s \textit{package}} & Package has to be installed locally\\
   \rowcolor{Gray}
   & \texttt{dpkg-query --status \textit{package}} & Package has to be installed locally \\
-  \hline
-\end{tabular}
-
-\section{Display available packages}
-\begin{tabular}{ p{3.5cm} p{9cm} p{11cm}}
-  \hline
-  \rowcolor{Gray}
-  \textbf{Tool} & \textbf{Command} & \textbf{Notes} \\
-  \hline 
-  \textbf{APT} & \texttt{apt list} & List all known, and available packages with its status\\
-  \rowcolor{Gray}
-  \textbf{Apt-cache} & \texttt{apt-cache pkgnames} & List all known, and available packages\\
-  \hline
-\end{tabular}
-
-\newpage
-
-\cheatsheet
-
-\section{Display renewable packages}
-\begin{tabular}{ p{3.5cm} p{9cm} p{11cm}}
-  \hline
-  \rowcolor{Gray}
-  \textbf{Tool} & \textbf{Command} & \textbf{Notes} \\
-  \hline 
-  \textbf{Apt} & \texttt{apt list --upgradable} & List available packages with a new version\\
-  \rowcolor{Gray}
-  & \texttt{apt list --upgradable \textit{package}} & List new versions for this package\\
-  & \texttt{apt-get upgrade -u} & List available packages with a new version \\
-  \rowcolor{Gray}
-  & \texttt{apt-get upgrade --show-upgraded} & List available packages with a new version \\
-  & \texttt{apt-get upgrade -u -s} & Simulate upgrading available packages with a new version \\
-  \rowcolor{Gray}
-  & \texttt{apt-get upgrade --show-upgraded --simulate} & Simulate upgrading available packages with a new version \\
-  \textbf{Aptitude} & \texttt{aptitude search '\textasciitilde{U}'} & List available packages with a new version \\
-  \rowcolor{Gray}
-  & \texttt{aptitude search ?upgradable} & List available packages with a new version \\
   \hline
 \end{tabular}
 
@@ -313,7 +322,112 @@
   \hline
 \end{tabular}
 
-\section*{Recommended books}
 
-\noindent Axel Beckert, Frank Hofmann: Das Debian-Paketmanagement-Buch \\ \faIcon{github} \href{https://github.com/dpmb}{https://github.com/dpmb}
+\section{Display available packages}
+\begin{tabular}{ p{3.5cm} p{9cm} p{11cm}}
+  \hline
+  \rowcolor{Gray}
+  \textbf{Tool} & \textbf{Command} & \textbf{Notes} \\
+  \hline 
+  \textbf{APT} & \texttt{apt list} & List all known, and available packages with its status\\
+  \rowcolor{Gray}
+  & \texttt{apt list} & List all known, and available package versions with its status\\
+  \textbf{Apt-cache} & \texttt{apt-cache pkgnames} & List all known, and available packages\\
+  \hline
+\end{tabular}
+
+\newpage
+
+\cheatsheet
+\section{Display renewable packages}
+\begin{tabular}{ p{3.5cm} p{9cm} p{11cm}}
+  \hline
+  \rowcolor{Gray}
+  \textbf{Tool} & \textbf{Command} & \textbf{Notes} \\
+  \hline 
+  \textbf{Apt} & \texttt{apt list --upgradable} & List available packages with a new version\\
+  \rowcolor{Gray}
+  & \texttt{apt list --upgradable \textit{package}} & List new versions for this package\\
+  & \texttt{apt-get upgrade -u} & List available packages with a new version \\
+  \rowcolor{Gray}
+  & \texttt{apt-get upgrade --show-upgraded} & List available packages with a new version \\
+  & \texttt{apt-get upgrade -u -s} & Simulate upgrading available packages with a new version \\
+  \rowcolor{Gray}
+  & \texttt{apt-get upgrade --show-upgraded --simulate} & Simulate upgrading available packages with a new version \\
+  \textbf{Aptitude} & \texttt{aptitude search '\textasciitilde{U}'} & List available packages with a new version \\
+  \rowcolor{Gray}
+  & \texttt{aptitude search ?upgradable} & List available packages with a new version \\
+  \hline
+\end{tabular}
+
+
+\section{List software packages that are available as a new version}
+\begin{tabular}{ p{3.5cm} p{9cm} p{11cm}}
+  \hline
+  \rowcolor{Gray}
+  \textbf{Tool} & \textbf{Command} & \textbf{Notes} \\
+  \hline 
+  \textbf{APT} & \texttt{apt list --upgradable} & List the available packages as well as the new version number \\
+  \rowcolor{Gray}
+  & \texttt{apt list --upgradable \textit{package}} & List the new versions for this package, only \\
+  & \texttt{apt-get upgrade -u} & List the available packages as well as the new version number \\
+  \rowcolor{Gray}
+  & \texttt{apt-get upgrade --show-upgraded} & List the available packages as well as the new version number \\
+  & \texttt{apt-get upgrade -u -s} & Simulate updating the available packages with the new version \\
+  \rowcolor{Gray}
+  & \texttt{apt-get upgrade --show-upgraded --simulate} & Simulate updating the available packages with the new version \\
+  \textbf{Aptitude} & \texttt{aptitude search '\textasciitilde{U}'} & List the available packages as well as the version number \\
+  \rowcolor{Gray}
+  & \texttt{aptitude search ?upgradable} &  List the available packages as well as the version number \\
+  \hline
+\end{tabular}
+
+\section{Update an existing release (distribution upgrade)}
+\begin{tabular}{ p{3.5cm} p{9cm} p{11cm}}
+  \hline
+  \rowcolor{Gray}
+  \textbf{Tool} & \textbf{Command} & \textbf{Notes} \\
+  \hline 
+  \textbf{APT} & \texttt{apt full-upgrade} & Update all existing packages to the newest available version \\
+  \rowcolor{Gray}
+  & \texttt{apt-get dist-upgrade} & Update all existing packages to the newest available version \\
+  \textbf{Aptitude} & \texttt{aptitude full-upgrade} & Update all existing packages to the newest available version \\
+  \rowcolor{Gray}
+  & \texttt{aptitude safe-upgrade} &  Update all existing packages to the newest available version except for the unused packages \\
+  \hline
+\end{tabular}
+
+\newpage
+
+\cheatsheet
+
+\section{Recommended books and resources}
+
+\begin{description}
+    \item[Axel Beckert, Frank Hofmann: Das Debian-Paketmanagement-Buch] ~ \\
+        \begin{tabbing}
+            \= Available languages: \= \= German \\
+            \> Project website: \> \> \href{https://dpmb.org/}{https://dpmb.org/} \\
+            \> Contribute: \> \> via GitHub ~ \faIcon{github} \href{https://github.com/dpmb}{https://github.com/dpmb} \\
+            \> Debian package: \> \> \href{https://packages.debian.org/stable/debian-paketmanagement-buch}{\texttt{debian-paketmanagement-buch}} \\ 
+        \end{tabbing}
+
+    \item[Raphaël Hertzog, Roland Mas: The Debian Administrator's Handbook] ~ \\ 
+        \begin{tabbing}
+            \= Available languages: \= \= French, English, German, Russian, Japanese, and other languages \\
+            \> Project website \> \> \href{https://debian-handbook.info/}{https://debian-handbook.info/} \\
+            \> Contribute: \> \> via Salsa ~ \href{https://salsa.debian.org/hertzog/debian-handbook/}{https://salsa.debian.org/hertzog/debian-handbook/} \\
+            \> Debian package: \> \> \href{https://packages.debian.org/stable/debian-handbook}{\texttt{debian-handbook}} \\
+        \end{tabbing}
+
+    \item[Frank Ronneburg: Das Debian GNU/Linux Anwenderhandbuch] ~ \\
+        \begin{tabbing}
+            \= Available languages: \= \= German \\
+            \> Project website: \> \> \href{https://debiananwenderhandbuch.de/}{https://debiananwenderhandbuch.de/} \\
+            \> Contribute: \> \> via email ~ \faIcon{envelope} 
+            \href{mailto:fr@debiananwenderhandbuch.de}{fr@debiananwenderhandbuch.de} \\
+            
+            \> Debian package: \> \> not available
+        \end{tabbing}
+    \end{description}
 \end{document}
