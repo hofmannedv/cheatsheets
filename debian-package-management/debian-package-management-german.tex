@@ -1,0 +1,420 @@
+% Debian Paketmanagement
+% Version 0.4
+% (C) 2023 Frank Hofmann <info@efho.de>
+% Available from https://github.com/hofmannedv/cheatsheets
+
+% Published under Creative Commons CC-BY-SA 4.0 International License
+% https://creativecommons.org/licenses/by-sa/4.0/
+
+\documentclass[10pt]{article}
+\usepackage{cheatsheet}
+
+\renewcommand{\cheatsheetTitle}{Cheatsheet für das Debian-Paketmanagement}
+\renewcommand{\cheatsheetVersion}{Version 0.4}
+\renewcommand{\cheatsheetCopyright}{
+  \copyright~ 2023 Frank Hofmann \faIcon{envelope} \href{mailto:info@efho.de}{info@efho.de} \\ Veröffentlicht unter 
+ \href{https://creativecommons.org/licenses/by-sa/4.0/}{Creative Commons CC-BY-SA 4.0 \\ International License}. Erstellt mit \LaTeX. \\ \faIcon{github} \href{https://github.com/hofmannedv/cheatsheets}{https://github.com/hofmannedv/cheatsheets}~.
+}
+\begin{document}
+
+\cheatsheet
+
+\section{Die lokale Paketliste aktualisieren}
+
+\begin{tabular}{ p{3.5cm} p{9cm} p{11cm}}
+  \hline
+  \rowcolor{Gray}
+  \textbf{Werkzeug} & \textbf{Kommandofolge} & \textbf{Anmerkungen} \\
+  \hline 
+  \textbf{APT} & \texttt{apt update} & \\
+  \rowcolor{Gray}
+  & \texttt{apt-get update} & \\
+  \textbf{Aptitude} & \texttt{aptitude update} & \\
+  \hline 
+\end{tabular}
+
+\section{Neue Softwarepakete installieren}
+\begin{tabular}{ p{3.5cm} p{9cm} p{11cm}}
+  \hline
+  \rowcolor{Gray}
+  \textbf{Werkzeug} & \textbf{Kommandofolge} & \textbf{Anmerkungen} \\
+  \hline 
+  \textbf{APT} & \texttt{apt install \textit{Paketname}} & Das Paket wird vom Paketrepository bezogen \\
+  \rowcolor{Gray}
+   & \texttt{apt --no-download install \textit{Paketname}} & Das Paket wird nicht vom Paketrepository bezogen, sondern statt\-dessen aus dem Paketcache entnommen \\ 
+   & \texttt{apt-get install \textit{Paketname}} & Das Paket wird vom Paketrepository bezogen \\
+  \rowcolor{Gray}
+   & \texttt{apt-get --no-download install \textit{Paketname}} & Das Paket wird nicht vom Paketrepository bezogen, sondern statt\-dessen aus dem Paketcache entnommen \\
+  \textbf{Aptitude} & \texttt{aptitude install \textit{Paketname}} & Das Paket wird vom Paketrepository bezogen \\
+  \rowcolor{Gray}
+  \textbf{Dpkg} & \texttt{dpkg -i \textit{Dateiname}} & Installiere das Paket als \texttt{.deb}-Datei aus dem aktuellen Verzeichnis \\
+  \hline
+\end{tabular}
+
+\section{Bereits bestehende Softwarepakete erneuern}
+\begin{tabular}{ p{3.5cm} p{9cm} p{11cm}}
+  \hline
+  \rowcolor{Gray}
+  \textbf{Werkzeug} & \textbf{Kommandofolge} & \textbf{Anmerkungen} \\
+  \hline 
+  \textbf{APT} & \texttt{apt install \textit{Paketname}} & Ein Paket wird aktualisiert, sofern dieses bereits installiert ist. Das Paket wird vom Paketrepository bezogen. \\
+  \rowcolor{Gray}
+   & \texttt{apt safe-upgrade \textit{Paketname}} &  Eine neuere Version des Paketes wird installiert. Das neue Paket wird vom Paketrepository bezogen.\\
+   & \texttt{apt-get install \textit{Paketname}} & Ein Paket wird aktualisiert, sofern dieses bereits installiert ist. Das neue Paket wird vom Paketrepository bezogen. \\
+  \rowcolor{Gray}
+   & \texttt{apt-get upgrade \textit{Paketname}} & Eine neuere Version des Paketes wird installiert. Das Paket wird vom Paketrepository bezogen.\\
+  \textbf{Aptitude} & \texttt{aptitude safe-upgrade \textit{Paketname}} &  Eine neuere Version des Paketes wird installiert. Das Paket wird vom Paketrepository bezogen.\\
+  \hline
+\end{tabular}
+
+\newpage
+
+\cheatsheet
+
+\section{Ein Softwarepaket erneut installieren}
+\begin{tabular}{ p{3.5cm} p{9cm} p{11cm}}
+  \hline
+  \rowcolor{Gray}
+  \textbf{Werkzeug} & \textbf{Kommandofolge} & \textbf{Anmerkungen} \\
+  \hline 
+  \textbf{APT} & \texttt{apt reinstall \textit{Paketname}} & Das Paket wird vom Paketrepository bezogen \\
+  \rowcolor{Gray}
+  & \texttt{apt-get install --reinstall \textit{Paketname}} & Das Paket wird vom Paketrepository bezogen \\
+  & \texttt{apt-get reinstall \textit{Paketname}} & Das Paket wird vom Paketrepository bezogen \\
+  \rowcolor{Gray}
+  \textbf{Aptitude} & \texttt{aptitude reinstall \textit{Paketname}} & Das Paket wird vom Paketrepository bezogen \\
+  \hline
+\end{tabular}
+
+\section{Softwarepakete nur herunterladen}
+\begin{tabular}{ p{3.5cm} p{9cm} p{11cm}}
+  \hline
+  \rowcolor{Gray}
+  \textbf{Werkzeug} & \textbf{Kommandofolge} & \textbf{Anmerkungen} \\
+  \hline 
+  \textbf{APT} & \texttt{apt download \textit{Paketname}} & Das Paket wird vom Paketrepository bezogen und im aktuellen \newline Verzeichnis gespeichert. Es kann nachfolgend mit \texttt{dpkg -i \textit{Dateiname}} installiert werden\\
+  \rowcolor{Gray}
+  \textbf{Aptitude} & \texttt{aptitude download \textit{Paketname}} & Das Paket wird vom Paketrepository bezogen und im aktuellen \newline Verzeichnis gespeichert. Es kann nachfolgend mit \texttt{dpkg -i \textit{Dateiname}} installiert werden \\
+  \hline
+\end{tabular}
+
+\section{Softwarepakete entfernen und die Konfigurationsdateien behalten}
+\begin{tabular}{ p{3.5cm} p{9cm} p{11cm}}
+  \hline
+  \rowcolor{Gray}
+  \textbf{Werkzeug} & \textbf{Kommandofolge} & \textbf{Anmerkungen} \\
+  \hline 
+  \textbf{APT} & \texttt{apt remove \textit{Paketname}} & \\
+  \rowcolor{Gray}
+  & \texttt{apt-get remove \textit{Paketname}} & \\
+  \textbf{Aptitude} & \texttt{aptitude remove \textit{Paketname}} & \\
+  \rowcolor{Gray}
+  \textbf{Dpkg} & \texttt{dpkg -r \textit{Paketname}} & \\
+  & \texttt{dpkg --remove \textit{Paketname}} & \\
+  \hline
+\end{tabular}
+
+\section{Softwarepakete samt Konfigurationsdateien entfernen}
+\begin{tabular}{ p{3.5cm} p{9cm} p{11cm}}
+  \hline
+  \rowcolor{Gray}
+  \textbf{Werkzeug} & \textbf{Kommandofolge} & \textbf{Anmerkungen} \\
+  \hline 
+  \textbf{APT}& \texttt{apt purge \textit{Paketname}} & \\
+  \rowcolor{Gray}
+  & \texttt{apt-get purge \textit{Paketname}} & \\
+  & \texttt{apt-get --purge remove \textit{Paketname}} & \\
+  \rowcolor{Gray}
+  \textbf{Aptitude} & \texttt{aptitude purge \textit{Paketname}} & \\
+  \textbf{Dpkg} & \texttt{dpkg -P \textit{Paketname}} & \\
+  \rowcolor{Gray}
+  & \texttt{dpkg --purge \textit{Paketname}} & \\
+  \hline
+\end{tabular}
+
+\newpage
+
+\cheatsheet
+
+\section{Installierte Softwarepakete auflisten}
+\begin{tabular}{ p{3.5cm} p{9cm} p{11cm}}
+  \hline
+  \rowcolor{Gray}
+  \textbf{Werkzeug} & \textbf{Kommandofolge} & \textbf{Anmerkungen} \\
+  \hline 
+  \textbf{APT}& \texttt{apt list --installed} & Liste alle installierten Pakete auf\\
+  \rowcolor{Gray}
+  \textbf{Apt-cache} & \texttt{apt-cache search \textit{Paketname}} & Liste alle verfügbaren Pakete auf, die zu dem Paketnamen passen; die Suche umfaßt den Paketnamen, als auch die Paketbeschreibung \\
+  & \texttt{apt-cache search --names-only \textit{Paketname}} & Liste alle verfügbaren Pakete auf, die zu dem Paketnamen passen; die Suche umfaßt nur den Paketnamen \\
+  \rowcolor{Gray}
+  \textbf{Aptitude} & \texttt{aptitude search '\textasciitilde{}i'} & Liste alle installierten Pakete auf \\
+  \textbf{Dpkg} & \texttt{dpkg -l} & Liste alle installierten Pakete auf \\
+  \rowcolor{Gray}
+  & \texttt{dpkg --list} & Liste alle installierten Pakete auf \\
+  \hline
+\end{tabular}
+
+\section{Information zu einem einzelnen Softwarepaket anzeigen}
+\begin{tabular}{ p{3.5cm} p{9cm} p{11cm}}
+  \hline
+  \rowcolor{Gray}
+  \textbf{Werkzeug} & \textbf{Kommandofolge} & \textbf{Anmerkungen} \\
+  \hline 
+  \textbf{APT} & \texttt{apt list \textit{Paketname}} & Zeige die Paketinformation und den Installationsstatus an \\
+  \rowcolor{Gray}
+  & \texttt{apt show \textit{Paketname}} & Zeige die detaillierte Paketinformation und den Installationsstatus an \\
+  \textbf{Aptitude} & \texttt{aptitude show \textit{Paketname}} & Zeige die detaillierte Paketinformation und den Installationsstatus an \\
+  \textbf{Dpkg} & \texttt{dpkg -l \textit{Paketname} } & Zeige den Installationsstatus an \\
+  \rowcolor{Gray}
+  & \texttt{dpkg --list \textit{Paketname} } & Zeige den Installationsstatus an\\
+  & \texttt{dpkg -s \textit{Paketname} } & Zeige die Paketinformation an\\
+  \rowcolor{Gray}
+  & \texttt{dpkg --status \textit{Paketname} } & Zeige die Paketinformation an\\
+  \hline
+\end{tabular}
+
+\section{Paketabhängigkeiten anzeigen}
+\begin{tabular}{ p{3.5cm} p{9cm} p{11cm}}
+  \hline
+  \rowcolor{Gray}
+  \textbf{Werkzeug} & \textbf{Kommandofolge} & \textbf{Anmerkungen} \\
+  \hline 
+  \textbf{Apt-cache} & \texttt{apt-cache depends \textit{Paketname}} & Zeige die umgekehrten Abhängigkeiten an \\
+  \rowcolor{Gray}
+  & \texttt{apt-cache rdepends \textit{Paketname}} & Zeige die Abhängigkeiten an \\
+  \textbf{Aptitude} & \texttt{aptitude search '\textasciitilde{R}' \textit{Paketname}} & Zeige die Abhängigkeiten an \\
+  \rowcolor{Gray}
+  & \texttt{aptitude search '\textasciitilde{D}' \textit{Paketname}} & Zeige die umgekehrten Abhängigkeiten an\\
+  \textbf{Apt-rdepends} & \texttt{apt-rdepends -r \textit{Paketname}} & Zeige die Abhängigkeiten an \\
+  \rowcolor{Gray}
+  & \texttt{apt-rdepends \textit{Paketname}} & Zeige die umgekehrten Abhängigkeiten an \\
+  \textbf{Dpkg} & \texttt{dpkg -f \textit{Dateiname}} Depends & Zeige die Abhängigkeiten an; der Dateiname bezieht sich auf eine lokale \texttt{.deb}-Datei \\
+  \rowcolor{Gray}
+  & \texttt{dpkg-deb -f \textit{Dateiname}} Depends & Zeige die Abhängigkeiten an; der Dateiname bezieht sich auf eine lokale \texttt{.deb}-Datei \\
+  \textbf{Grep-status} & \texttt{grep-status -F Paketname -s Depends \textit{Paketname}} & Zeige die Abhängigkeiten an \\
+  \rowcolor{Gray}
+  & \texttt{grep-status -P -s Depends \textit{Paketname}} & Zeige die Abhängigkeiten an \\
+  \hline
+\end{tabular}
+
+\newpage
+
+\cheatsheet
+
+\section{Dateien eines Pakets vor der Installation anzeigen}
+\begin{tabular}{ p{3.5cm} p{9cm} p{11cm}}
+  \hline
+  \rowcolor{Gray}
+  \textbf{Werkzeug} & \textbf{Kommandofolge} & \textbf{Anmerkungen} \\
+  \hline 
+  \textbf{Dpkg} & \texttt{dpkg -c \textit{Paketname}} & \\
+  \rowcolor{Gray}
+  & \texttt{dpkg --contents \textit{Paketname}} & \\
+  \textbf{Dpkg-deb} & \texttt{dpkg-deb -c \textit{Paketname}} & \\
+  \rowcolor{Gray}
+  & \texttt{dpkg-deb --contents \textit{Paketname}} & \\
+  \hline
+\end{tabular}
+
+\section{Dateien eines installierten Pakets auflisten}
+\begin{tabular}{ p{3.5cm} p{9cm} p{11cm}}
+  \hline
+  \rowcolor{Gray}
+  \textbf{Werkzeug} & \textbf{Kommandofolge} & \textbf{Anmerkungen} \\
+  \hline 
+  \textbf{Apt-file} & \texttt{apt-file -list \textit{Paketname}} & \\
+  \rowcolor{Gray}
+  & \texttt{apt-file -show \textit{Paketname}} & \\
+  \textbf{Dpkg} & \texttt{dpkg -L \textit{Paketname}} & \\
+  \rowcolor{Gray}
+  & \texttt{dpkg --listfiles \textit{Paketname}} & \\
+  \textbf{Dpkg-query} & \texttt{dpkg-query -L \textit{Paketname}} & \\
+  \rowcolor{Gray}
+  & \texttt{dpkg-query --listfiles \textit{Paketname}} & \\
+  \hline
+\end{tabular}
+
+\section{Konfigurationsdateien eines Pakets auflisten}
+\begin{tabular}{ p{3.5cm} p{9cm} p{11cm}}
+  \hline
+  \rowcolor{Gray}
+  \textbf{Werkzeug} & \textbf{Kommandofolge} & \textbf{Anmerkungen} \\
+  \hline 
+  \textbf{Dpkg} & \texttt{dpkg -s \textit{Paketname}} & \\
+  \rowcolor{Gray}
+  & \texttt{dpkg --status \textit{Paketname}} & \\
+  \textbf{Dpkg-query} & \texttt{dpkg-query -s \textit{Paketname}} & \\
+  \rowcolor{Gray}
+  & \texttt{dpkg-query --status \textit{Paketname}} & \\
+  \hline
+\end{tabular}
+
+\section{Das Paket identifizieren, aus dem eine Datei stammt}
+\begin{tabular}{ p{3.5cm} p{9cm} p{11cm}}
+  \hline
+  \rowcolor{Gray}
+  \textbf{Werkzeug} & \textbf{Kommandofolge} & \textbf{Anmerkungen} \\
+  \hline 
+  \textbf{Apt-file} & \texttt{apt-file find \textit{Dateiname}} & Suche in allen verfügbaren Paketen\\
+  \rowcolor{Gray}
+  & \texttt{apt-file search \textit{Dateiname}} & Suche in allen verfügbaren Paketen\\
+  \textbf{Dpkg} & \texttt{dpkg -S \textit{Dateiname}} & Suche in allen installierten Paketen\\
+  \rowcolor{Gray}
+  & \texttt{dpkg --search \textit{Dateiname}} & Suche in allen installierten Paketen \\
+  \textbf{Dpkg-query} & \texttt{dpkg-query -S \textit{Dateiname}} & Suche in allen installierten Paketen\\
+  \rowcolor{Gray}
+  & \texttt{dpkg-query --search \textit{Dateiname}} & Suche in allen installierten Paketen \\
+  \hline
+\end{tabular}
+
+\newpage
+\cheatsheet
+
+\section{Den Paketstatus anzeigen}
+\begin{tabular}{ p{3.5cm} p{9cm} p{11cm}}
+  \hline
+  \rowcolor{Gray}
+  \textbf{Werkzeug} & \textbf{Kommandofolge} & \textbf{Anmerkungen} \\
+  \hline 
+  \textbf{Apt-cache} & \texttt{apt-cache show \textit{Paketname}} & Suche in allen verfügbaren Paketen\\
+  \rowcolor{Gray}
+  \textbf{Aptitude} & \texttt{aptitude show \textit{Paketname}} & Suche in allen verfügbaren Paketen\\
+  \textbf{Dpkg} & \texttt{dpkg -s \textit{Paketname}} & Das Paket muß lokal installiert sein \\
+  \rowcolor{Gray}
+  & \texttt{dpkg --status \textit{Paketname}} & Das Paket muß lokal installiert sein\\
+  & \texttt{dpkg -I \textit{Dateiname}} & Der Dateiname bezieht sich auf eine lokale \texttt{.deb}-Datei \\
+  \rowcolor{Gray}
+  & \texttt{dpkg --info \textit{Dateiname}} & Der Dateiname bezieht sich auf eine lokale \texttt{.deb}-Datei\\
+  \textbf{Dpkg-query} & \texttt{dpkg-query -s \textit{Paketname}} & Das Paket muß lokal installiert sein\\
+  \rowcolor{Gray}
+  & \texttt{dpkg-query --status \textit{Paketname}} & Das Paket muß lokal installiert sein \\
+  \hline
+\end{tabular}
+
+\section{Die Paketsignatur überprüfen}
+\begin{tabular}{ p{3.5cm} p{9cm} p{11cm}}
+  \hline
+  \rowcolor{Gray}
+  \textbf{Werkzeug} & \textbf{Kommandofolge} & \textbf{Anmerkungen} \\
+  \hline 
+  \textbf{Debsums} & \texttt{debsums \textit{Paketname}} & Überprüfe alle Dateien des Pakets mit Ausnahme der Konfigurationsdateien\\
+  \rowcolor{Gray}
+  \textbf{Debsums} & \texttt{debsums} & Überprüfe alle Dateien aller Pakete mit Ausnahme der Konfigurationsdateien \\
+  \textbf{Dpkg} & \texttt{dpkg -V \textit{Paketname}} & Überprüfe alle Dateien des Pakets \\
+  \rowcolor{Gray}
+  & \texttt{dpkg --verify \textit{Paketname}} & Überprüfe alle Dateien des Pakets \\
+  \textbf{Dpkg-sig} & \texttt{dpkg-sig --verify \textit{Paketname}} & Überprüfe die GPG-Signatur des Pakets \\
+  \rowcolor{Gray}
+  \textbf{Gpg} & \texttt{gpg --verify \textit{Paketname}} & Überprüfe die GPG-Signatur des Pakets \\
+  \hline
+\end{tabular}
+
+\section{Ein bereits installiertes Paket auf Änderungen überprüfen}
+\begin{tabular}{ p{3.5cm} p{9cm} p{11cm}}
+  \hline
+  \rowcolor{Gray}
+  \textbf{Werkzeug} & \textbf{Kommandofolge} & \textbf{Anmerkungen} \\
+  \hline 
+  \textbf{Dpkg} & \texttt{dpkg --verify \textit{Paketname}} & Prüfe nur dieses Paket \\
+  \rowcolor{Gray}
+  & \texttt{dpkg --verify} & Prüfe alle Pakete \\
+  \hline
+\end{tabular}
+
+\newpage
+
+\cheatsheet
+
+\section{Verfügbare Pakete auflisten}
+\begin{tabular}{ p{3.5cm} p{9cm} p{11cm}}
+  \hline
+  \rowcolor{Gray}
+  \textbf{Werkzeug} & \textbf{Kommandofolge} & \textbf{Anmerkungen} \\
+  \hline 
+  \textbf{APT} & \texttt{apt list} & Liste alle bekannten und verfügbaren Pakete mit deren Status auf\\
+  \rowcolor{Gray}
+  & \texttt{apt list \textit{Paketname}} & Liste alle bekannten und verfügbaren Versionen des Pakets mit dessen Status auf\\
+  \textbf{Apt-cache} & \texttt{apt-cache pkgnames} & Liste alle bekannten und verfügbaren Pakete auf\\
+  \hline
+\end{tabular}
+
+\section{Mit neuer Version aktualisierbare Softwarepakete anzeigen}
+\begin{tabular}{ p{3.5cm} p{9cm} p{11cm}}
+  \hline
+  \rowcolor{Gray}
+  \textbf{Werkzeug} & \textbf{Kommandofolge} & \textbf{Anmerkungen} \\
+  \hline 
+  \textbf{APT} & \texttt{apt list --upgradable} & Liste die verfügbaren Pakete mit der neuen Versionsnummer auf\\
+  \rowcolor{Gray}
+  & \texttt{apt list --upgradable \textit{Paketname}} & Liste die neuen Versionen für dieses Paket auf\\
+  & \texttt{apt-get upgrade -u} & Liste die verfügbaren Pakete mit der neuen Versionsnummer auf \\
+  \rowcolor{Gray}
+  & \texttt{apt-get upgrade --show-upgraded} & Liste die verfügbaren Pakete mit der neuen Versionsnummer auf \\
+  & \texttt{apt-get upgrade -u -s} & Simuliere die Aktualisierung der verfügbaren Pakete mit einer neuen Version \\
+  \rowcolor{Gray}
+  & \texttt{apt-get upgrade --show-upgraded --simulate} & Simuliere die Aktualisierung der verfügbaren Pakete mit einer neuen Version \\
+  \textbf{Aptitude} & \texttt{aptitude search '\textasciitilde{U}'} & Liste die verfügbaren Pakete mit der neuen Versionsnummer auf \\
+  \rowcolor{Gray}
+  & \texttt{aptitude search ?upgradable} &  Liste die verfügbaren Pakete mit der neuen Versionsnummer auf \\
+  \hline
+\end{tabular}
+
+\section{Eine installierte Veröffentlichung aktualisieren (Distributionsupgrade)}
+\begin{tabular}{ p{3.5cm} p{9cm} p{11cm}}
+  \hline
+  \rowcolor{Gray}
+  \textbf{Werkzeug} & \textbf{Kommandofolge} & \textbf{Anmerkungen} \\
+  \hline 
+  \textbf{APT} & \texttt{apt full-upgrade} & Aktualisiere alle bereits installierten Softwarepakete auf die aktuellste, verfügbare Version \\
+  \rowcolor{Gray}
+  & \texttt{apt-get dist-upgrade} & Aktualisiere alle bereits installierten Softwarepakete auf die aktuellste, verfügbare Version \\
+  \textbf{Aptitude} & \texttt{aptitude full-upgrade} & Aktualisiere alle bereits installierten Softwarepakete auf die aktuellste, verfügbare Version \\
+  \rowcolor{Gray}
+  & \texttt{aptitude safe-upgrade} &  Aktualisiere alle bereits installierten Softwarepakete auf die aktuellste, verfügbare Version mit der Ausnahme von ungenutzten Paketen \\
+  \hline
+\end{tabular}
+
+\newpage
+
+\cheatsheet
+
+\section{Empfohlene Bücher und Materialien}
+
+\begin{description}
+    \item[Axel Beckert, Frank Hofmann: Das Debian-Paketmanagement-Buch] ~ \\
+        \begin{tabbing}
+            \= Verfügbare Sprachen: \= \= Deutsch \\
+            \> Projektwebseite: \> \> \href{https://dpmb.org/}{https://dpmb.org/} \\
+            \> Mitwirkung: \> \> via GitHub ~ \faIcon{github} \href{https://github.com/dpmb}{https://github.com/dpmb} \\
+            \> Debianpaket: \> \> \href{https://packages.debian.org/stable/debian-paketmanagement-buch}{\texttt{debian-paketmanagement-buch}} \\ 
+        \end{tabbing}
+
+    \item[Raphaël Hertzog, Roland Mas: The Debian Administrator's Handbook] ~ \\ 
+        \begin{tabbing}
+            \= Verfügbare Sprachen: \= \= Französisch, Englisch, Deutsch, Russisch, Japanisch und andere Sprachen \\
+            \> Projektwebseite \> \> \href{https://debian-handbook.info/}{https://debian-handbook.info/} \\
+            \> Mitwirkung: \> \> via Salsa ~ \href{https://salsa.debian.org/hertzog/debian-handbook/}{https://salsa.debian.org/hertzog/debian-handbook/} \\
+            \> Debianpaket: \> \> \href{https://packages.debian.org/stable/debian-handbook}{\texttt{debian-handbook}} \\
+        \end{tabbing}
+
+    \item[Frank Ronneburg: Das Debian GNU/Linux Anwenderhandbuch] ~ \\
+        \begin{tabbing}
+            \= Verfügbare Sprachen: \= \= Deutsch \\
+            \> Projektwebseite: \> \> \href{https://debiananwenderhandbuch.de/}{https://debiananwenderhandbuch.de/} \\
+            \> Mitwirkung: \> \> via Email ~ \faIcon{envelope} 
+            \href{mailto:fr@debiananwenderhandbuch.de}{fr@debiananwenderhandbuch.de} \\
+            
+            \> Debianpaket: \> \> nicht vorhanden \\
+        \end{tabbing}
+        
+    \item[Matthew Danish: Die apt-dpkg-Referenzliste] ~ \\
+        \begin{tabbing}
+            \= Verfügbare Sprachen: \= \= Englisch \\
+            \> Projektwebseite: \> \> nicht vorhanden \\
+            \> Mitwirkung: \> \> nicht bekannt \\
+            
+            \> Debianpaket: \> \> \texttt{apt-dpkg-ref} (verfügbar bis Debian 11 \textit{Bullseye})
+        \end{tabbing}
+\end{description}
+
+\end{document}
