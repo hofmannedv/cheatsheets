@@ -1,5 +1,4 @@
 # About Cheatsheets
----
 
 Learning to program is not difficult -- especially with the right information about everyday tools. These cheatsheets include overviews of the following UNIX/Linux tools:
 
@@ -12,7 +11,6 @@ Learning to program is not difficult -- especially with the right information ab
 I use these in my Linux training courses as an aid and learning material.
 
 ## Availability
----
 
 Currently, these cheatsheets are available as single PDF documents in the following languages:
 
@@ -22,7 +20,6 @@ Currently, these cheatsheets are available as single PDF documents in the follow
 - Russian (for Bash shortcuts, only)
 
 ## License
----
 
 These cheatsheets are published under [Creative Commons CC-BY-SA 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/).
 
