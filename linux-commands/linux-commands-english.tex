@@ -1,0 +1,522 @@
+% Essential Linux Commands
+% Version 0.6
+% (C) 2023,2024 by Frank Hofmann <info@efho.de>
+% Available from https://github.com/hofmannedv/cheatsheets
+
+% Published under Creative Commons CC-BY-SA 4.0 International License
+% https://creativecommons.org/licenses/by-sa/4.0/
+
+\documentclass[10pt]{article}
+\usepackage{cheatsheet}
+
+\renewcommand{\cheatsheetTitle}{Essential Linux Commands Cheatsheet}
+\renewcommand{\cheatsheetVersion}{Version 0.6}
+\renewcommand{\cheatsheetCopyright}{
+  \copyright~ 2023,2024 by Frank Hofmann \\ \faIcon{envelope} \href{mailto:info@efho.de}{info@efho.de}. Published under 
+ \href{https://creativecommons.org/licenses/by-sa/4.0/}{Creative Commons \\ CC-BY-SA 4.0 International License}. Created with \LaTeX. \\ \faIcon{github} \href{https://github.com/hofmannedv/cheatsheets}{https://github.com/hofmannedv/cheatsheets}~.
+}
+\begin{document}
+
+\cheatsheet
+
+\begin{multicols}{2}
+
+\section{System information and administration}
+\begin{tabular}{ p{2.5cm} p{8.5cm} }
+  \hline
+  \texttt{blkid} & List the block devices, and its ids \\
+  \rowcolor{Gray}
+  \texttt{cfdisk}, \texttt{fdisk} & Alter the partition table \\
+  \texttt{cpuid}, \texttt{lscpu} & List detailed cpu information \\
+  \rowcolor{Gray}
+  \texttt{df} & Show available disk space \\
+  \texttt{du} & Show disk space usage \\
+  \rowcolor{Gray}
+  \texttt{free} & List both available and used memory, and SWAP space  \\
+  \texttt{halt}, \texttt{poweroff}, \texttt{shutdown} & Stop the system \\
+  \rowcolor{Gray}
+  \texttt{journalctl} & Query the systemd journal \\
+  \texttt{lsblk} & Display information about the system's block devices\\
+  \rowcolor{Gray}
+  \texttt{lsdev}, \texttt{lshw} & Display information about installed hardware\\
+  \texttt{lsof} & List open files \\
+  \rowcolor{Gray}
+  \texttt{lspci} & List all pci devices\\
+  \texttt{lsusb} & List all usb devices\\
+  \rowcolor{Gray}
+  \texttt{mailq} & Listing of the contents of the mail queue on the standard output\\
+  \texttt{reboot} & Reboot the system\\
+  \rowcolor{Gray}
+  \texttt{systemctl} & Reboot the system\\
+  \texttt{systemd-cat} & Connect a pipeline or program's output with the journal\\
+  \rowcolor{Gray}
+  \texttt{uname} & Display the Linux kernel that is in use\\
+  \texttt{uptime} & Display the time the system is already up and running\\
+  \hline
+\end{tabular}
+
+~\\
+\vfill
+
+\section{Find files and directories}
+\begin{tabular}{ p{2.5cm} p{8.5cm} }
+  \hline
+  \texttt{find} & Find files, and directories by various criteria \\
+  \rowcolor{Gray}
+  \texttt{locate} & Find files, and directories by name based on the locate database \\
+  \texttt{updatedb} & Initialize, and update the locate database \\
+  \hline
+\end{tabular}
+
+
+\columnbreak
+
+\section{File and directory operations}
+\begin{tabular}{ p{2.5cm} p{8.5cm} }
+  \hline
+  \texttt{cd} & Change to a directory \\
+  \rowcolor{Gray}
+  \texttt{cp} & Copy a file \\
+  \texttt{file} & Identify the file type \\
+  \rowcolor{Gray}
+  \texttt{ln} & Create a link \\
+  \texttt{ls} & List the contents of a directory \\
+  \rowcolor{Gray}
+  \texttt{mkdir} & Create a directory \\
+  \texttt{mmv} & Rename, or move multiple files, or directories \\
+  \rowcolor{Gray}
+  \texttt{mv} & Rename, or move a single file, or directory \\
+  \texttt{pwd} & Print the current working directory \\
+  \rowcolor{Gray}
+  \texttt{rm} & Remove one or more files, or directories \\
+  \texttt{rmdir} & Remove an empty directory \\
+  \rowcolor{Gray}
+  \texttt{touch} & Create an empty file, or update the timestamp of an existing file \\
+  \texttt{umask} & Set file mode creation mask \\
+  \hline
+\end{tabular}
+
+%~\\
+\vfill
+
+\section{Package management (selection)}
+\begin{tabular}{ p{2.5cm} p{8.5cm} }
+  \hline 
+  \texttt{apt}, \texttt{apt-get}, \texttt{aptitude}, \newline \texttt{synaptic} & Install, update, and remove software packages~\fbox{1} \\
+  \rowcolor{Gray}
+  \texttt{apt-cache} & Manage, and query the package cache~\fbox{1} \\
+  \texttt{dpkg} & Install, update, and remove software packages~\fbox{1} \\
+  \rowcolor{Gray}
+  \texttt{dpkg-reconfigure} & Reconfigure package configuration~\fbox{1} \\
+  \texttt{rpm}, \texttt{yum} & Install, update, and remove software packages~\fbox{2} \\
+  \hline
+\end{tabular}
+\noindent Notes: \\
+\fbox{1}: Debian GNU/Linux, Ubuntu, and Linux Mint\\
+\fbox{2}: RedHat Linux, Fedora, and OpenSuse
+
+
+\end{multicols}
+
+\newpage
+
+\cheatsheet
+
+\begin{multicols}{2}
+
+\section{Network commands}
+\begin{tabular}{ p{2.5cm} p{8.5cm} }
+  \hline
+  \texttt{dhclient} & Request a dynamic IP address \\
+  \rowcolor{Gray}
+  \texttt{host} & DNS lookup utility \\
+  \texttt{hostname} & Display the system's hostname \\
+  \rowcolor{Gray}
+  \texttt{ifconfig}, \texttt{iwconfig} & Configure network interfaces, and display interface configuration (deprecated)\\
+  \texttt{ifup} & Enable a network interface \\
+  \rowcolor{Gray}
+  \texttt{ip} & Configure network interfaces, and display interface configuration \\
+  \texttt{ifdown} & Disable a network interface \\
+  \rowcolor{Gray}
+  \texttt{iwlist} & List available wireless networks \\
+  \texttt{nc}, \texttt{netcat} & TCP/IP swiss army knife \\
+  \rowcolor{Gray}
+  \texttt{netstat} & Display network statistics \\
+  \texttt{nslookup} & Lookup name service entries \\
+  \rowcolor{Gray}
+  \texttt{ping}, \texttt{ping6} & Send ICMP package to a host \\
+  \texttt{route} & Display routing table \\
+  \rowcolor{Gray}
+  \texttt{tcpdump} & Dump traffic on a network \\
+  \texttt{traceroute}, \texttt{traceroute6} & Print the route packets trace to network host\\
+  \hline
+  & \\
+\end{tabular}
+
+\section{Secure data transfer}
+\begin{tabular}{ p{2.5cm} p{8.5cm} }
+  \hline
+  \texttt{rsync}, \texttt{scp} & Synchronize data locally, or remotely \newline using a secure, encrypted channel \\
+  \rowcolor{Gray}
+  \texttt{ssh} & Connect to a remote system using a \newline secure, encrypted channel\\
+  \texttt{ssh-copy-id} & Transfer an SSH public key to a remote system for password-less authentification\\
+  \rowcolor{Gray}
+  \texttt{ssh-keygen} & Generate an SSH key pair for password-less authentification\\
+  \hline
+\end{tabular}
+
+\columnbreak
+
+\section{Using pagers}
+\begin{tabular}{ p{2.5cm} p{8.5cm} }
+  \hline
+  \texttt{less}, \texttt{more} & Display data page by page \\
+  \rowcolor{Gray}
+  \texttt{most} & Display data page by page, and in multiple windows \\
+  \hline
+\end{tabular}
+
+\section{Users, groups, and access control}
+\begin{tabular}{ p{2.5cm} p{8.5cm} }
+  \hline
+  \texttt{addgroup} & Add a new group~\fbox{1} \\
+  \rowcolor{Gray}
+  \texttt{adduser} & Add a new user~\fbox{1} \\
+  \texttt{chage} & Modify the duration a user account is valid\\
+  \rowcolor{Gray}
+  \texttt{chgrp} & Modify the group of a file, or directory\\
+  \texttt{chmod} & Modify the access rights of a file, or directory\\
+  \rowcolor{Gray}
+  \texttt{chown} & Modify the owner of a file, or directory\\
+  \texttt{delgroup} & Remove an existing group~\fbox{1} \\
+  \rowcolor{Gray}
+  \texttt{deluser} & Remove an existing user~\fbox{1} \\
+  \texttt{getent} & Lookup user information in local databases \\
+  \rowcolor{Gray}
+  \texttt{groupadd} & Add a new group~\fbox{2} \\
+  \texttt{groupdel} & Remove an existing group~\fbox{2} \\
+  \rowcolor{Gray}
+  \texttt{groupmod} & Modify an existing group~\fbox{2} \\
+  \texttt{id} & Display user information \\
+  \rowcolor{Gray}
+  \texttt{last} & Show last login time for a user \\
+  \texttt{passwd} & Modify password for a user account \\
+  \rowcolor{Gray}
+  \texttt{su} & Switch to a different user account\\
+  \texttt{sudo} & Run command as administrative user \\
+  \rowcolor{Gray}
+  \texttt{useradd} & Add a new user~\fbox{2} \\
+  \texttt{userdel} & Remove an existing user~\fbox{2} \\
+  \rowcolor{Gray}
+  \texttt{usermod} & Modify an existing user~\fbox{2} \\
+  \texttt{users}, \texttt{w}, \texttt{who} & List logged-in users \\
+  \rowcolor{Gray}
+  \texttt{wall} & Write a message to all users currently logged in \\
+  \texttt{whoami} & Display current user name \\
+  \hline
+\end{tabular}
+\noindent Notes: \\ 
+\fbox{1} High-level tool
+\fbox{2} Low-level tool
+
+%~\\
+\vfill
+%~\\
+
+\end{multicols}
+
+\newpage
+
+\cheatsheet
+
+\begin{multicols}{2}   
+
+\section{Getting help}
+\begin{tabular}{ p{2.5cm} p{8.5cm} }
+  \hline
+  \texttt{apropos} & Display a short help text explaining the given command \\
+  \rowcolor{Gray}
+  \texttt{info} & Get help using the GNU Info system \\
+  \texttt{man} & Display an extended help text explaining the given command \\
+  \rowcolor{Gray}
+  \texttt{manpath} & Manage the path for manual pages \\
+  \texttt{whatis} & Looks up the index database for short help texts explaining the given command\\
+  \hline
+  & \\
+  & \\
+  & \\
+  & \\
+\end{tabular}
+
+\section{Processes and job control}
+\begin{tabular}{ p{2.5cm} p{8.5cm} }
+  \hline
+  \texttt{bg} & Send process to the background \\
+  \rowcolor{Gray}
+  \texttt{fg} & Bring a process into the foreground \\
+  \texttt{htop}, \texttt{top} & A process monitor \\
+  \rowcolor{Gray}
+  \texttt{jobs} & List running jobs \\
+  \texttt{kill} & Send a signal to a process \\
+  \rowcolor{Gray}
+  \texttt{killall} & Send a signal to a number of processes\\
+  \texttt{nice}, \texttt{renice} & Modify the nice level of a process \\
+  \rowcolor{Gray}
+  \texttt{pgrep} & Find a process by its name, or by Regular Expression \\
+  \texttt{ps} & List running processes \\
+  \rowcolor{Gray}
+  \texttt{pstree} & Display processes as a tree structure \\
+  \texttt{pkill} & Look up or signal processes based on name and other attributes\\
+  \rowcolor{Gray}
+  \texttt{sleep} & Pause the execution of commands \\
+  \texttt{watch} & Execute a program periodically, showing output fullscreen \\
+  \hline
+\end{tabular}
+
+\section{Text and data stream processing}
+\begin{tabular}{ p{2.5cm} p{8.5cm} }
+  \hline
+  \texttt{awk} & Alter, or extract data from text files preferably by column\\
+  \rowcolor{Gray}
+  \texttt{cat} & Output a file from top to bottom \\
+  \texttt{colrm} & Remove a column from a file \\
+  \rowcolor{Gray}
+  \texttt{column} & Display data column-wise \\
+  \texttt{cut} & Extract data from text files by column \\
+  \rowcolor{Gray}
+  \texttt{diff} & Compare two files, and show the differences between them\\
+  \texttt{egrep}, \texttt{fgrep}, \texttt{grep} & Filter text files by pattern line-wise \\
+  \rowcolor{Gray}
+  \texttt{head} & Print a specified number of lines beginning at  the top of a file\\
+  \texttt{hexdump} & Output data as hexadecimal characters\\
+  \rowcolor{Gray}
+  \texttt{nl} & Output a file, and add line numbers\\
+  \texttt{paste} & Combine single files into one \\
+  \rowcolor{Gray}
+  \texttt{sed} & Modify a file line-wise \\
+  \texttt{sort} & Sort a file \\
+  \rowcolor{Gray}
+  \texttt{split} & Split a file based on conditions\\
+  \texttt{tac} & Output a file from bottom to top\\
+  \rowcolor{Gray}
+  \texttt{tail} & Print a specified number of lines beginning at the bottom of a file\\
+  \texttt{tr} & Replace text in a file\\
+  \rowcolor{Gray}
+  \texttt{uniq} & Report, or remove duplicate lines \\
+  \texttt{tee} & Read from \texttt{stdin}, and print to both a file, and \texttt{stdout}\\
+  \rowcolor{Gray}
+  \texttt{wc} & Count lines, words, and characters of a file\\
+  \hline
+\end{tabular}
+
+\section{Dealing with log files}
+\begin{tabular}{ p{2.5cm} p{8.5cm} }
+  \hline
+  \texttt{logger} & A shell command interface to the syslog system log module \\
+  \rowcolor{Gray}
+  \texttt{logrotate} & Rotates, compresses, and mails system logs \\
+  \hline
+\end{tabular}
+
+\end{multicols}
+
+\newpage
+
+\cheatsheet
+
+\begin{multicols}{2} 
+\section{Handling file systems}
+\begin{tabular}{ p{2.5cm} p{8.5cm} }
+  \hline
+  \texttt{e2fsck}, \texttt{fsck} & File system check \\
+  \rowcolor{Gray}
+  \texttt{mkfs} & Create a file system \\
+  \texttt{mkswap} & Prepare a partition for SWAP usage \\
+  \rowcolor{Gray}
+  \texttt{mount} & Mount a file system \\
+  \texttt{swapoff} & Disable a SWAP partition \\
+  \rowcolor{Gray}
+  \texttt{swapon} & Ensable a SWAP partition \\
+  \texttt{tune2fs} & Modify existing file system \\
+  \rowcolor{Gray}
+  \texttt{umount} & Unmount a file system\\
+  \hline
+\end{tabular}
+
+%~\\
+%\vfill
+
+\section{Working with terminals and shells, adjust the working environment}
+\begin{tabular}{ p{2.5cm} p{8.5cm} }
+  \hline
+  \texttt{alias} & List, or alter aliases for commmands \\
+  \rowcolor{Gray}
+  \texttt{clear} & Clear the screen \\
+  \texttt{echo} & Output text on the screen \\
+  \rowcolor{Gray}
+  \texttt{env} & Display the environment variables \\
+  \texttt{exit} & Quit the current shell session \\
+  \rowcolor{Gray}
+  \texttt{history} & Display the previously used commands \\
+  \texttt{screen}, \texttt{tmux} & A terminal multiplexer \\
+  \rowcolor{Gray}
+  \texttt{set} & Enable, or change a run-time parameter \\
+  \texttt{time} & Measure the execution time of a command \\
+  \rowcolor{Gray}
+  \texttt{type} & Identify command type \\
+  \texttt{unalias} & Remove an alias for a command \\
+  \rowcolor{Gray}
+  \texttt{unset} & Remove, or disable a runtime parameter \\
+  \texttt{whatis} & Lookup the index database for command descriptions \\
+  \rowcolor{Gray}
+  \texttt{whereis} & Lookup the binary files, source code files, and manual pages for a command \\
+  \texttt{which} & Identify which command will be run by the shell\\
+  \rowcolor{Gray}
+  \texttt{xargs} & Build and execute command lines from standard input \\
+  \hline
+\end{tabular}
+
+\columnbreak
+
+\section{Handling the Linux kernel}
+\begin{tabular}{ p{2.5cm} p{8.5cm} }
+  \hline
+  \texttt{dmesg} & Display, and control the kernel ring buffer\\
+  \rowcolor{Gray}
+  \texttt{insmod} & Insert (activate) a kernel module into the currently running Linux kernel\\
+  \texttt{lsmod} & List the kernel modules from the currently running Linux kernel \\
+  \rowcolor{Gray}
+  \texttt{modprobe} & Try to insert (activate) a kernel module into the currently running Linux kernel \\
+  \texttt{rmmode} & Remove (deactivate) a kernel module from the currently running Linux kernel \\
+  \rowcolor{Gray}
+  \texttt{uname} & Display information about the currently running Linux kernel\\
+  \hline
+\end{tabular}
+
+\section{Printing}
+\begin{tabular}{ p{2.5cm} p{8.5cm} }
+  \hline
+  \texttt{lp}, \texttt{lpr} & Print files, or change an existing printing job\\
+  \rowcolor{Gray}
+  \texttt{lpc} & Manage printers \\
+  \texttt{lpq} & Display the contents of the printer queue\\
+  \rowcolor{Gray}
+  \texttt{lprm} & Remove an existing job from the printer queue \\
+  \hline
+\end{tabular}
+
+\section{System time, date, calendar, and locales}
+\begin{tabular}{ p{2.5cm} p{8.5cm} }
+  \hline
+  \texttt{cal}, \texttt{ncal} & Display a calendar\\
+  \rowcolor{Gray}
+  \texttt{date} & Display a date in various formats\\
+  \texttt{hwclock} & Manage both the hardware, and the system clock\\
+  \rowcolor{Gray}
+  \texttt{locale} & Display information about the current locale \\
+  \texttt{ntpdate}, \texttt{ntpsec-ntpdate} & Retrieve the time information from an NTP server \\
+  \rowcolor{Gray}
+  \texttt{timedatectl} & Control the system time and date \\
+  \hline
+\end{tabular}
+\end{multicols}
+
+\newpage
+
+\cheatsheet
+
+\begin{multicols}{2} 
+%\vfill
+
+\section{Archives and data compression}
+
+\begin{tabular}{ p{2.5cm} p{8.5cm} }
+  \hline 
+  \texttt{bunzip2} & Unpack a compressed file (bzip2 format) \\
+  \rowcolor{Gray}
+  \texttt{bzcat} & Output file content to \texttt{stdout} from a compressed file (bzip2 format)\\
+  \texttt{bzegrep}, \texttt{bzfgrep}, \texttt{bzgrep} & Search in a bz-compressed file \\
+  \rowcolor{Gray}
+  \texttt{bzip2} & Compress a file (bzip2 format) \\
+  \texttt{gunzip} & Unpack a compressed file (gzip format) \\
+  \rowcolor{Gray}
+  \texttt{gzip} & Compress a file (gzip format) \\
+  \texttt{tar} & Create, and manage a tape archive (tar file) \\
+  \rowcolor{Gray}
+  \texttt{unzip} & Unpack a compressed file (zip format) \\
+  \texttt{xz} & Compress a file (xz format) \\
+  \rowcolor{Gray}
+  \texttt{xzcat} & Output file content to \texttt{stdout} from a compressed file (xz format) \\
+  \texttt{xzegrep}, \texttt{xzfgrep}, \texttt{xzgrep} & Search in a xz-compressed file \\
+  \rowcolor{Gray}
+  \texttt{zip} & Compress a file (zip format) \\
+  \texttt{zcat} & Output file content to \texttt{stdout} from a compressed file (zip format) \\
+  \rowcolor{Gray}
+  \texttt{zegrep}, \texttt{zfgrep}, \texttt{zgrep} & Search in a zip-compressed file \\
+  \hline
+\end{tabular}
+
+\section{System libraries}
+\begin{tabular}{ p{2.5cm} p{8.5cm} }
+  \hline 
+  \texttt{ldd} & Print shared library dependencies \\
+  \rowcolor{Gray}
+  \texttt{ldconfig} & Configure dynamic linker run-time bin\-dings
+  \\
+  \hline
+\end{tabular}
+
+%\vfill
+\columnbreak
+
+\section*{Notes\textcolor{white}{g}}
+\begin{tabular}{ p{2.5cm} p{8.5cm} }
+  \hline 
+  ~ & ~ \\
+  \rowcolor{Gray}
+  ~ & ~ \\
+  ~ & ~ \\
+  \rowcolor{Gray}
+  ~ & ~ \\
+  ~ & ~ \\
+  \rowcolor{Gray}
+  ~ & ~ \\
+  ~ & ~ \\
+  \rowcolor{Gray}
+  ~ & ~ \\
+  ~ & ~ \\
+  \rowcolor{Gray}
+  ~ & ~ \\
+  ~ & ~ \\
+  \rowcolor{Gray}
+  ~ & ~ \\
+  ~ & ~ \\
+  \rowcolor{Gray}
+  ~ & ~ \\
+  ~ & ~ \\
+  \rowcolor{Gray}
+  ~ & ~ \\
+  ~ & ~ \\
+  \rowcolor{Gray}
+  ~ & ~ \\
+  ~ & ~ \\
+  \rowcolor{Gray}
+  ~ & ~ \\
+  ~ & ~ \\
+  \rowcolor{Gray}
+  ~ & ~ \\
+  ~ & ~ \\
+  \rowcolor{Gray}
+  ~ & ~ \\
+  ~ & ~ \\
+  \rowcolor{Gray}
+  ~ & ~ \\
+  ~ & ~ \\
+  \rowcolor{Gray}
+  ~ & ~ \\
+  \hline
+\end{tabular}
+
+\end{multicols}
+
+\end{document}
