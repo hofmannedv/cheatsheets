@@ -31,6 +31,14 @@ These cheatsheets are published under [Creative Commons CC-BY-SA 4.0 Internation
 
 These cheatsheets are available as printed versions, too, and include additional sheets for your notes. Suitable as training material for Linux courses and preparation for obtaining a Linux certificate.
 
+Currently, these cheatsheets are included:
+
+- Vi/Vim text editor
+- Working with Bash
+- Package management under Debian GNU/Linux, and Ubuntu
+- Essential commands for Linux
+- How to use the Nano text editor
+
 50 pages, coloured, including 19 pages of cheatsheets.
 
 You can obtain them from Amazon as follows:
