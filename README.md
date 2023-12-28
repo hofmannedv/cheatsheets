@@ -4,7 +4,8 @@ Learning to program is not difficult -- especially with the right information ab
 
 - Vi/Vim text editor
 - Working with Bash
-- Package management under Debian GNU/Linux and Ubuntu
+- Package management under Debian GNU/Linux, and Ubuntu
+- Package management under Red Hat Linux, Fedora, and CentOS
 - Essential commands for Linux
 - How to use the Nano text editor
 
@@ -18,6 +19,9 @@ Currently, these cheatsheets are available as single PDF documents in the follow
 - English
 - French (available as a release candidate, and still require proofreading)
 - Russian (for Bash shortcuts, only)
+
+The cheatsheet for package management under Red Hat Linux, Fedora, and CentOS is available in 
+English, currently. 
 
 ## License
 
