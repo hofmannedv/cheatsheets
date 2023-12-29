@@ -1,13 +1,13 @@
 # About Cheatsheets
 
-Learning to program is not difficult -- especially with the right information about everyday tools. These cheatsheets include overviews of the following UNIX/Linux tools:
+Learning to maintain a Linux system is not difficult -- especially with the right information about everyday tools. These cheatsheets include overviews of the following UNIX/Linux tools:
 
-- Vi/Vim text editor
-- Working with Bash
-- Package management under Debian GNU/Linux, and Ubuntu
-- Package management under Red Hat Linux, Fedora, and CentOS
-- Essential commands for Linux
-- How to use the Nano text editor
+- [Vi/Vim text editor](https://github.com/hofmannedv/cheatsheets/tree/master/vim)
+- [Working with Bash](https://github.com/hofmannedv/cheatsheets/tree/master/bash)
+- [Package management under Debian GNU/Linux, and Ubuntu](https://github.com/hofmannedv/cheatsheets/tree/master/debian-package-management)
+- [Package management under Red Hat Linux, Fedora, and CentOS](https://github.com/hofmannedv/cheatsheets/tree/master/redhat-package-management)
+- [Essential commands for Linux](https://github.com/hofmannedv/cheatsheets/tree/master/linux-commands)
+- [How to use the Nano text editor](https://github.com/hofmannedv/cheatsheets/tree/master/nano)
 
 I use these in my Linux training courses as an aid and learning material.
 
@@ -21,7 +21,7 @@ Currently, these cheatsheets are available as single PDF documents in the follow
 - Russian (for Bash shortcuts, only)
 
 The cheatsheet for package management under Red Hat Linux, Fedora, and CentOS is available in 
-English, currently. 
+English, currently. Further translations will follow shortly.
 
 ## License
 
