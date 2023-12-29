@@ -1,6 +1,8 @@
 # About Cheatsheets
 
-Learning to maintain a Linux system is not difficult -- especially with the right information about everyday tools. These cheatsheets include overviews of the following UNIX/Linux tools:
+Learning to maintain a Linux system is not difficult -- especially with the right 
+information about everyday tools at hand. These cheatsheets include overviews of 
+the following UNIX/Linux tools:
 
 - [Vi/Vim text editor](https://github.com/hofmannedv/cheatsheets/tree/master/vim)
 - [Working with Bash](https://github.com/hofmannedv/cheatsheets/tree/master/bash)
@@ -13,15 +15,16 @@ I use these in my Linux training courses as an aid and learning material.
 
 ## Availability
 
-Currently, these cheatsheets are available as single PDF documents in the following languages:
+Currently, these cheatsheets are available as single PDF documents in the 
+following languages:
 
 - German
 - English
 - French (available as a release candidate, and still require proofreading)
 - Russian (for Bash shortcuts, only)
 
-The cheatsheet for package management under Red Hat Linux, Fedora, and CentOS is available in 
-English, currently. Further translations will follow shortly.
+The cheatsheet for package management under Red Hat Linux, Fedora, and CentOS is 
+available in English, currently. Further translations will follow shortly.
 
 ## License
 
@@ -29,7 +32,9 @@ These cheatsheets are published under [Creative Commons CC-BY-SA 4.0 Internation
 
 ## Printed Versions
 
-These cheatsheets are available as printed versions, too, and include additional sheets for your notes. Suitable as training material for Linux courses and preparation for obtaining a Linux certificate.
+These cheatsheets are available as printed versions, too, and include additional 
+sheets for your notes. Suitable as training material for Linux courses and 
+preparation for obtaining a Linux certificate.
 
 Currently, these cheatsheets are included:
 
