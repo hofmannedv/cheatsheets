@@ -23,9 +23,6 @@ following languages:
 - French (available as a release candidate, and still require proofreading)
 - Russian (for Bash shortcuts, only)
 
-The cheatsheet for package management under Red Hat Linux, Fedora, and CentOS is 
-available in English, and German, currently. Further translations will follow shortly.
-
 ## License
 
 These cheatsheets are published under [Creative Commons CC-BY-SA 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/).
