@@ -20,7 +20,7 @@ following languages:
 
 - German
 - English
-- French (available as a release candidate, and still require proofreading)
+- French
 - Russian (for Bash shortcuts, only)
 
 ## License
@@ -38,12 +38,14 @@ Currently, these cheatsheets are included:
 - Vi/Vim text editor
 - Working with Bash
 - Package management under Debian GNU/Linux, and Ubuntu
+- Package management under RedHat Linux, and Fedora Linux
 - Essential commands for Linux
 - How to use the Nano text editor
 
-50 pages, coloured, including 19 pages of cheatsheets.
+50 pages, coloured, including 25 pages of cheatsheets.
 
 You can obtain them from Amazon as follows:
 
 - German version: [Notizbuch für (bessere) Programmierer](https://www.amazon.de/Notizbuch-bessere-Programmierer-Frank-Hofmann/dp/B0CJBG4GML)
 - English version: [Notebook for (better) Programmers](https://www.amazon.de/Notebook-better-Programmers-Frank-Hofmann/dp/B0CPPTLLTK)
+- French version: [Cahier de notes pour (meilleurs) programmeurs](https://www.amazon.fr/Cahier-notes-pour-meilleurs-programmeurs/dp/B0CVXW2C95)
