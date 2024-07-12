@@ -1,5 +1,5 @@
 % Essential Linux Commands
-% Version 0.8
+% Version 0.9
 % (C) 2023,2024 by Frank Hofmann <info@efho.de>
 % Available from https://github.com/hofmannedv/cheatsheets
 
@@ -10,7 +10,7 @@
 \usepackage{cheatsheet}
 
 \renewcommand{\cheatsheetTitle}{Essential Linux Commands Cheatsheet}
-\renewcommand{\cheatsheetVersion}{Version 0.8}
+\renewcommand{\cheatsheetVersion}{Version 0.9}
 \renewcommand{\cheatsheetCopyright}{
   \copyright~ 2023,2024 by Frank Hofmann \\ \faIcon{envelope} \href{mailto:info@efho.de}{info@efho.de}. Published under 
  \href{https://creativecommons.org/licenses/by-sa/4.0/}{Creative Commons \\ CC-BY-SA 4.0 International License}. Created with \LaTeX. \\ \faIcon{github} \href{https://github.com/hofmannedv/cheatsheets}{https://github.com/hofmannedv/cheatsheets}~.
@@ -40,7 +40,7 @@
   \texttt{blkid} & List the block devices, and its ids \\
   \rowcolor{Gray}
   \texttt{cfdisk}, \texttt{fdisk} & Alter the partition table \\
-  \texttt{cpuid}, \texttt{lscpu} & List detailed cpu information \\
+  \texttt{cpu-info}, \texttt{cpuid}, \texttt{lscpu} & List detailed cpu information \\
   \rowcolor{Gray}
   \texttt{df}, \texttt{dfc}, \texttt{duf} & Show available disk space \\
   \texttt{du}, \texttt{duf} & Show disk space usage \\
@@ -166,6 +166,7 @@
   & \\
   & \\
   & \\
+  & \\
 \end{tabular}
 
 \section{Secure data transfer}
@@ -212,21 +213,23 @@
   \texttt{groupdel} & Remove an existing group~\fbox{2} \\
   \rowcolor{Gray}
   \texttt{groupmod} & Modify an existing group~\fbox{2} \\
+  \texttt{groups} & Display the groups a user belongs to \\
+  \rowcolor{Gray}
   \texttt{id} & Display user information \\
-  \rowcolor{Gray}
   \texttt{last} & Show last login time for a user \\
+  \rowcolor{Gray}
   \texttt{passwd}, \texttt{usermod} & Modify password for a user account \\
-  \rowcolor{Gray}
   \texttt{pwgen} & Generate a random password\\
+  \rowcolor{Gray}
   \texttt{su} & Switch to a different user account\\
-  \rowcolor{Gray}
   \texttt{sudo} & Run command as administrative user \\
+  \rowcolor{Gray}
   \texttt{useradd} & Add a new user~\fbox{2} \\
-  \rowcolor{Gray}
   \texttt{userdel} & Remove an existing user~\fbox{2} \\
-  \texttt{usermod} & Modify an existing user~\fbox{2} \\
   \rowcolor{Gray}
+  \texttt{usermod} & Modify an existing user~\fbox{2} \\
   \texttt{users}, \texttt{w}, \texttt{who} & List logged-in users \\
+  \rowcolor{Gray}
   \texttt{wall} & Write a message to all users currently logged in \\
   \rowcolor{Gray}
   \texttt{whoami} & Display current user name \\
@@ -374,23 +377,24 @@
   \texttt{echo} & Output text on the screen \\
   \rowcolor{Gray}
   \texttt{env} & Display the environment variables \\
-  \texttt{exit} & Quit the current shell session \\
+  \texttt{exit}, \texttt{logout} & Quit the current shell session \\
   \rowcolor{Gray}
+  \texttt{fc} & Modify the command history \\
   \texttt{history} & Display the previously used commands \\
+  \rowcolor{Gray}
   \texttt{screen}, \texttt{tmux} & A terminal multiplexer \\
-  \rowcolor{Gray}
   \texttt{set} & Enable, or change a run-time parameter \\
+  \rowcolor{Gray}
   \texttt{time} & Measure the execution time of a command \\
-  \rowcolor{Gray}
   \texttt{type} & Identify command type \\
+  \rowcolor{Gray}
   \texttt{unalias} & Remove an alias for a command \\
-  \rowcolor{Gray}
   \texttt{unset} & Remove, or disable a runtime parameter \\
+  \rowcolor{Gray}
   \texttt{whatis} & Lookup the index database for command descriptions \\
-  \rowcolor{Gray}
   \texttt{whereis} & Lookup the binary files, source code files, and manual pages for a command \\
-  \texttt{which} & Identify which command will be run by the shell\\
   \rowcolor{Gray}
+  \texttt{which} & Identify which command will be run by the shell\\
   \texttt{xargs} & Build and execute command lines from standard input \\
   \hline
 \end{tabular}
