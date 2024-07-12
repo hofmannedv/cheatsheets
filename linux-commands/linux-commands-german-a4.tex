@@ -1,5 +1,5 @@
 % Essential Linux Commands
-% Version 0.10
+% Version 0.11
 % (C) 2023-2024 Frank Hofmann <info@efho.de>
 % Available from https://github.com/hofmannedv/cheatsheets
 
@@ -10,7 +10,7 @@
 \usepackage{cheatsheeta4}
 
 \renewcommand{\cheatsheetTitle}{Essentielle Kommandos \newline für Linux}
-\renewcommand{\cheatsheetVersion}{Version 0.10}
+\renewcommand{\cheatsheetVersion}{Version 0.11}
 \renewcommand{\cheatsheetCopyright}{
   \copyright~ 2023-2024 Frank Hofmann \faIcon{envelope} \href{mailto:info@efho.de}{info@efho.de} \\ Veröffentlicht unter 
  \href{https://creativecommons.org/licenses/by-sa/4.0/}{Creative Commons CC-BY-SA 4.0 \\ International License}. Erstellt mit \LaTeX. \\ \faIcon{github} \href{https://github.com/hofmannedv/cheatsheets}{https://github.com/hofmannedv/cheatsheets}~.
@@ -40,7 +40,7 @@
   \texttt{blkid} & Gib die Blockgeräte samt deren IDs aus\\
   \rowcolor{Gray}
   \texttt{cfdisk}, \texttt{fdisk} & Ändere die Partitionstabelle \\
-  \texttt{cpuid}, \texttt{lscpu} & Gib detaillierte Informationen zu den Prozessoren aus \\
+  \texttt{cpu-info}, \texttt{cpuid}, \texttt{lscpu} & Gib detaillierte Informationen zu den Prozessoren aus \\
   \rowcolor{Gray}
   \texttt{df}, \texttt{dfc}, \texttt{duf} & Zeige den freien Speicherplatz von Datenträgern an \\
   \texttt{du}, \texttt{duf} & Zeige den belegten Speicherplatz von Datenträgern an \\
@@ -200,23 +200,24 @@
   \texttt{groupdel} & Entferne eine bestehende Gruppe~\fbox{2} \\
   \rowcolor{Gray}
   \texttt{groupmod} & Ändere eine bestehende Gruppe~\fbox{2} \\
+  \texttt{groups} & Liste die Gruppen auf, zu denen ein Benutzer gehört \\
+  \rowcolor{Gray}
   \texttt{id} & Zeige die Informationen zu einem Benutzer an \\
-  \rowcolor{Gray}
   \texttt{last} & Zeige den Zeitpunkt der letzten Anmeldung eines Benutzers \\
+  \rowcolor{Gray}
   \texttt{passwd}, \texttt{usermod} & Ändere das Passwort für einen Benutzer \\
-  \rowcolor{Gray}
   \texttt{pwgen} & Generiere ein zufälliges Passwort \\
+  \rowcolor{Gray}
   \texttt{su} & Wechsele zu einem anderen Benutzer\\
-  \rowcolor{Gray}
   \texttt{sudo} & Führe ein Kommando als administrativer Benutzer aus \\
+  \rowcolor{Gray}
   \texttt{useradd} & Füge einen neuen Benutzer hinzu~\fbox{2} \\
-  \rowcolor{Gray}
   \texttt{userdel} & Entferne einen bestehenden Benutzer~\fbox{2} \\
+  \rowcolor{Gray}
   \texttt{usermod} & Ändere einen bestehenden Benutzer~\fbox{2} \\
-  \rowcolor{Gray}
   \texttt{users}, \texttt{w}, \texttt{who} & Liste die angemeldeten Benutzer auf \\
-  \texttt{wall} & Schreibe eine Nachricht an alle gerade angemeldeten Benutzer \\
   \rowcolor{Gray}
+  \texttt{wall} & Schreibe eine Nachricht an alle gerade angemeldeten Benutzer \\
   \texttt{whoami} & Zeige den aktuellen Benutzernamen an \\
   \hline
 \end{tabular}
@@ -357,23 +358,24 @@
   \texttt{echo} & Gib Text auf dem Bildschirm aus \\
   \rowcolor{Gray}
   \texttt{env} & Zeige die Umgebungsvariablen an \\
-  \texttt{exit} & Beende die aktuelle Shell-Sitzung \\
+  \texttt{exit}, \texttt{logout} & Beende die aktuelle Shell-Sitzung \\
   \rowcolor{Gray}
+  \texttt{fc} & Bearbeite die Historie der bisher genutzten Kommandos\\
   \texttt{history} & Zeige die vorher genutzten Kommandos an \\
+  \rowcolor{Gray}
   \texttt{screen}, \texttt{tmux} & Ein Terminalmultiplexer \\
-  \rowcolor{Gray}
   \texttt{set} & Aktiviere oder ändere Laufzeitparameter \\
+  \rowcolor{Gray}
   \texttt{time} & Messe die Ausführungszeit eines Kommandos \\
-  \rowcolor{Gray}
   \texttt{type} & Identifiziere den Kommandotyp \\
+  \rowcolor{Gray}
   \texttt{unalias} & Entferne einen Alias für ein Kommando \\
-  \rowcolor{Gray}
   \texttt{unset} & Entferne oder deaktiviere einen Laufzeitparameter \\
+  \rowcolor{Gray}
   \texttt{whatis} & Durchsuche die Indexdatenbank nach Kommando\-beschreibungen \\
-  \rowcolor{Gray}
   \texttt{whereis} & Suche nach Binärdateien, Quellcode und Handbuchseiten zu einem Kommando \\
-  \texttt{which} & Identifiziere, welches Kommando von der Shell ausgeführt wird\\
   \rowcolor{Gray}
+  \texttt{which} & Identifiziere, welches Kommando von der Shell ausgeführt wird\\
   \texttt{xargs} & Stelle Kommandos auf der Basis der Standardeingabe zusammen und führe diese aus \\
   \hline
 \end{tabular}
