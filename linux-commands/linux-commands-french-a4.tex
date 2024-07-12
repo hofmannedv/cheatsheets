@@ -1,5 +1,5 @@
 % Essential Linux Commands
-% Version 0.4
+% Version 0.5
 % (C) 2023,2024 Frank Hofmann <info@efho.de>
 % Available from https://github.com/hofmannedv/cheatsheets
 
@@ -10,7 +10,7 @@
 \usepackage{cheatsheeta4}
 
 \renewcommand{\cheatsheetTitle}{Commandes essentielles \\ pour Linux}
-\renewcommand{\cheatsheetVersion}{Version 0.4}
+\renewcommand{\cheatsheetVersion}{Version 0.5}
 \renewcommand{\cheatsheetCopyright}{
   \copyright~ 2023,2024 Frank Hofmann \faIcon{envelope} \href{mailto:info@efho.de}{info@efho.de}. Relecture et correction par Jean-Marc Trobrillant. Publié sous licence 
  \href{https://creativecommons.org/licenses/by-sa/4.0/}{Creative Commons CC-BY-SA 4.0 International License}. Créé avec \LaTeX{}. \\ \faIcon{github} \href{https://github.com/hofmannedv/cheatsheets}{https://github.com/hofmannedv/cheatsheets}~.
@@ -40,7 +40,7 @@
   \texttt{blkid} & Donner les périphériques de bloc et leurs identifiants\\
   \rowcolor{Gray}
   \texttt{cfdisk}, \texttt{fdisk} & Modifier la table de partition \\
-  \texttt{cpuid}, \texttt{lscpu} & Donner des informations détaillées sur les processeurs \\
+  \texttt{cpu-info}, \texttt{cpuid}, \texttt{lscpu} & Donner des informations détaillées sur les processeurs \\
   \rowcolor{Gray}
   \texttt{df}, \texttt{dfc}, \texttt{duf} & Afficher l'espace de stackage libre \\
   \texttt{du}, \texttt{duf} & Afficher l'espace de stockage utilisé \\
@@ -162,7 +162,9 @@
 \end{tabular}
 
 \hfill
-%~ \\
+~ \\
+~ \\
+~ \\
 
 \section{Transmission sécurisée des données}
 \begin{tabular}{ p{2.5cm} p{8.5cm} }
@@ -200,23 +202,24 @@
   \texttt{groupdel} & Supprimer un groupe existant~\fbox{2} \\
   \rowcolor{Gray}
   \texttt{groupmod} & Modifier un groupe existant~\fbox{2} \\
+  \texttt{groups} & Afficher les groupes dont un utilisateur fait partie \\
+  \rowcolor{Gray}
   \texttt{id} & Afficher les informations d'un utilisateur \\
-  \rowcolor{Gray}
   \texttt{last} & Afficher l'heure de la dernière connexion d'un utilisateur \\
+  \rowcolor{Gray}
   \texttt{passwd}, \texttt{usermod} & Changer le mot de passe d'un utilisateur \\
-  \rowcolor{Gray}
   \texttt{pwgen} & Générer un mot de passe aléatoire \\
+  \rowcolor{Gray}
   \texttt{su} & Changer d'utilisateur \\
-  \rowcolor{Gray}
   \texttt{sudo} & Exécuter une commande en tant qu'utilisateur admi\-nistratif \\
+  \rowcolor{Gray}
   \texttt{useradd} & Ajouter un nouvel utilisateur~\fbox{2} \\
-  \rowcolor{Gray}
   \texttt{userdel} & Supprimer un utilisateur existant~\fbox{2} \\
+  \rowcolor{Gray}
   \texttt{usermod} & Modifier un utilisateur existant~\fbox{2} \\
-  \rowcolor{Gray}
   \texttt{users}, \texttt{w}, \texttt{who} & Lister des utilisateurs connectés \\
-  \texttt{wall} & Écrire un message à tous les utilisateurs actuellement connectés \\
   \rowcolor{Gray}
+  \texttt{wall} & Écrire un message à tous les utilisateurs actuellement connectés \\
   \texttt{whoami} & Afficher le nom d'utilisateur actuel \\
   \hline
 \end{tabular}
@@ -357,23 +360,24 @@
   \texttt{echo} & Afficher du texte à l'écran \\
   \rowcolor{Gray}
   \texttt{env} & Afficher les variables d'environnement \\
-  \texttt{exit} & Quitter la session shell en cours \\
+  \texttt{exit}, \texttt{logout} & Quitter la session shell en cours \\
   \rowcolor{Gray}
+  \texttt{fc} & Modifier l'historique des commandes \\
   \texttt{history} & Afficher les commandes utilisées précédemment \\
+  \rowcolor{Gray}
   \texttt{screen}, \texttt{tmux} & Un multiplexeur de terminal \\
-  \rowcolor{Gray}
   \texttt{set} & Activer ou modifier les paramètres d'exécution \\
+  \rowcolor{Gray}
   \texttt{time} & Mesurer du temps d'exécution d'une commande \\
-  \rowcolor{Gray}
   \texttt{type} & Identifier le type de commande \\
+  \rowcolor{Gray}
   \texttt{unalias} & Supprimer un alias pour une commande shell \\
-  \rowcolor{Gray}
   \texttt{unset} & Supprimer ou désactiver un paramètre d'exécution \\
+  \rowcolor{Gray}
   \texttt{whatis} & Rechercher dans la base de données d'index les descriptions de commandes \\
-  \rowcolor{Gray}
   \texttt{whereis} & Rechercher les fichiers binaires, le code source et les pages de manuel d'une commande \\
-  \texttt{which} & Identifier quelle commande est exécutée par le shell\\
   \rowcolor{Gray}
+  \texttt{which} & Identifier quelle commande est exécutée par le shell\\
   \texttt{xargs} & Composer des commandes sur la base de l'entrée standard et les exécuter\\
   \hline
 \end{tabular}
