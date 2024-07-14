@@ -1,5 +1,5 @@
 % Essential Linux Commands
-% Version 0.5
+% Version 0.6
 % (C) 2023,2024 Frank Hofmann <info@efho.de>
 % Available from https://github.com/hofmannedv/cheatsheets
 
@@ -10,7 +10,7 @@
 \usepackage{cheatsheeta4}
 
 \renewcommand{\cheatsheetTitle}{Commandes essentielles \\ pour Linux}
-\renewcommand{\cheatsheetVersion}{Version 0.5}
+\renewcommand{\cheatsheetVersion}{Version 0.6}
 \renewcommand{\cheatsheetCopyright}{
   \copyright~ 2023,2024 Frank Hofmann \faIcon{envelope} \href{mailto:info@efho.de}{info@efho.de}. Relecture et correction par Jean-Marc Trobrillant. Publié sous licence 
  \href{https://creativecommons.org/licenses/by-sa/4.0/}{Creative Commons CC-BY-SA 4.0 International License}. Créé avec \LaTeX{}. \\ \faIcon{github} \href{https://github.com/hofmannedv/cheatsheets}{https://github.com/hofmannedv/cheatsheets}~.
@@ -138,7 +138,7 @@
   \hline
   \texttt{dhclient} & Obtenir une adresse IP dynamique \\
   \rowcolor{Gray}
-  \texttt{host} & Résoudrer un nom d'hôte par DNS \\
+  \texttt{dig}, \texttt{host} & Résoudrer un nom d'hôte par DNS \\
   \texttt{hostname} & Afficher le nom d'hôte du système \\
   \rowcolor{Gray}
   \texttt{ifconfig}, \texttt{iwconfig} & Configurer les interfaces réseau et afficher leur confi\-guration (obsolète)\\
@@ -158,11 +158,12 @@
   \rowcolor{Gray}
   \texttt{tcpdump} & Donner le trafic réseau \\
   \texttt{traceroute}, \texttt{traceroute6} & Donner l'itinéraire d'un paquet réseau vers \newline l'ordinateur de destination \\
+  \rowcolor{Gray}
+  \texttt{wget} & Transfert de données non interactif \\
   \hline
 \end{tabular}
 
 \hfill
-~ \\
 ~ \\
 ~ \\
 
@@ -235,16 +236,13 @@
 
 \begin{multicols}{2}   
 
-\section{Obtenir de l'aide}
+\section{Traitement des fichiers log}
 \begin{tabular}{ p{2.5cm} p{8.5cm} }
   \hline
-  \texttt{apropos} & Afficher un court texte d'aide pour la commande \\
+  \texttt{journalctl} & Fournir des informations sur les entrées du journal via Systemd \\
   \rowcolor{Gray}
-  \texttt{info} & Afficher l'aide du système GNU Info \\
-  \texttt{man} & Afficher une aide avancée pour la commande \\
-  \rowcolor{Gray}
-  \texttt{manpath} & Contrôler le chemin d'accès aux pages d'aide \\
-  \texttt{whatis} & Consulter la base de données d'index pour obtenir des textes d'aide courts sur la commande indiquée \\
+  \texttt{logger} & Une interface avec Syslog \\
+  \texttt{logrotate} & Rotation, compression et envoi de fichiers journaux liés au système \\
   \hline
 \end{tabular}
 
@@ -298,29 +296,20 @@
   \texttt{nl} & Numéroter les lignes sorties \\
   \texttt{paste} & Relier plusieurs fichiers en un seul \\
   \rowcolor{Gray}
+  \texttt{rev} & Imprimer le texte en ordre inversé \\
   \texttt{sed} & Modifier les données ligne par ligne \\
+  \rowcolor{Gray}
   \texttt{sort} & Trier les données en fonction de critères\\
-  \rowcolor{Gray}
   \texttt{split} & Diviser les données en fonction des conditions \\
-  \texttt{tac} & Donner les données de la fin au début\\
   \rowcolor{Gray}
+  \texttt{tac} & Donner les données de la fin au début\\
   \texttt{tail} & Donner les dernières lignes de données\\
+  \rowcolor{Gray}
+  \texttt{tee} & Lire sur \texttt{stdin} et sortir les données dans un fichier et sur \texttt{stdout}\\
   \texttt{tr} & Remplacer des caractères individuels dans les données\\
   \rowcolor{Gray}
   \texttt{uniq} & Trouver et supprimer les lignes en double \\
-  \texttt{tee} & Lire sur \texttt{stdin} et sortir les données dans un fichier et sur \texttt{stdout}\\
-  \rowcolor{Gray}
   \texttt{wc} & Compter les lignes, les mots et les caractères dans les données\\
-  \hline
-\end{tabular}
-
-\section{Traitement des fichiers log}
-\begin{tabular}{ p{2.5cm} p{8.5cm} }
-  \hline
-  \texttt{journalctl} & Fournir des informations sur les entrées du journal via Systemd \\
-  \rowcolor{Gray}
-  \texttt{logger} & Une interface avec Syslog \\
-  \texttt{logrotate} & Rotation, compression et envoi de fichiers journaux liés au système \\
   \hline
 \end{tabular}
 
@@ -336,20 +325,19 @@
   \hline
   \texttt{e2fsck}, \texttt{fsck} & Effectuer un contrôle du système de fichiers \\
   \rowcolor{Gray}
+  \texttt{findmnt} & Lister et rechercher des systèmes de fichiers montés \\
   \texttt{mkfs} & Créer un système de fichiers \\
+  \rowcolor{Gray}
   \texttt{mkswap} & Préparer une partition pour l'utiliser comme SWAP \\
-  \rowcolor{Gray}
   \texttt{mount} & Intégrer un système de fichiers \\
+  \rowcolor{Gray}
   \texttt{swapoff} & Désactiver une partition SWAP \\
-  \rowcolor{Gray}
   \texttt{swapon} & Activer une partition SWAP \\
-  \texttt{tune2fs} & Modifier un système de fichiers existant \\
   \rowcolor{Gray}
+  \texttt{tune2fs} & Modifier un système de fichiers existant \\
   \texttt{umount} & Démonter un système de fichiers \\
   \hline
 \end{tabular}
-
-~ \\
 
 \section{Travailler avec le shell, environnement de travail}
 \begin{tabular}{ p{2.5cm} p{8.5cm} }
@@ -444,20 +432,6 @@
 
 \begin{multicols}{2}
 
-\section{Heure du système, date, calendrier et localisation}
-\begin{tabular}{ p{2.75cm} p{8.25cm} }
-  \hline
-  \texttt{cal}, \texttt{ncal} & Afficher un calendrier\\
-  \rowcolor{Gray}
-  \texttt{date} & Sortir un horodatage dans différents formats \\
-  \texttt{hwclock} & Contrôler à la fois l'horloge matérielle et l'horloge système\\
-  \rowcolor{Gray}
-  \texttt{locale} & Afficher les informations sur la localisation actuellement utilisée \\
-  \texttt{ntpdate}, \texttt{ntpsec-ntpdate} & Obtenir les informations horaires d'un serveur NTP \\
-  \rowcolor{Gray}
-  \texttt{timedatectl} & Contrôler l'heure et la date du système \\
-  \hline
-\end{tabular}
 
 %~ \\
 %\vfill
@@ -489,9 +463,37 @@
   \hline
 \end{tabular}
 
+~\hfill
+
+\section{Heure du système, date, calendrier et localisation}
+\begin{tabular}{ p{2.75cm} p{8.25cm} }
+  \hline
+  \texttt{cal}, \texttt{ncal} & Afficher un calendrier\\
+  \rowcolor{Gray}
+  \texttt{date} & Sortir un horodatage dans différents formats \\
+  \texttt{hwclock} & Contrôler à la fois l'horloge matérielle et l'horloge système\\
+  \rowcolor{Gray}
+  \texttt{locale} & Afficher les informations sur la localisation actuellement utilisée \\
+  \texttt{ntpdate}, \texttt{ntpsec-ntpdate} & Obtenir les informations horaires d'un serveur NTP \\
+  \rowcolor{Gray}
+  \texttt{timedatectl} & Contrôler l'heure et la date du système \\
+  \hline
+\end{tabular}
 
 \columnbreak
 
+\section{Obtenir de l'aide}
+\begin{tabular}{ p{2.5cm} p{8.5cm} }
+  \hline
+  \texttt{apropos} & Afficher un court texte d'aide pour la commande \\
+  \rowcolor{Gray}
+  \texttt{info} & Afficher l'aide du système GNU Info \\
+  \texttt{man} & Afficher une aide avancée pour la commande \\
+  \rowcolor{Gray}
+  \texttt{manpath} & Contrôler le chemin d'accès aux pages d'aide \\
+  \texttt{whatis} & Consulter la base de données d'index pour obtenir des textes d'aide courts sur la commande indiquée \\
+  \hline
+\end{tabular}
 \section*{Notes}
 
 \begin{tabular}{ p{2.5cm} p{8.5cm} }
@@ -533,23 +535,6 @@
   \rowcolor{Gray}
   ~ & \\
   ~ & \\
-  \rowcolor{Gray}
-  ~ & \\
-  ~ & \\
-  \rowcolor{Gray}
-  ~ & \\
-  ~ & \\
-  \rowcolor{Gray}
-  ~ & \\
-  ~ & \\
-  \rowcolor{Gray}
-  ~ & \\
-  ~ & \\
-  \rowcolor{Gray}
-  ~ & \\
-  ~ & \\
-%  \rowcolor{Gray}
-%  ~ & \\
   \hline
 \end{tabular}
 \end{multicols}
