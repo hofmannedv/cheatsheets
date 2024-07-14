@@ -1,5 +1,5 @@
 % Essential Linux Commands
-% Version 0.9
+% Version 0.10
 % (C) 2023,2024 by Frank Hofmann <info@efho.de>
 % Available from https://github.com/hofmannedv/cheatsheets
 
@@ -10,7 +10,7 @@
 \usepackage{cheatsheet}
 
 \renewcommand{\cheatsheetTitle}{Essential Linux Commands Cheatsheet}
-\renewcommand{\cheatsheetVersion}{Version 0.9}
+\renewcommand{\cheatsheetVersion}{Version 0.10}
 \renewcommand{\cheatsheetCopyright}{
   \copyright~ 2023,2024 by Frank Hofmann \\ \faIcon{envelope} \href{mailto:info@efho.de}{info@efho.de}. Published under 
  \href{https://creativecommons.org/licenses/by-sa/4.0/}{Creative Commons \\ CC-BY-SA 4.0 International License}. Created with \LaTeX. \\ \faIcon{github} \href{https://github.com/hofmannedv/cheatsheets}{https://github.com/hofmannedv/cheatsheets}~.
@@ -137,12 +137,21 @@
 
 \begin{multicols}{2}
 
+\section{Using pagers}
+\begin{tabular}{ p{2.5cm} p{8.5cm} }
+  \hline
+  \texttt{less}, \texttt{more} & Display data page by page \\
+  \rowcolor{Gray}
+  \texttt{most} & Display data page by page, and in multiple windows \\
+  \hline
+\end{tabular}
+
 \section{Network commands}
 \begin{tabular}{ p{2.5cm} p{8.5cm} }
   \hline
   \texttt{dhclient} & Request a dynamic IP address \\
   \rowcolor{Gray}
-  \texttt{host} & DNS lookup utility \\
+  \texttt{dig}, \texttt{host} & DNS lookup utility \\
   \texttt{hostname} & Display the system's hostname \\
   \rowcolor{Gray}
   \texttt{ifconfig}, \texttt{iwconfig} & Configure network interfaces, and display interface configuration (deprecated)\\
@@ -162,11 +171,9 @@
   \rowcolor{Gray}
   \texttt{tcpdump} & Dump traffic on a network \\
   \texttt{traceroute}, \texttt{traceroute6} & Print the route packets trace to network host\\
+  \rowcolor{Gray}
+  \texttt{wget} & Non-interactive data transfer\\
   \hline
-  & \\
-  & \\
-  & \\
-  & \\
 \end{tabular}
 
 \section{Secure data transfer}
@@ -183,15 +190,6 @@
 
 \columnbreak
 
-\section{Using pagers}
-\begin{tabular}{ p{2.5cm} p{8.5cm} }
-  \hline
-  \texttt{less}, \texttt{more} & Display data page by page \\
-  \rowcolor{Gray}
-  \texttt{most} & Display data page by page, and in multiple windows \\
-  \hline
-\end{tabular}
-
 \section{Users, groups, and access control}
 \begin{tabular}{ p{2.5cm} p{8.5cm} }
   \hline
@@ -207,19 +205,22 @@
   \texttt{delgroup} & Remove an existing group~\fbox{1} \\
   \rowcolor{Gray}
   \texttt{deluser} & Remove an existing user~\fbox{1} \\
+  \texttt{getfacl} & Display ACL permissions of a file, or directory \\
+  \rowcolor{Gray}
   \texttt{getent} & Lookup user information in local databases \\
-  \rowcolor{Gray}
   \texttt{groupadd} & Add a new group~\fbox{2} \\
+  \rowcolor{Gray}
   \texttt{groupdel} & Remove an existing group~\fbox{2} \\
-  \rowcolor{Gray}
   \texttt{groupmod} & Modify an existing group~\fbox{2} \\
+  \rowcolor{Gray}
   \texttt{groups} & Display the groups a user belongs to \\
-  \rowcolor{Gray}
   \texttt{id} & Display user information \\
-  \texttt{last} & Show last login time for a user \\
   \rowcolor{Gray}
+  \texttt{last} & Show last login time for a user \\
   \texttt{passwd}, \texttt{usermod} & Modify password for a user account \\
+  \rowcolor{Gray}
   \texttt{pwgen} & Generate a random password\\
+  \texttt{setfacl} & Set ACL permissions of a file, or directory \\
   \rowcolor{Gray}
   \texttt{su} & Switch to a different user account\\
   \texttt{sudo} & Run command as administrative user \\
@@ -231,7 +232,6 @@
   \texttt{users}, \texttt{w}, \texttt{who} & List logged-in users \\
   \rowcolor{Gray}
   \texttt{wall} & Write a message to all users currently logged in \\
-  \rowcolor{Gray}
   \texttt{whoami} & Display current user name \\
   \hline
 \end{tabular}
@@ -315,18 +315,19 @@
   \texttt{nl} & Output a file, and add line numbers\\
   \texttt{paste} & Combine single files into one \\
   \rowcolor{Gray}
+  \texttt{rev} & Output text in reverse order \\
   \texttt{sed} & Modify a file line-wise \\
+  \rowcolor{Gray}
   \texttt{sort} & Sort a file \\
-  \rowcolor{Gray}
   \texttt{split} & Split a file based on conditions\\
-  \texttt{tac} & Output a file from bottom to top\\
   \rowcolor{Gray}
+  \texttt{tac} & Output a file from bottom to top\\
   \texttt{tail} & Print a specified number of lines beginning at the bottom of a file\\
+  \rowcolor{Gray}
+  \texttt{tee} & Read from \texttt{stdin}, and print to both a file, and \texttt{stdout}\\
   \texttt{tr} & Replace text in a file\\
   \rowcolor{Gray}
   \texttt{uniq} & Report, or remove duplicate lines \\
-  \texttt{tee} & Read from \texttt{stdin}, and print to both a file, and \texttt{stdout}\\
-  \rowcolor{Gray}
   \texttt{wc} & Count lines, words, and characters of a file\\
   \hline
 \end{tabular}
@@ -352,15 +353,16 @@
   \hline
   \texttt{e2fsck}, \texttt{fsck} & File system check \\
   \rowcolor{Gray}
+  \texttt{findmnt} & List, and search for mounted file systems \\
   \texttt{mkfs} & Create a file system \\
+  \rowcolor{Gray}
   \texttt{mkswap} & Prepare a partition for SWAP usage \\
-  \rowcolor{Gray}
   \texttt{mount} & Mount a file system \\
+  \rowcolor{Gray}
   \texttt{swapoff} & Disable a SWAP partition \\
-  \rowcolor{Gray}
   \texttt{swapon} & Ensable a SWAP partition \\
-  \texttt{tune2fs} & Modify existing file system \\
   \rowcolor{Gray}
+  \texttt{tune2fs} & Modify existing file system \\
   \texttt{umount} & Unmount a file system\\
   \hline
 \end{tabular}
