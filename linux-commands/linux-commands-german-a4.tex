@@ -1,5 +1,5 @@
 % Essential Linux Commands
-% Version 0.11
+% Version 0.12
 % (C) 2023-2024 Frank Hofmann <info@efho.de>
 % Available from https://github.com/hofmannedv/cheatsheets
 
@@ -10,7 +10,7 @@
 \usepackage{cheatsheeta4}
 
 \renewcommand{\cheatsheetTitle}{Essentielle Kommandos \newline für Linux}
-\renewcommand{\cheatsheetVersion}{Version 0.11}
+\renewcommand{\cheatsheetVersion}{Version 0.12}
 \renewcommand{\cheatsheetCopyright}{
   \copyright~ 2023-2024 Frank Hofmann \faIcon{envelope} \href{mailto:info@efho.de}{info@efho.de} \\ Veröffentlicht unter 
  \href{https://creativecommons.org/licenses/by-sa/4.0/}{Creative Commons CC-BY-SA 4.0 \\ International License}. Erstellt mit \LaTeX. \\ \faIcon{github} \href{https://github.com/hofmannedv/cheatsheets}{https://github.com/hofmannedv/cheatsheets}~.
@@ -138,7 +138,7 @@
   \hline
   \texttt{dhclient} & Beziehe eine dynamische IP-Adresse \\
   \rowcolor{Gray}
-  \texttt{host} & Löse einen Hostnamen über das DNS auf \\
+  \texttt{dig}, \texttt{host} & Löse einen Hostnamen über das DNS auf \\
   \texttt{hostname} & Zeige den Hostname des Systems an \\
   \rowcolor{Gray}
   \texttt{ifconfig}, \texttt{iwconfig} & Konfiguriere die Netzwerkschnittstellen und zeige deren Konfiguration an (veraltet)\\
@@ -158,6 +158,8 @@
   \rowcolor{Gray}
   \texttt{tcpdump} & Gib den Netzwerkverkehr aus \\
   \texttt{traceroute}, \texttt{traceroute6} & Gib die Route eines Netzwerkpakets zum Zielrechner aus \\
+  \rowcolor{Gray}
+  \texttt{wget} & Nicht-interaktiver Datentransfer von einer Quelle\\
   \hline
 \end{tabular}
 
@@ -187,26 +189,29 @@
   \texttt{adduser} & Füge einen neuen Benutzer hinzu~\fbox{1} \\
   \texttt{chage} & Ändere die Gültigkeit eines Benutzers\\
   \rowcolor{Gray}
-  \texttt{chgrp} & Ändere die Gruppe einer Datei oder eines Verzeichnisses\\
-  \texttt{chmod} & Ändere die Zugriffsrechte einer Datei oder eines \newline Verzeichnisses \\
+  \texttt{chgrp} & Ändere die Gruppe für Datei oder Verzeichnis\\
+  \texttt{chmod} & Ändere die Zugriffsrechte für Datei oder Verzeichnis \\
   \rowcolor{Gray}
-  \texttt{chown} & Ändere den Eigentümer einer Datei oder eines \newline Verzeichnisses\\
+  \texttt{chown} & Ändere den Eigentümer für Datei oder Verzeichnis\\
   \texttt{delgroup} & Entferne eine bestehende Gruppe~\fbox{1} \\
   \rowcolor{Gray}
   \texttt{deluser} & Entferne einen bestehenden Benutzer~\fbox{1} \\
   \texttt{getent} & Suche die Benutzerinformationen aus den lokalen Datenbanken heraus \\
   \rowcolor{Gray}
+  \texttt{getfacl} & Liste die ACLs für Datei oder Verzeichnis auf \\
   \texttt{groupadd} & Lege eine neue Gruppe an~\fbox{2} \\
+  \rowcolor{Gray}
   \texttt{groupdel} & Entferne eine bestehende Gruppe~\fbox{2} \\
-  \rowcolor{Gray}
   \texttt{groupmod} & Ändere eine bestehende Gruppe~\fbox{2} \\
+  \rowcolor{Gray}
   \texttt{groups} & Liste die Gruppen auf, zu denen ein Benutzer gehört \\
-  \rowcolor{Gray}
   \texttt{id} & Zeige die Informationen zu einem Benutzer an \\
-  \texttt{last} & Zeige den Zeitpunkt der letzten Anmeldung eines Benutzers \\
   \rowcolor{Gray}
+  \texttt{last} & Zeige den Zeitpunkt der letzten Anmeldung eines Benutzers \\
   \texttt{passwd}, \texttt{usermod} & Ändere das Passwort für einen Benutzer \\
+  \rowcolor{Gray}
   \texttt{pwgen} & Generiere ein zufälliges Passwort \\
+  \texttt{setfacl} & Setze die ACLs für Datei oder Verzeichnis \\
   \rowcolor{Gray}
   \texttt{su} & Wechsele zu einem anderen Benutzer\\
   \texttt{sudo} & Führe ein Kommando als administrativer Benutzer aus \\
@@ -296,18 +301,19 @@
   \texttt{nl} & Nummeriere die ausgegebenen Zeilen \\
   \texttt{paste} & Verbinde mehrere Dateien zu einer \\
   \rowcolor{Gray}
+  \texttt{rev} & Gib Text in umgekehrter Reihenfolge aus \\
   \texttt{sed} & Ändere die Daten zeilenweise \\
+  \rowcolor{Gray}
   \texttt{sort} & Sortiere die Daten anhand von Kriterien\\
-  \rowcolor{Gray}
   \texttt{split} & Teile die Daten anhand von Bedingungen \\
-  \texttt{tac} & Gib die Daten vom Ende bis zum Anfang aus\\
   \rowcolor{Gray}
+  \texttt{tac} & Gib die Daten vom Ende bis zum Anfang aus\\
   \texttt{tail} & Gib die letzten Zeilen der Daten aus\\
+  \rowcolor{Gray}
+  \texttt{tee} & Lies von \texttt{stdin} und gib die Daten in eine Datei und auf \texttt{stdout} aus\\
   \texttt{tr} & Ersetze einzelne Zeichen in den Daten\\
   \rowcolor{Gray}
   \texttt{uniq} & Finde und entferne doppelte Zeilen \\
-  \texttt{tee} & Lies von \texttt{stdin} und gib die Daten in eine Datei und auf \texttt{stdout} aus\\
-  \rowcolor{Gray}
   \texttt{wc} & Zähle in den Daten die Zeilen, Worte und Zeichen\\
   \hline
 \end{tabular}
@@ -334,20 +340,21 @@
   \hline
   \texttt{e2fsck}, \texttt{fsck} & Führe einen Dateisystemcheck durch \\
   \rowcolor{Gray}
+  \texttt{findmnt} & Suche und zeige eingebundene Dateisysteme an \\
   \texttt{mkfs} & Erzeuge ein Dateisystem \\
+  \rowcolor{Gray}
   \texttt{mkswap} & Bereite eine Partition zur Nutzung als SWAP vor \\
-  \rowcolor{Gray}
   \texttt{mount} & Binde ein Dateisystem ein \\
+  \rowcolor{Gray}
   \texttt{swapoff} & Deaktiviere eine SWAP-Partition \\
-  \rowcolor{Gray}
   \texttt{swapon} & Aktiviere eine SWAP-Partition \\
-  \texttt{tune2fs} & Ändere ein bestehendes Dateisystem \\
   \rowcolor{Gray}
+  \texttt{tune2fs} & Ändere ein bestehendes Dateisystem \\
   \texttt{umount} & Hänge ein Dateisystem aus \\
   \hline
 \end{tabular}
 
-~ \\
+% ~ \\
 
 \section{Arbeiten mit der Shell, Arbeitsumgebung}
 \begin{tabular}{ p{2.5cm} p{8.5cm} }
