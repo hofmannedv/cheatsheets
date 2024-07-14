@@ -10,6 +10,7 @@ the following UNIX/Linux tools:
 - [Package management under Red Hat Linux, Fedora, and CentOS](https://github.com/hofmannedv/cheatsheets/tree/master/redhat-package-management)
 - [Essential commands for Linux](https://github.com/hofmannedv/cheatsheets/tree/master/linux-commands)
 - [How to use the Nano text editor](https://github.com/hofmannedv/cheatsheets/tree/master/nano)
+- [Keyboard layouts](https://github.com/hofmannedv/cheatsheets/tree/master/keyboard)
 
 I use these in my Linux training courses as an aid and learning material.
 
