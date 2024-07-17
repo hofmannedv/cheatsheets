@@ -1,5 +1,5 @@
 % Essential Linux Commands
-% Version 0.6
+% Version 0.8
 % (C) 2023,2024 Frank Hofmann <info@efho.de>
 % Available from https://github.com/hofmannedv/cheatsheets
 
@@ -10,7 +10,7 @@
 \usepackage{cheatsheeta4}
 
 \renewcommand{\cheatsheetTitle}{Commandes essentielles \\ pour Linux}
-\renewcommand{\cheatsheetVersion}{Version 0.6}
+\renewcommand{\cheatsheetVersion}{Version 0.8}
 \renewcommand{\cheatsheetCopyright}{
   \copyright~ 2023,2024 Frank Hofmann \faIcon{envelope} \href{mailto:info@efho.de}{info@efho.de}. Relecture et correction par Jean-Marc Trobrillant. Publié sous licence 
  \href{https://creativecommons.org/licenses/by-sa/4.0/}{Creative Commons CC-BY-SA 4.0 International License}. Créé avec \LaTeX{}. \\ \faIcon{github} \href{https://github.com/hofmannedv/cheatsheets}{https://github.com/hofmannedv/cheatsheets}~.
@@ -103,12 +103,14 @@
   \texttt{rm} & Supprimer un ou plusieurs fichiers ou répertoires \\
   \texttt{rmdir} & Supprimer un répertoire vide \\
   \rowcolor{Gray}
+  \texttt{stat} & Afficher les détails d'un fichier, d'un répertoire ou d'un lien \\
   \texttt{touch} & Créer un fichier vide ou mettre à jour l'horodatage d'un fichier \\
+  \rowcolor{Gray}
   \texttt{umask} & Définir le masque qui sera utilisé comme modèle lors de la création de fichiers\\
   \hline
 \end{tabular}
 
-~ \\
+%~ \\
 \hfill
 
 \section{Gestion des paquets (sélection)}
@@ -381,10 +383,26 @@
   \texttt{insmod} & Insérer un module de kernel dans le kernel Linux en cours d'exécution\\
   \texttt{lsmod} & Lister les modules du kernel actuel du kernel Linux\\
   \rowcolor{Gray}
+  \texttt{modinfo} & Afficher des informations détaillées sur un module du kernel\\
   \texttt{modprobe} & Tenter d'ajouter un module de kernel au kernel Linux en cours d'exécution\\
-  \texttt{rmmode} & Supprimer un module de kernel du kernel Linux en cours d'exécution \\
   \rowcolor{Gray}
+  \texttt{rmmod} & Supprimer un module de kernel du kernel Linux en cours d'exécution \\
   \texttt{uname} & Afficher des informations sur le kernel Linux actuellement en cours d'exécution\\
+  \hline
+  & \\
+  & \\
+\end{tabular}
+
+\section{Obtenir de l'aide}
+\begin{tabular}{ p{2.5cm} p{8.5cm} }
+  \hline
+  \texttt{apropos} & Afficher un court texte d'aide pour la commande \\
+  \rowcolor{Gray}
+  \texttt{info} & Afficher l'aide du système GNU Info \\
+  \texttt{man} & Afficher une aide avancée pour la commande \\
+  \rowcolor{Gray}
+  \texttt{manpath} & Contrôler le chemin d'accès aux pages d'aide \\
+  \texttt{whatis} & Consulter la base de données d'index pour obtenir des textes d'aide courts sur la commande indiquée \\
   \hline
 \end{tabular}
 
@@ -397,25 +415,6 @@
   \texttt{lpq} & Éditer le contenu de la file d'attente de l'imprimante\\
   \rowcolor{Gray}
   \texttt{lprm} & Supprimer un travail existant de la file d'attente de l'imprimante \\
-  \hline
-\end{tabular}
-
-\section{Bibliothèques du système}
-
-\begin{tabular}{ p{2.5cm} p{8.5cm} }
-  \hline 
-  \texttt{ldd} & Donner les dépendances des bibliothèques partagées (\textit{Shared Libraries)} \\
-  \rowcolor{Gray}
-  \texttt{ldconfig} & Configurer le lien d'exécution du linker dynamique \\
-  \hline
-\end{tabular}
-
-\section{Utiliser les pagers}
-\begin{tabular}{ p{2.5cm} p{8.5cm} }
-  \hline
-  \texttt{less}, \texttt{more} & Afficher les données par page \\
-  \rowcolor{Gray}
-  \texttt{most} & Afficher les données par page ou dans plusieurs fenêtres \\
   \hline
 \end{tabular}
 
@@ -482,28 +481,28 @@
 
 \columnbreak
 
-\section{Obtenir de l'aide}
+\section{Bibliothèques du système}
+
+\begin{tabular}{ p{2.5cm} p{8.5cm} }
+  \hline 
+  \texttt{ldd} & Donner les dépendances des bibliothèques partagées (\textit{Shared Libraries)} \\
+  \rowcolor{Gray}
+  \texttt{ldconfig} & Configurer le lien d'exécution du linker dynamique \\
+  \hline
+\end{tabular}
+
+\section{Utiliser les pagers}
 \begin{tabular}{ p{2.5cm} p{8.5cm} }
   \hline
-  \texttt{apropos} & Afficher un court texte d'aide pour la commande \\
+  \texttt{less}, \texttt{more} & Afficher les données par page \\
   \rowcolor{Gray}
-  \texttt{info} & Afficher l'aide du système GNU Info \\
-  \texttt{man} & Afficher une aide avancée pour la commande \\
-  \rowcolor{Gray}
-  \texttt{manpath} & Contrôler le chemin d'accès aux pages d'aide \\
-  \texttt{whatis} & Consulter la base de données d'index pour obtenir des textes d'aide courts sur la commande indiquée \\
+  \texttt{most} & Afficher les données par page ou dans plusieurs fenêtres \\
   \hline
 \end{tabular}
 \section*{Notes}
 
 \begin{tabular}{ p{2.5cm} p{8.5cm} }
   \hline
-  ~ & \\
-  \rowcolor{Gray}
-  ~ & \\
-  ~ & \\
-  \rowcolor{Gray}
-  ~ & \\
   ~ & \\
   \rowcolor{Gray}
   ~ & \\
