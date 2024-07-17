@@ -1,5 +1,5 @@
 % Essential Linux Commands
-% Version 0.10
+% Version 0.12
 % (C) 2023,2024 by Frank Hofmann <info@efho.de>
 % Available from https://github.com/hofmannedv/cheatsheets
 
@@ -10,7 +10,7 @@
 \usepackage{cheatsheet}
 
 \renewcommand{\cheatsheetTitle}{Essential Linux Commands Cheatsheet}
-\renewcommand{\cheatsheetVersion}{Version 0.10}
+\renewcommand{\cheatsheetVersion}{Version 0.12}
 \renewcommand{\cheatsheetCopyright}{
   \copyright~ 2023,2024 by Frank Hofmann \\ \faIcon{envelope} \href{mailto:info@efho.de}{info@efho.de}. Published under 
  \href{https://creativecommons.org/licenses/by-sa/4.0/}{Creative Commons \\ CC-BY-SA 4.0 International License}. Created with \LaTeX. \\ \faIcon{github} \href{https://github.com/hofmannedv/cheatsheets}{https://github.com/hofmannedv/cheatsheets}~.
@@ -104,7 +104,9 @@
   \texttt{rm} & Remove one or more files, or directories \\
   \texttt{rmdir} & Remove an empty directory \\
   \rowcolor{Gray}
+  \texttt{stat} & Display details of a file, directory, or link\\
   \texttt{touch} & Create an empty file, or update the timestamp of an existing file \\
+  \rowcolor{Gray}
   \texttt{umask} & Set file mode creation mask \\
   \hline
 \end{tabular}
@@ -411,12 +413,16 @@
   \texttt{insmod} & Insert (activate) a kernel module into the currently running Linux kernel\\
   \texttt{lsmod} & List the kernel modules from the currently running Linux kernel \\
   \rowcolor{Gray}
+  \texttt{modinfo} & Display information about a kernel module \\
   \texttt{modprobe} & Try to insert (activate) a kernel module into the currently running Linux kernel \\
-  \texttt{rmmode} & Remove (deactivate) a kernel module from the currently running Linux kernel \\
   \rowcolor{Gray}
+  \texttt{rmmod} & Remove (deactivate) a kernel module from the currently running Linux kernel \\
   \texttt{uname} & Display information about the currently running Linux kernel\\
   \hline
+  & \\
 \end{tabular}
+
+~\hfill
 
 \section{Printing}
 \begin{tabular}{ p{2.5cm} p{8.5cm} }
