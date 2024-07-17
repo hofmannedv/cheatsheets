@@ -1,5 +1,5 @@
 % Essential Linux Commands
-% Version 0.12
+% Version 0.14
 % (C) 2023-2024 Frank Hofmann <info@efho.de>
 % Available from https://github.com/hofmannedv/cheatsheets
 
@@ -10,7 +10,7 @@
 \usepackage{cheatsheeta4}
 
 \renewcommand{\cheatsheetTitle}{Essentielle Kommandos \newline für Linux}
-\renewcommand{\cheatsheetVersion}{Version 0.12}
+\renewcommand{\cheatsheetVersion}{Version 0.14}
 \renewcommand{\cheatsheetCopyright}{
   \copyright~ 2023-2024 Frank Hofmann \faIcon{envelope} \href{mailto:info@efho.de}{info@efho.de} \\ Veröffentlicht unter 
  \href{https://creativecommons.org/licenses/by-sa/4.0/}{Creative Commons CC-BY-SA 4.0 \\ International License}. Erstellt mit \LaTeX. \\ \faIcon{github} \href{https://github.com/hofmannedv/cheatsheets}{https://github.com/hofmannedv/cheatsheets}~.
@@ -103,12 +103,14 @@
   \texttt{rm} & Entferne eine oder mehrere Dateien oder Verzeichnisse \\
   \texttt{rmdir} & Entferne ein leeres Verzeichnis \\
   \rowcolor{Gray}
+  \texttt{rstat} & Zeige die Details zu einer Datei, einem Verzeichnis oder Link an \\
   \texttt{touch} & Erzeuge eine leere Datei oder aktualisiere den Zeitstempel einer Datei \\
+  \rowcolor{Gray}
   \texttt{umask} & Lege die Maske fest, die bei der Erzeugung von Dateien als Vorlage genutzt wird \\
   \hline
 \end{tabular}
 
-~ \\
+%~ \\
 \hfill
 
 \section{Paketverwaltung (Auswahl)}
@@ -398,9 +400,10 @@
   \texttt{insmod} & Füge ein Kernelmodul in den aktuell laufenden Linux\-kernel ein\\
   \texttt{lsmod} & Liste die Kernelmodule des aktuell laufenden Linux\-kernels auf\\
   \rowcolor{Gray}
+  \texttt{modinfo} & Zeige detaillierte Informationen über ein  Kernelmodul an\\
   \texttt{modprobe} & Versuche, ein Kernelmodul zum aktuell laufenden Linux\-kernel hinzuzufügen \\
-  \texttt{rmmode} & Entferne ein Kernelmodul vom aktuell laufenden Linux\-kernel \\
   \rowcolor{Gray}
+  \texttt{rmmod} & Entferne ein Kernelmodul vom aktuell laufenden Linux\-kernel \\
   \texttt{uname} & Zeige Informationen über den aktuell laufenden \newline Linuxkernel an\\
   \hline
 \end{tabular}
