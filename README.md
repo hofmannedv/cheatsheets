@@ -14,6 +14,13 @@ the following UNIX/Linux tools:
 
 I use these in my Linux training courses as an aid and learning material.
 
+In preparation are cheatsheets for the following tools:
+
+- Subcommands for the revision control system Git
+- Keyboard shortcuts for the Mozilla Firefox webbrowser
+- Keyboard shortcuts for the Chromium webbrowser
+- Keyboard shortcuts for the Links webbrowser
+
 ## Availability
 
 Currently, these cheatsheets are available as single PDF documents in the 
