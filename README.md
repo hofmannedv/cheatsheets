@@ -35,6 +35,10 @@ following languages:
 
 These cheatsheets are published under [Creative Commons CC-BY-SA 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/).
 
+## A Note On Preview Of The Cheatsheets
+
+I observed that Mozilla Firefox struggles to display the stored PDF cheatsheets directly on the Github page. This includes the version 115 that is delivered with Debian GNU/Linux 12. As workarounds, either download the PDF file, or use a different webbrowser like Chromium to display it.
+
 ## Printed Versions
 
 These cheatsheets are available as printed versions, too, and include additional 
