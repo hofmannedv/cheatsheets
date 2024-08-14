@@ -1,0 +1,180 @@
+% Bash cheatsheets
+% Version 0.12
+% (C) 2023,2024 by Frank Hofmann <info@efho.de>
+% Available from https://github.com/hofmannedv/cheatsheets
+
+% Published under Creative Commons CC-BY-SA 4.0 International License
+% https://creativecommons.org/licenses/by-sa/4.0/
+
+\documentclass[10pt]{article}
+\usepackage{cheatsheet}
+
+\renewcommand{\cheatsheetTitle}{Bash Cheatsheet}
+\renewcommand{\cheatsheetVersion}{Version 0.12}
+\renewcommand{\cheatsheetCopyright}{
+  \copyright~ 2023,2024 by Frank Hofmann \\ \faIcon{envelope} \href{mailto:info@efho.de}{info@efho.de}. Published under 
+ \href{https://creativecommons.org/licenses/by-sa/4.0/}{Creative Commons \\ CC-BY-SA 4.0 International License}. Created with \LaTeX. \\ \faIcon{github} \href{https://github.com/hofmannedv/cheatsheets}{https://github.com/hofmannedv/cheatsheets}~.
+}
+
+% add document metadata as XMP data
+% add keywords based on hyperref package
+\usepackage{hyperxmp}
+\hypersetup{
+    pdfauthor={Frank Hofmann}, 
+    pdftitle={Bash Cheatsheet},
+    pdfkeywords={Bash, commandline, keyboard shortcuts, terminal usage},
+    pdfsubject={Keyboard shortcuts for the effective use of Bash},
+    pdfcopyright={Copyright (C) 2023,2024 by Frank Hofmann. Published under Creative Commons Attribution - Share Alike 4.0 International License (CC-BY-SA-4.0)}
+    pdfcopyrighturl={https://creativecommons.org/licenses/by-sa/4.0/legalcode.en}
+}
+
+\begin{document}
+
+\cheatsheet
+
+\begin{multicols}{2}
+
+\section{Moving the cursor}
+\begin{tabular}{ p{4.5cm} p{6.5cm} }
+  \hline
+  \cellSpaceNormal\keyCtrl+\key{a} or \keyHome & Go to the beginning of the line \\
+  \rowcolor{Gray}
+  \cellSpaceNormal\keyCtrl+\key{e} or \keyEnd & Go to the end of the line \\
+  \cellSpaceNormal\keyAlt+\key{b} & One word backward to the left \\
+  \rowcolor{Gray}
+  \cellSpaceNormal\keyAlt+\key{f} & One word forward to the right  \\
+  \cellSpaceNormal\keyCtrl+\key{b} or \key{$\leftarrow$} & One character backward to the left\\
+  \rowcolor{Gray}
+  \cellSpaceNormal\keyCtrl+\key{f} or \key{$\rightarrow$} & One character forward to the right\\
+  \cellSpaceNormal\keyCtrl+\key{\textit{xx}} & Toggle between the start of line and current cursor position specified using \textit{xx} \cellSpaceLittle \\
+  \rowcolor{Gray}
+  \cellSpaceNormal\key{Tab} & Tab completion for file and directory names \cellSpaceLittle \\
+  \cellSpaceNormal\keyCtrl+\key{p} or \key{$\uparrow$} & Go back to previous command \\
+  \rowcolor{Gray}
+  \cellSpaceNormal\keyCtrl+\key{n} or \key{$\downarrow$} & Go forward to next command \\
+  \hline
+\end{tabular}
+
+%~\\
+\vfill
+
+\section{Copy and paste}
+\begin{tabular}{ p{4.5cm} p{6.5cm} }
+  \hline
+  \cellSpaceNormal\keyCtrl+\key{w} & Cut the word before the cursor to the clipboard \cellSpaceLittle \\
+  \rowcolor{Gray}
+  \cellSpaceNormal\keyCtrl+\key{k} & Cut the line after the cursor to the clipboard \cellSpaceLittle \\
+  \cellSpaceNormal\keyCtrl+\key{u} & Cut the line before the cursor to the clipboard \cellSpaceLittle \\
+  \rowcolor{Gray}
+  \cellSpaceNormal\keyCtrl+\key{y} & Paste the last word/line that was cut \\
+  \hline
+\end{tabular}
+
+\columnbreak
+
+\section{Deleting characters and words}
+\begin{tabular}{ p{4.5cm} p{6.5cm} }
+  \hline
+  \cellSpaceNormal\keyCtrl+\key{l} & Clear the screen \\
+  \rowcolor{Gray}
+  \cellSpaceNormal\keyAlt+\keyDel & Delete the word before the cursor \\
+  \cellSpaceNormal\keyAlt+\key{d} & Delete the word after the cursor \\
+  \rowcolor{Gray}
+  \cellSpaceNormal\keyCtrl+\key{d} or \keyDel & Delete the character under the cursor \\
+  \cellSpaceNormal\keyCtrl+\key{h} or \newline \cellSpaceLittle\keyBackspace & Delete the character before the cursor \\
+  \rowcolor{Gray}
+  \cellSpaceNormal\keyCtrl+\key{k} & Delete all text from the cursor to the end of the line \cellSpaceLittle \\
+  \cellSpaceNormal\keyCtrl+\key{x} followed by \newline \cellSpaceLittle\keyBackspace & Delete all text from the cursor to the beginning of the line \cellSpaceLittle \\
+  \hline
+\end{tabular}
+
+\vfill
+
+\section{Change spelling}
+\begin{tabular}{ p{4.5cm} p{6.5cm} }
+  \hline 
+  \cellSpaceNormal\keyAlt+\key{l} & Lower the case of every character from the cursor to the end of the current word \cellSpaceLittle \\
+  \rowcolor{Gray}
+  \cellSpaceNormal\keyAlt+\key{u} & Capitalize every character from the cursor to the end of the current word \cellSpaceLittle \\
+  \cellSpaceNormal\keyAlt+\key{c} & Capitalize the character under the cursor and move to the end of the word \cellSpaceLittle \\
+  \rowcolor{Gray}
+  \cellSpaceNormal\keyAlt+\key{r} & Cancel the changes and put back the line as it \cellSpaceLittle was before (revert) \\
+  \cellSpaceNormal\keyAlt+\key{\_} & Undo last action \\
+  \hline
+\end{tabular}
+
+\end{multicols}
+
+\newpage
+
+\cheatsheet
+
+\begin{multicols}{2}
+
+\section{Swapping characters and words}
+\begin{tabular}{ p{4.5cm} p{6.5cm} }
+  \hline
+  \cellSpaceNormal\keyAlt+\key{t} & Swap current word with previous one\\
+  \rowcolor{Gray}
+  \cellSpaceNormal\keyCtrl+\key{t} & Swap the last two characters before the cursor \cellSpaceLittle \\
+  \cellSpaceNormal\keyEscape+\key{t} & Swap the last two words before the cursor\\
+  \hline
+\end{tabular}
+
+\vfill
+
+\section{History}
+
+\begin{tabular}{ p{4.5cm} p{6.5cm} }
+  \hline
+  \cellSpaceNormal \keyCtrl+\key{r} & Recall the last command including the specified character(s). Searches the command history as you type. \cellSpaceLittle \\
+  \rowcolor{Gray}
+  \cellSpaceNormal \keyCtrl+\key{p} & Previous command in history \cellSpaceLittle \\
+  \cellSpaceNormal \keyCtrl+\key{n} & Next command in history \cellSpaceLittle \\
+  \rowcolor{Gray}
+  \cellSpaceNormal \keyCtrl+\key{s} &  Go back to the next most recent command \cellSpaceLittle \\
+  \cellSpaceNormal \keyCtrl+\key{o} & Execute the command previously found via \keyCtrl+\key{r} or \keyCtrl+\key{s} \cellSpaceLittle \\
+  \rowcolor{Gray}
+  \cellSpaceNormal \keyCtrl+\key{g} & Escape from history searching mode \\
+  \cellSpaceNormal \key{!}~\key{!} & Repeat last command \\
+  \rowcolor{Gray}
+  \cellSpaceNormal \key{!\$}, \keyEscape+\key{.}, or \newline \cellSpaceLittle \keyAlt+\key{.}\cellSpaceLittle & Last argument of previous command \\
+  \hline
+\end{tabular}
+
+\columnbreak
+
+\section{Process control\phantom{g}}
+\begin{tabular}{ p{4.5cm} p{6.5cm} }
+  \hline
+  \cellSpaceNormal \keyCtrl+\key{c} & Interrupt/Kill whatever process you are running (SIGINT) \cellSpaceLittle \\
+  \rowcolor{Gray}
+  \cellSpaceNormal \keyCtrl+\key{l} & Clear the screen \\
+  \cellSpaceNormal \keyCtrl+\key{s} & Stop output to the screen (for long running verbose commands), then use navi\-gation keys \keyPageUp and \keyPageDown to \newline browse \cellSpaceLittle\\
+  \rowcolor{Gray}
+  \cellSpaceNormal \keyCtrl+\key{q} & Allow output to the screen (if previously stopped using command above) \cellSpaceLittle \\
+  \cellSpaceNormal \keyCtrl+\key{d} & Send an EOF marker, unless disabled by an option, this will close the current shell (EXIT) \cellSpaceLittle \\
+  \rowcolor{Gray}
+  \cellSpaceNormal \keyCtrl+\key{z} & Send the signal SIGTSTP to the current task, which suspends it. To return to it later enter \texttt{fg \textit{job id}} (foreground) \cellSpaceLittle \\
+  \hline
+\end{tabular}
+
+\section{Tips and tricks}
+%\begin{tabular}{ p{11.4cm}}
+\begin{tabular}{ p{4.5cm} p{6.5cm} }
+  \hline
+~ & ~ \\
+\multicolumn{2}{p{11.2cm}}{Unless otherwise configured Bash is running in the default Emacs setting. If you prefer this can be switched to Vi shortcuts instead as follows:}\\
+~ & ~ \\
+Switch to Vi mode: & \texttt{set -o vi} \\ 
+Switch to Emacs mode: & \texttt{set -o emacs} \\ 
+~ & ~ \\
+Display key combinations: & \texttt{bind -p} \\ 
+~ & ~ \\
+  \hline
+\end{tabular}
+
+%\vfill 
+
+\end{multicols}
+\end{document}
