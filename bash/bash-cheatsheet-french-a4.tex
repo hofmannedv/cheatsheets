@@ -1,0 +1,174 @@
+% Bash cheatsheets
+% Version 0.7
+% (C) 2023,2024 Frank Hofmann <info@efho.de>
+% Available from https://github.com/hofmannedv/cheatsheets
+
+% Published under Creative Commons CC-BY-SA 4.0 International License
+% https://creativecommons.org/licenses/by-sa/4.0/
+
+\documentclass[10pt]{article}
+\usepackage{cheatsheeta4}
+
+\renewcommand{\cheatsheetTitle}{Aide-mémoire Bash}
+\renewcommand{\cheatsheetVersion}{Version 0.7}
+\renewcommand{\cheatsheetCopyright}{\copyright~ 2023,2024 Frank Hofmann 
+\faIcon{envelope} \href{mailto:info@efho.de}{info@efho.de}. Traduction de Mohamed Azerkane. Relecture et correction par Jean-Marc Trobrillant. Publié sous licence \href{https://creativecommons.org/licenses/by-sa/4.0/}{Creative Commons CC-BY-SA 4.0 International License}. Créé avec \LaTeX{}.}
+
+% add document metadata as XMP data
+% add keywords based on hyperref package
+\usepackage{hyperxmp}
+\hypersetup{
+    pdfauthor={Frank Hofmann}, 
+    pdftitle={Aide-mémoire Bash},
+    pdfkeywords={Bash, Ligne de commande, raccourcis clavier, utilisation},
+    pdfsubject={Raccourcis clavier pour une utilisation effective de Bash},
+    pdfcopyright={Copyright (C) 2023,2024 Frank Hofmann. Publié sous Creative Commons Attribution - Share Alike 4.0 International License (CC-BY-SA-4.0)}
+    pdfcopyrighturl={https://creativecommons.org/licenses/by-sa/4.0/legalcode.fr}
+}
+
+\begin{document}
+
+\cheatsheet
+
+\begin{multicols}{2}
+
+\section{Déplacement du curseur}
+\begin{tabular}{ p{2.5cm} p{8.5cm} }
+  \hline
+  \cellSpaceNormal\keyCtrl+\key{a} & Aller au début de la ligne (\key{$\nwarrow$} également)\\
+  \rowcolor{Gray}
+  \cellSpaceNormal\keyCtrl+\key{e} & Aller à la fin de la ligne (\key{Fin} également)\\
+  \cellSpaceNormal\keyAlt+\key{b} & Reculer d'un mot vers la gauche \\
+  \rowcolor{Gray}
+  \cellSpaceNormal\keyAlt+\key{f} & Avancer d'un mot vers la droite \\
+  \cellSpaceNormal\keyCtrl+\key{b} & Reculer d'un caractère vers la gauche \newline (\key{$\leftarrow$} également)\cellSpaceLittle \\
+  \rowcolor{Gray}
+  \cellSpaceNormal\keyCtrl+\key{f} & Avancer d'un caractère vers la droite \newline (\key{$\rightarrow$} également) \cellSpaceLittle \\
+  \cellSpaceNormal\keyCtrl+\key{\textit{xx}} & Basculer entre le début de la ligne et la position actuelle du curseur spécifiée par \textit{xx} \cellSpaceLittle \\
+  \rowcolor{Gray}
+  \cellSpaceNormal\key{Tab} & Complétion automatique pour le nom des fichiers et des répertoires \cellSpaceLittle \\
+  \cellSpaceNormal\keyCtrl+\key{p} & Revenir à la commande précédente (\key{$\uparrow$} également)\\
+  \rowcolor{Gray}
+  \cellSpaceNormal\keyCtrl+\key{n} & Avancer à la commande suivante (\key{$\downarrow$} également)\\
+  \hline
+\end{tabular}
+
+%~\\
+\vfill
+
+\section{Échange de caractères et de mots}
+\begin{tabular}{ p{2.5cm} p{8.5cm} }
+  \hline
+  \cellSpaceNormal\keyAlt+\key{t} & Remplacez le mot actuel par le précédent \\
+  \rowcolor{Gray}
+  \cellSpaceNormal\keyCtrl+\key{t} & Permuter les deux derniers caractères avant le curseur \\
+  \cellSpaceNormal\keyEscape+\key{t} & Permuter les deux derniers mots avant le curseur\\
+  \hline
+\end{tabular}
+
+\columnbreak
+
+\section{Copier et coller}
+\begin{tabular}{ p{2.5cm} p{8.5cm} }
+  \hline
+  \cellSpaceNormal\keyCtrl+\key{w} & Découper le mot avant la position actuelle du curseur \\
+  \rowcolor{Gray}
+  \cellSpaceNormal\keyCtrl+\key{k} & Découper le mot après la position actuelle du curseur \\
+  \cellSpaceNormal\keyCtrl+\key{u} & Découper le contenu de la ligne avant la position \newline actuelle du curseur \cellSpaceLittle \\
+  \rowcolor{Gray}
+  \cellSpaceNormal\keyCtrl+\key{y} & Coller le dernier mot ou la dernière ligne coupé auparavant \cellSpaceLittle \\
+  \hline
+\end{tabular}
+
+\vfill
+
+\section{Suppression de caractères et de mots}
+\begin{tabular}{ p{2.55cm} p{8.45cm} }
+  \hline
+  \cellSpaceNormal\keyCtrl+\key{l} & Effacer l'écran \\
+  \rowcolor{Gray}
+  \cellSpaceNormal\keyAlt+\key{Suppr} & Supprimer le mot avant le curseur \\
+  \cellSpaceNormal\keyAlt+\key{d} & Supprimer le mot après le curseur \\
+  \rowcolor{Gray}
+  \cellSpaceNormal\keyCtrl+\key{d} & Supprimer le caractère sous le curseur (\key{Suppr} également) \cellSpaceLittle \\
+  \cellSpaceNormal\keyCtrl+\key{h} & Supprimer le caractère avant le curseur \newline (\key{Suppr arrière} également) \cellSpaceLittle\\
+  \rowcolor{Gray}
+  \cellSpaceNormal\keyCtrl+\key{K} & Supprimer tous les caractères du curseur jusqu'à la fin de la ligne \cellSpaceLittle \\
+  \cellSpaceNormal\keyCtrl+\key{X} + \newline \cellSpaceLittle\key{Suppr arrière} & Supprimer tous les caractères du curseur jusqu'au \newline début de la ligne \cellSpaceLittle \\
+  \hline
+\end{tabular}
+
+\end{multicols}
+
+\newpage
+
+\cheatsheet
+
+\begin{multicols}{2}
+
+\section{Modification de l’orthographe}
+\begin{tabular}{ p{2.5cm} p{8.5cm} }
+  \hline 
+  \cellSpaceNormal\keyAlt+\key{l} & Mettre en minuscule chaque caractère du curseur \newline jusqu'à la fin du mot courant \cellSpaceLittle \\
+  \rowcolor{Gray}
+  \cellSpaceNormal\keyAlt+\key{u} & Mettre en majuscule chaque caractère du curseur \newline jusqu'à la fin du mot courant \cellSpaceLittle \\
+  \cellSpaceNormal\keyAlt+\key{c} & Mettre en majuscule le caractère sous le curseur et se déplacer jusqu'à la fin du mot \cellSpaceLittle \\
+  \rowcolor{Gray}
+  \cellSpaceNormal\keyAlt+\key{r} & Annuler les modifications et rétablir la ligne comme elle était auparavant \cellSpaceLittle \\
+  \cellSpaceNormal\keyAlt+\key{\_} & Annuler la dernière action \\
+  \hline
+\end{tabular}
+
+\vfill
+
+\section{Contrôle des processus}
+\begin{tabular}{ p{2.5cm} p{8.5cm} }
+  \hline
+  \cellSpaceNormal \keyCtrl+\key{c} & Interrompre/Terminer le processus en cours (SIGINT) \cellSpaceLittle \\
+  \rowcolor{Gray}
+  \cellSpaceNormal \keyCtrl+\key{l} & Effacer l'écran \\
+  \cellSpaceNormal \keyCtrl+\key{s} & Arrêter l’affichage à l’écran (pour les commandes verbeuses à longue durée d’exécution), puis utilisez les touches de navigation \key{$\Uparrow$} et \key{$\Downarrow$} pour la pagination \cellSpaceLittle\\
+  \rowcolor{Gray}
+  \cellSpaceNormal \keyCtrl+\key{q} & Autoriser l’affichage à l’écran (si arrêté précédemment avec la commande ci-dessus) \cellSpaceLittle \\
+  \cellSpaceNormal \keyCtrl+\key{d} & Envoyer un caractère EOF à moins qu’une option ne le désactive. Cela fermera le shell actuel (EXIT) \cellSpaceLittle \\
+  \rowcolor{Gray}
+  \cellSpaceNormal \keyCtrl+\key{z} & Envoyer le signal SIGTSTP à la tâche actuelle, ce qui la suspend. Pour y revenir plus tard, entrez \texttt{fg \textit{numero de commande}} (premier plan) \cellSpaceLittle \\
+  \hline
+\end{tabular}
+\columnbreak
+
+\section{Historique}
+\begin{tabular}{ p{2.5cm} p{8.5cm} }
+  \hline
+  \cellSpaceNormal \keyCtrl+\key{r} & Rappeler la dernière commande incluant le(s) caractère(s) spécifié(s). Rechercher dans l'historique des commandes pendant que vous tapez. \cellSpaceLittle \\
+  \rowcolor{Gray}
+  \cellSpaceNormal \keyCtrl+\key{p} & Obtenir la commande précédente dans l'historique \cellSpaceLittle \\
+  \cellSpaceNormal \keyCtrl+\key{n} & Obtenir la commande suivante dans l'historique \cellSpaceLittle \\
+  \rowcolor{Gray}
+  \cellSpaceNormal \keyCtrl+\key{s} & Revenir à la commande la plus récente \\
+  \cellSpaceNormal \keyCtrl+\key{o} & Exécutez la commande précédemment trouvée via \newline \keyCtrl+\key{r} ou \keyCtrl+\key{s} \cellSpaceLittle \\
+  \rowcolor{Gray}
+  \cellSpaceNormal \keyCtrl+\key{g} & Quitter le mode de recherche de l’historique \\
+  \cellSpaceNormal \key{!}~\key{!} & Répéter la dernière commande \\
+  \rowcolor{Gray}
+  \cellSpaceNormal \keyEscape+\key{.}, \newline \cellSpaceNormal \key{!\$}, ou \newline \cellSpaceNormal \keyAlt+\key{.}\cellSpaceLittle & Obtenir le dernier argument de la commande précédente \\
+  \hline
+\end{tabular}
+
+\section{Mode Emacs comparé au mode Vi}
+\begin{tabular}{ p{10.9cm}}
+  \hline
+~ \\
+À moins d'être configuré différemment, Bash s'exécute avec les paramètres Emacs par défaut. Si vous préférez, vous pouvez passer aux raccourcis Vi à la place. Activez le mode Vi dans Bash comme suit: \\
+~ \\
+\texttt{set -o vi}  \\
+~ \\
+Activez le mode Emacs dans Bash comme suit: \\
+~ \\
+\texttt{set -o emacs} 
+
+\end{tabular}
+\vfill 
+
+\end{multicols}
+\end{document}
