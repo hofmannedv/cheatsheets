@@ -1,0 +1,185 @@
+% Bash cheatsheets (Russian version)
+% Version 0.5
+% (C) 2023,2024 Frank Hofmann <info@efho.de>
+% Available from https://github.com/hofmannedv/cheatsheets
+
+% Published under Creative Commons CC-BY-SA 4.0 International License
+% https://creativecommons.org/licenses/by-sa/4.0/
+
+\documentclass[10pt]{article}
+
+\usepackage{cheatsheet}
+\usepackage[T2A]{fontenc}
+
+%Hyphenation rules
+%--------------------------------------
+\usepackage{hyphenat}
+\hyphenation{ма-те-ма-ти-ка вос-ста-нав-ли-вать}
+%--------------------------------------
+\usepackage[english, russian]{babel}
+
+\renewcommand{\cheatsheetTitle}{Bash Cheatsheet}
+\renewcommand{\cheatsheetVersion}{Версия 0.5}
+\renewcommand{\cheatsheetCopyright}{
+  \copyright~ 2023,2024 Франк Хофманн \\ \faIcon{envelope} \href{mailto:info@efho.de}{info@efho.de} . Перевод  Натальи Семенцовой. Опубликовано по международной лицензии \href{https://creativecommons.org/licenses/by-sa/4.0/}{Creative Commons CC-BY-SA 4.0 International License}. Создано с помощью \LaTeX. \faIcon{github} \href{https://github.com/hofmannedv/cheatsheets}{https://github.com/hofmannedv/cheatsheets}~.
+}
+
+\begin{document}
+
+\cheatsheet
+
+\begin{multicols}{2}
+
+\section{Управление процессом}
+\begin{tabular}{ p{4.5cm} p{6.5cm} }
+  \hline
+  \cellSpaceNormal \keyCtrl+\key{ц} & Прервать / уничтожить любой запущенный вами процесс (SIGINT) \cellSpaceLittle \\
+  \rowcolor{Gray}
+  \cellSpaceNormal \keyCtrl+\key{л} & Очистить экран \\
+  \cellSpaceNormal \keyCtrl+\key{с} & Остановить вывод на экран (для длительно выполняющихся подробных команд), затем использовать навигационные клавиши \key{PgUp} и \key{PgDn} для просмотра \cellSpaceLittle\\
+  \rowcolor{Gray}
+  \cellSpaceNormal \keyCtrl+\key{я} & Разрешить вывод на экран (если вывод на экран был  ранее остановлен  приведенной выше командой) \cellSpaceLittle \\
+  \cellSpaceNormal \keyCtrl+\key{д} & Отправить маркер EOF, если опция не отключена, это закроет текущий терминал (EXIT) \cellSpaceLittle \\
+  \rowcolor{Gray}
+  \cellSpaceNormal \keyCtrl+\key{з} & Отправить сигнал SIGTSTP текущей задаче, который приостанавливает ее выполнение. Чтобы вернуться к ней позже, ввести \texttt{fg} имя процесса (активный режим) \cellSpaceLittle \\
+  \hline
+\end{tabular}
+
+\vfill
+
+\section{Перестановка символов и слов }
+\begin{tabular}{ p{4.5cm} p{6.5cm} }
+  \hline
+  \cellSpaceNormal\keyAlt+\key{т} & Поменять местами текущее слово с предыдущим \cellSpaceLittle\\
+  \rowcolor{Gray}
+  \cellSpaceNormal\keyCtrl+\key{т} & Поменяйть местами последние два символа перед курсором \cellSpaceLittle \\
+  \cellSpaceNormal\key{Esc}+\key{т}& Поменяйть местами последние два слова перед курсором \cellSpaceLittle \\
+  \hline
+\end{tabular}
+%\columnbreak
+
+\section{Перемещение курсора}
+\begin{tabular}{ p{4.5cm} p{6.5cm} }
+  \hline
+  \cellSpaceNormal\key{Ctrl}+\key{а} или \key{Home} & Перейдите к началу строки \\
+  \rowcolor{Gray}
+  \cellSpaceNormal\keyCtrl+\key{е} или \key{End} & Перейдите в конец строки \\
+  \cellSpaceNormal\keyAlt+\key{б} & Одно слово назад налево \\
+  \rowcolor{Gray}
+  \cellSpaceNormal\keyAlt+\key{ф} & Одно слово вперед направо  \\
+  \cellSpaceNormal\keyCtrl+\key{б} или \key{$\leftarrow$} & Один символ назад налево\\
+  \rowcolor{Gray}
+  \cellSpaceNormal\keyCtrl+\key{ф} или \key{$\rightarrow$} & Один символ вперед направо\\
+  \cellSpaceNormal\keyCtrl+\key{\textit{xx}} & Переключение между началом строки и текущей позицией \newline \cellSpaceLittle курсора, указанной с помощью \textit{xx} \\
+  \rowcolor{Gray}
+  \cellSpaceNormal\key{Tаб} & Завершение клавтшей Tаб для имен файлов и каталогов \\
+  \cellSpaceNormal\keyCtrl+\key{п} или \key{$\uparrow$} & Вернуться к предыдущей команде \\
+  \rowcolor{Gray}
+  \cellSpaceNormal\keyCtrl+\key{н} или \key{$\downarrow$} & Перейти к следующей команде \\
+  \hline
+\end{tabular}
+
+
+%\vfill
+
+\section{Копирование и вставка}
+\begin{tabular}{ p{4.5cm} p{6.5cm} }
+  \hline
+  \cellSpaceNormal\keyCtrl+\key{В} & Вырезать слово перед курсором в буфер обмена \cellSpaceLittle \\
+  \rowcolor{Gray}
+  \cellSpaceNormal\keyCtrl+\key{к} & Вырезать строку после курсора в буфер обмена \cellSpaceLittle \\
+ \cellSpaceNormal\keyCtrl+\key{у} & Вырезать  строку перед курсором в буфер обмена \cellSpaceLittle \\
+  \rowcolor{Gray}
+  \cellSpaceNormal\keyCtrl+\key{ы} & Вставить последнее вырезанное слово/строку \cellSpaceLittle \\
+  \hline
+\end{tabular}
+
+\end{multicols}
+
+\newpage
+
+\cheatsheet
+
+\begin{multicols}{2}
+
+\section{Удаление символов и слов}
+\begin{tabular}{ p{4.5cm} p{6.5cm} }
+  \hline
+  \cellSpaceNormal\keyCtrl+\key{л} & Очистить экран \\
+  \rowcolor{Gray}
+  \cellSpaceNormal\keyAlt+\key{Del} & Удалить слово перед курсором \\
+  \cellSpaceNormal\keyAlt+\key{д} & Удалить слово после курсора \\
+  \rowcolor{Gray}
+  \cellSpaceNormal\keyCtrl+\key{д} или \key{Del} & Удалить символ под курсором \\
+  \cellSpaceNormal\keyCtrl+\key{X} или \newline \cellSpaceLittle\key{Backspace} & Удалить символ перед курсором \\
+  \rowcolor{Gray}
+  \cellSpaceNormal\keyCtrl+\key{к} & Удалить весь текст от курсора до конца строки \cellSpaceLittle \\
+  \cellSpaceNormal\keyCtrl+\key{ь} с \newline последующим   \cellSpaceNormal\key{Backspace} & Удалить весь текст от курсора до начала строки \cellSpaceLittle \\
+  \hline
+\end{tabular}
+
+\section{Изменение написания}
+\begin{tabular}{ p{4.5cm} p{6.5cm} }
+  \hline 
+  \cellSpaceNormal\keyAlt+\key{л} & Написать маленькими буквами каждый символ от курсора до конца текущего слова \cellSpaceLittle \\
+  \rowcolor{Gray}
+  \cellSpaceNormal\keyAlt+\key{у} & Написать заглавными буквами каждый символ от курсора до конца текущего слова \cellSpaceLittle \\
+  \cellSpaceNormal\keyAlt+\key{ц} & Ввести заглавными буквами символ под курсором и перейти к концу слова \cellSpaceLittle \\
+  \rowcolor{Gray}
+  \cellSpaceNormal\keyAlt+\key{р} & Отменить изменения и вернуть строку в прежнее состояние\cellSpaceLittle (вернуться) \\
+  \cellSpaceNormal\keyAlt+\key{\_} & Отменить последнее действие \\
+  \hline
+\end{tabular}
+
+\section{История}
+
+\begin{tabular}{ p{4.5cm} p{6.5cm} }
+  \hline
+  \cellSpaceNormal \keyCtrl+\key{р} & Вызвать последнюю команду, включающую указанный символ(ы). Выполняет поиск в истории команд по мере ввода. \cellSpaceLittle \\
+  \rowcolor{Gray}
+  \cellSpaceNormal \keyCtrl+\key{П} & Предыдущая команда в истории \cellSpaceLittle \\
+  \cellSpaceNormal \keyCtrl+\key{н} & Следующая команда в истории \cellSpaceLittle \\
+  \rowcolor{Gray}
+  \cellSpaceNormal \keyCtrl+\key{с} &  Вернуться к последней команде \cellSpaceLittle \\
+  \cellSpaceNormal \keyCtrl+\key{o} & Выполнить команду, ранее найденную с помощью \keyCtrl+\key{р} или \newline \keyCtrl+\key{с} \cellSpaceLittle \\
+  \rowcolor{Gray}
+  \cellSpaceNormal \keyCtrl+\key{г} & Выход из режима  истории поиска\\
+  \cellSpaceNormal \key{!}~\key{!} & Повторить последнюю команду \\
+  \rowcolor{Gray}
+  \cellSpaceNormal \key{!\$}, \key{Esc}+\key{.}, или \newline \cellSpaceLittle \keyAlt+\key{.}\cellSpaceLittle & Последний параметр предыдущей команды \\
+  \hline
+\end{tabular}
+
+%\section{Режим Emacs по сравнению с режимом Vi}
+%\begin{tabular}{ p{11.4cm}}
+%  \hline
+% ~ \\
+%Если не настроено иное, Bash запускается с настройками Emacs по умолчанию. Если вы предпочитаете, вместо этого можно переключиться на сочетания клавиш Vi. Включите режим Vi в Bash следующим образом: \\
+%~ \\
+%\texttt{set -o vi}  \\
+%~ \\
+%Включить режим Emacs в bash следующим образом: \\
+%~ \\
+%\texttt{set -o emacs} 
+%
+%\end{tabular}
+
+\section{Советы и подсказки}
+%\begin{tabular}{ p{11.4cm}}
+\begin{tabular}{ p{4.5cm} p{6.5cm} }
+  \hline
+~ & ~ \\
+\multicolumn{2}{p{11.2cm}}{Если не настроено иначе, Bash запускается в настройках Emacs по умолчанию. При желании можно переключиться на использование ярлыков Vi следующим образом:}\\
+~ & ~ \\
+Переход в режим Vi: & \texttt{set -o vi} \\ 
+Переход в режим Emacs: & \texttt{set -o emacs} \\ 
+~ & ~ \\
+Комбинации клавиш дисплея: & \texttt{bind -p} \\ 
+~ & ~ \\
+  \hline
+\end{tabular}
+%\columnbreak
+%\vfill 
+
+\end{multicols}
+\end{document}
