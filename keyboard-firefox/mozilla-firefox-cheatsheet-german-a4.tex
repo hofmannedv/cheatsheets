@@ -1,0 +1,253 @@
+% Cheatsheet for Mozilla Firefox
+% Version 0.1
+% (C) 2024 Frank Hofmann <info@efho.de>
+% Available from https://github.com/hofmannedv/cheatsheets
+
+% Published under Creative Commons CC-BY-SA 4.0 International License
+% https://creativecommons.org/licenses/by-sa/4.0/
+
+\documentclass[10pt,a4paper]{article}
+\usepackage{cheatsheeta4}
+
+\renewcommand{\cheatsheetTitle}{
+  \begin{minipage}{2cm}
+    \includegraphics[width=1.5cm]{firefox-logo.png}
+  \end{minipage} ~ \begin{minipage}{3cm}
+    Cheatsheet für Mozilla Firefox
+  \end{minipage}
+}
+\renewcommand{\cheatsheetVersion}{Version 0.1}
+\renewcommand{\cheatsheetCopyright}{
+  \copyright~ 2024 Frank Hofmann \faIcon{envelope} \href{mailto:info@efho.de}{info@efho.de} \\
+  Veröffentlicht unter der 
+  \href{https://creativecommons.org/licenses/by-sa/4.0/}{Creative Commons CC-BY-SA 4.0 \\ International License}. Erstellt mit \LaTeX. \\ 
+  \faIcon{github} \href{https://github.com/hofmannedv/cheatsheets}{https://github.com/hofmannedv/cheatsheets}~.
+}
+
+% add document metadata as XMP data
+% add keywords based on hyperref package
+\usepackage{hyperxmp}
+\hypersetup{
+    pdfauthor={Frank Hofmann}, 
+    pdftitle={Cheatsheet für Mozilla Firefox},
+    pdfkeywords={Firefox, Webbrowser, Tastenkürzel, Bedienung},
+    pdfsubject={Tastenkürzel für den Umgang mit dem Webbrowser Mozilla Firefox},
+    pdfcopyright={Copyright (C) 2024 Frank Hofmann. Veröffentlicht unter Creative Commons Attribution - Share Alike 4.0 International License (CC-BY-SA-4.0)}
+    pdfcopyrighturl={https://creativecommons.org/licenses/by-sa/4.0/legalcode.en}
+}
+
+\begin{document}
+
+\cheatsheet
+
+\begin{multicols}{2}
+
+\section{Allgemeine Navigation}
+\begin{tabular}{ p{5cm} p{6cm} }
+  \hline
+  \cellSpaceNormal\keyAlt+\key{$\leftarrow$} oder \keyStrg+\key{[} & Gehe zurück zur vorher besuchten Webseite \cellSpaceLittle \\
+  \rowcolor{Gray}
+  \cellSpaceNormal\keyAlt+\key{$\rightarrow$} oder \keyStrg+\key{]} & Gehe vorwärts zur danach besuchten Webseite \cellSpaceLittle \\
+  \cellSpaceNormal\keyAlt+\key{Pos1} & Gehe zurück zur Startseite \cellSpaceLittle \\
+  \rowcolor{Gray}
+  \cellSpaceNormal\key{Umschalt}+\key{Tab} & Springe im aktuellen Reiter (Tab) zum vorherigen Link oder zum vorherigen Eingabefeld  \cellSpaceLittle \\
+  \cellSpaceNormal\key{Tab} & Springe im aktuellen Reiter (Tab) zum nächsten Link oder zum nächsten Eingabefeld  \cellSpaceLittle \\
+  \rowcolor{Gray}
+  \cellSpaceNormal\key{Bild $\uparrow$} oder \newline \cellSpaceNormal \key{Umschalt}+\key{Leertaste} & Blättere  eine Bildschirmseite nach oben \cellSpaceLittle \\
+  \cellSpaceNormal\key{Bild $\downarrow$} oder \cellSpaceNormal \key{Leertaste} & Blättere eine Bildschirmseite nach unten \cellSpaceLittle \\ 
+  \rowcolor{Gray}
+  \cellSpaceNormal\key{Pos1} oder \keyStrg+\key{$\uparrow$} & Blättere zum Seitenanfang \cellSpaceLittle \\
+  \cellSpaceNormal\key{Ende} oder \keyStrg+\key{$\downarrow$}& Blättere zum Seitenende \cellSpaceLittle \\
+  \rowcolor{Gray}
+  \cellSpaceNormal\key{Umschalt}+\key{F6} & Gehe zum vorherigen Frame oder \newline Pop-up \cellSpaceLittle \\
+  \cellSpaceNormal\key{F6} & Gehe zum nächsten Frame oder \newline Pop-up \cellSpaceLittle \\
+  \rowcolor{Gray}
+  \cellSpaceNormal\key{ESC} & Breche die aktuelle Aktion ab \cellSpaceLittle \\
+  \hline
+\end{tabular}
+
+\columnbreak
+
+\section{Aktuelle Webseite}
+\begin{tabular}{ p{4.5cm} p{6.5cm} }
+  \hline
+  \cellSpaceNormal\keyStrg+\key{o} & Öffne eine (lokale) Webseite zur Ansicht \cellSpaceLittle \\
+  \rowcolor{Gray}
+  \cellSpaceNormal\keyStrg+\key{r} oder \key{F5} & Lade die aktuelle Webseite neu \cellSpaceLittle \\
+  \cellSpaceNormal\keyStrg+\key{Umschalt}+\key{r} \newline \cellSpaceNormal oder \keyStrg+\key{F5} & Lade die aktuelle Webseite neu, ohne dabei den Browsercache zu berücksichtigen \cellSpaceLittle \\
+  \rowcolor{Gray}
+  \cellSpaceNormal\keyStrg+\key{p} & Drucke die aktuelle Webseite \cellSpaceLittle \\
+  \cellSpaceNormal\keyStrg+\key{s} & Speichere die aktuelle Webseite \cellSpaceLittle \\
+  \rowcolor{Gray}
+  \cellSpaceNormal\keyStrg+\key{+} & Vergrößere die Darstellung (Zoom in) \cellSpaceLittle \\
+  \cellSpaceNormal\keyStrg+\key{-} & Verkleinere die Darstellung (Zoom out) \cellSpaceLittle \\
+  \rowcolor{Gray}
+  \cellSpaceNormal\keyStrg+\key{0} & Setze die Darstellung zurück \cellSpaceLittle \\
+  \hline
+\end{tabular}
+
+\section{Suchen in der angezeigten Webseite}
+\begin{tabular}{ p{4.5cm} p{6.5cm} }
+  \hline
+  \cellSpaceNormal\keyStrg+\key{f} & Suche mit zusätzlichen Optionen \cellSpaceLittle \\
+  \rowcolor{Gray}
+  \cellSpaceNormal\key{/} & Suche ohne zusätzliche Optionen \cellSpaceLittle \\
+  \cellSpaceNormal\key{'} & Suche nur in den Linktexten \cellSpaceLittle \\
+  \rowcolor{Gray}
+  \cellSpaceNormal\keyStrg+\key{g} oder \key{F3} & Setze die Suche fort (Vorwärtssuche) \cellSpaceLittle \\
+  \cellSpaceNormal\keyStrg+\key{Umschalt}+\key{g} \newline \cellSpaceNormal oder \key{Umschalt}+\key{F3} & Setze die Suche fort (Rückwärtssuche) \cellSpaceLittle \\
+  \hline
+\end{tabular}
+
+\end{multicols}
+
+\newpage
+
+\cheatsheet
+
+\begin{multicols}{2}
+
+\section{Umgang mit Reitern (Tabs)}
+\begin{tabular}{ p{5cm} p{6cm} }
+  \hline
+  \cellSpaceNormal\keyStrg+\key{t} & Öffne einen neuen Reiter \cellSpaceLittle\\
+  \rowcolor{Gray}
+  \cellSpaceNormal\keyStrg+\key{Tab} & Gehe durch die Reiter anhand der Reihenfolge der Benutzung \cellSpaceLittle\\
+  \cellSpaceNormal\keyStrg+\key{Tab} und \newline \cellSpaceNormal\keyStrg+\key{Bild $\downarrow$} & Gehe einen Reiter nach rechts \cellSpaceLittle\\
+  \rowcolor{Gray}
+  \cellSpaceNormal\keyStrg+\key{Umschalt}+\key{Tab} \newline \cellSpaceNormal und \keyStrg+\key{Bild $\uparrow$} & Gehe einen Reiter nach links \cellSpaceLittle\\
+  \cellSpaceNormal\keyAlt+\key{1} bis \keyAlt+\key{8} & Gehe zu Reiter 1 bis 8 \cellSpaceLittle\\
+  \rowcolor{Gray}
+  \cellSpaceNormal\keyAlt+\key{9} & Gehe zum letzten Reiter \cellSpaceLittle\\
+  \cellSpaceNormal\keyStrg+\key{Umschalt}+\key{Bild $\downarrow$} & Verschiebe den Reiter nach rechts \cellSpaceLittle\\
+  \rowcolor{Gray}
+  \cellSpaceNormal\keyStrg+\key{Umschalt}+\key{Bild $\uparrow$} & Verschiebe den Reiter nach links \cellSpaceLittle\\
+  \cellSpaceNormal\keyStrg+\key{Umschalt}+\key{Ende} & Verschiebe den Reiter nach ganz rechts an das Ende \cellSpaceLittle\\
+  \rowcolor{Gray}
+  \cellSpaceNormal\keyStrg+\key{Umschalt}+\key{Pos1} & Verschiebe den Reiter nach ganz links an den Anfang \cellSpaceLittle\\
+  \cellSpaceNormal\keyStrg+\key{w} und \newline \cellSpaceNormal\keyStrg+\key{F4} & Schließe den Reiter, außer er ist angeheftet \cellSpaceLittle\\
+  \rowcolor{Gray}
+  \cellSpaceNormal\keyStrg+\key{Umschalt}+\key{t} & Öffne den soeben geschlossenen Reiter wieder\cellSpaceLittle\\
+  \hline
+  ~ & ~ \\
+\end{tabular}
+
+~\\
+~\\
+\vfill
+
+\columnbreak
+
+\section{Umgang mit Fenstern}
+\begin{tabular}{ p{5cm} p{6cm} }
+  \hline
+  \cellSpaceNormal\keyStrg+\key{n} & Öffne ein neues Fenster \cellSpaceLittle\\
+  \rowcolor{Gray}
+  \cellSpaceNormal\keyStrg+\key{Umschalt}+\key{p} & Öffne ein neues, privates Fenster \cellSpaceLittle\\
+  \cellSpaceNormal\keyStrg+\key{Umschalt}+\key{w} und \newline \cellSpaceNormal\keyAlt+\key{F4} & Schließe das aktuelle Fenster \cellSpaceLittle\\
+  \rowcolor{Gray}
+  \cellSpaceNormal\keyStrg+\key{Umschalt}+\key{n} & Öffne das soeben geschlossene Fenster wieder \cellSpaceLittle\\
+  \cellSpaceNormal\keyStrg+\key{q} & Beende Firefox und schließe alle Fenster \cellSpaceLittle\\
+  \hline
+\end{tabular}
+
+\section{Lesezeichen}
+\begin{tabular}{ p{5cm} p{6cm} }
+  \hline
+  \cellSpaceNormal\keyStrg+\key{b} & Öffne oder schließe die Leiste mit den Lesezeichen \cellSpaceLittle\\
+  \rowcolor{Gray}
+  \cellSpaceNormal\keyStrg+\key{d} & Füge die aktuelle Webseite zu den Lesezeichen hinzu \cellSpaceLittle\\
+  \cellSpaceNormal\keyStrg+\key{Umschalt}+\key{b} & Öffne oder schließe die Werkzeug\-leiste zu den Lesezeichen \cellSpaceLittle\\
+  \hline
+\end{tabular}
+\end{multicols}
+
+\newpage
+
+\cheatsheet
+
+\begin{multicols}{2}
+
+\section{Chronik}
+\begin{tabular}{ p{5cm} p{6cm} }
+  \hline
+  \cellSpaceNormal\keyStrg+\key{h} & Öffne oder schließe die Leiste mit der Browserhistorie \cellSpaceLittle\\
+  \rowcolor{Gray}
+  \cellSpaceNormal\keyStrg+\key{Umschalt}+\key{Entf} & Lösche die Einträge in der Browserhistorie \cellSpaceLittle\\
+  \hline
+\end{tabular}
+
+\section{Darstellung und Werkzeuge}
+\begin{tabular}{ p{5cm} p{6cm} }
+  \hline
+  \cellSpaceNormal\key{Alt} oder \key{F10} & (De-)Aktiviere die Menüleiste \cellSpaceLittle\\
+  \rowcolor{Gray}
+  \cellSpaceNormal\key{F11} & (De-)Aktiviere den Vollbildmodus \cellSpaceLittle\\
+  \cellSpaceNormal\keyStrg+\key{Umschalt}+\key{a} & (De-)Aktiviere das Fenster mit den Downloads \cellSpaceLittle\\
+  \rowcolor{Gray}
+  \cellSpaceNormal\keyStrg+\key{Umschalt}+\key{i} und\newline \cellSpaceNormal\key{F12} & (De-)Aktiviere das Fenster mit den \newline Developer Tools \cellSpaceLittle\\
+  \cellSpaceNormal\keyStrg+\key{Umschalt}+\key{k} & (De-)Aktiviere das Fenster mit der Web Console \cellSpaceLittle\\
+  \rowcolor{Gray}
+  \cellSpaceNormal\keyStrg+\key{Umschalt}+\key{i} & (De-)Aktiviere das Fenster mit dem Inspector \cellSpaceLittle\\
+  \cellSpaceNormal\key{Umschalt}+\key{F5} & (De-)Aktiviere das Fenster mit dem Profiler \cellSpaceLittle\\  \hline
+\end{tabular}
+
+\columnbreak
+
+\section{Benutzte Suchmaschinen}
+\begin{tabular}{ p{5cm} p{6cm} }
+  \hline
+  \cellSpaceNormal\keyAlt+\key{$\uparrow$} und \keyAlt+\key{$\downarrow$} & Wechsele zwischen den hinterlegten Suchmaschinen hin und her nach einer Eingabe in der Addresszeile \cellSpaceLittle\\
+  \rowcolor{Gray}
+  \cellSpaceNormal\keyAlt+\key{$\uparrow$} und \keyAlt+\key{$\downarrow$} \newline \cellSpaceNormal~oder \key{F4} & Zeige das Auswahlmenü der hinterlegten Suchmaschinen an, wenn das Suchfeld ausgewählt ist \cellSpaceLittle\\
+  \cellSpaceNormal\keyStrg+\key{$\uparrow$} und \keyStrg+\key{$\downarrow$} & Wechsele die hinterlegte Such\-maschine bei der Recherche über das Suchfeld \cellSpaceLittle\\
+  \rowcolor{Gray}
+  \cellSpaceNormal\key{?} \key{Leertaste} & Verwende die standardmäßig hinterlegte Suchmaschine bei der Recherche über die Addresszeile \cellSpaceLittle \\
+  \cellSpaceNormal\keyStrg+\key{k} und \keyStrg+\key{j} & Benutze die Addresszeile zur Recherche mit der hinterlegten Suchmaschine, falls das Suchfeld nicht angezeigt wird \cellSpaceLittle\\
+  \rowcolor{Gray}
+  \cellSpaceNormal\keyStrg+\key{k} und \keyStrg+\key{j} & Benutze das Suchfeld zur Recherche mit der hinterlegten Suchmaschine, falls das Suchfeld angezeigt wird \cellSpaceLittle\\
+  \hline
+\end{tabular}
+%~\\
+%\vfill
+
+%~\\
+%\vfill
+
+
+%\section*{Notizen}
+
+%\begin{tabular}{ p{4.5cm} p{6.5cm} }
+%  \hline
+%  ~ & ~ \\
+%  \rowcolor{Gray}
+%  ~ & ~ \\
+%  ~ & ~ \\
+%  \rowcolor{Gray}
+%  ~ & ~ \\
+%  ~ & ~ \\
+%  \rowcolor{Gray}
+%  ~ & ~ \\
+%  ~ & ~ \\
+%  \rowcolor{Gray}
+%  ~ & ~ \\
+%  ~ & ~ \\
+%  \rowcolor{Gray}
+%  ~ & ~ \\
+%  ~ & ~ \\
+%  \rowcolor{Gray}
+%  ~ & ~ \\
+%  ~ & ~ \\
+%  \rowcolor{Gray}
+%  ~ & ~ \\
+%  ~ & ~ \\
+%  \rowcolor{Gray}
+%  ~ & ~ \\
+%  \hline
+%\end{tabular}
+
+%~\\
+% \vfill
+
+\end{multicols}
+\end{document}
