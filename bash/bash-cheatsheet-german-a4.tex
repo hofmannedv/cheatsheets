@@ -1,0 +1,181 @@
+% Bash cheatsheets
+% Version 0.7
+% (C) 2023,2024 Frank Hofmann <info@efho.de>
+% Available from https://github.com/hofmannedv/cheatsheets
+
+% Published under Creative Commons CC-BY-SA 4.0 International License
+% https://creativecommons.org/licenses/by-sa/4.0/
+
+\documentclass[10pt,a4paper]{article}
+
+\usepackage{cheatsheeta4}
+
+\renewcommand{\cheatsheetTitle}{Bash Cheatsheet}
+\renewcommand{\cheatsheetVersion}{Version 0.7}
+\renewcommand{\cheatsheetCopyright}{
+ \copyright~ 2023,2024 Frank Hofmann \faIcon{envelope} \href{mailto:info@efho.de}{info@efho.de} \\ 
+ Veröffentlicht unter \href{https://creativecommons.org/licenses/by-sa/4.0/}{Creative Commons CC-BY-SA 4.0 \\ International License}. Erstellt mit \LaTeX. \\ \faIcon{github} \href{https://github.com/hofmannedv/cheatsheets}{https://github.com/hofmannedv/cheatsheets}~.
+}
+
+% add document metadata as XMP data
+% add keywords based on hyperref package
+\usepackage{hyperxmp}
+\hypersetup{
+    pdfauthor={Frank Hofmann}, 
+    pdftitle={Bash Cheatsheet},
+    pdfkeywords={Bash, Kommandozeile, Tastenkürzel, Bedienung},
+    pdfsubject={Tastenkürzel für den effektiven Umgang mit der Bash},
+    pdfcopyright={Copyright (C) 2023,2024 Frank Hofmann. Veröffentlicht unter Creative Commons Attribution - Share Alike 4.0 International License (CC-BY-SA-4.0)}
+    pdfcopyrighturl={https://creativecommons.org/licenses/by-sa/4.0/legalcode.en}
+}
+
+\begin{document}
+
+\cheatsheet
+
+\begin{multicols}{2}
+
+\section{Bewegen des Cursors}
+\begin{tabular}{ p{2.5cm} p{8.5cm} }
+  \hline
+  \cellSpaceNormal\keyStrg+\key{a} & Gehe zum Anfang der Zeile (auch \key{Pos1})\\
+  \rowcolor{Gray}
+  \cellSpaceNormal\keyStrg+\key{e} & Gehe zum Ende der Zeile (auch \key{Ende})\\
+  \cellSpaceNormal\keyAlt+\key{b} & Gehe ein Wort nach links \\
+  \rowcolor{Gray}
+  \cellSpaceNormal\keyAlt+\key{f} & Gehe ein Wort nach rechts  \\
+  \cellSpaceNormal\keyStrg+\key{b} & Gehe ein Zeichen nach links (auch \key{$\leftarrow$}) \\
+  \rowcolor{Gray}
+  \cellSpaceNormal\keyStrg+\key{f} & Gehe ein Zeichen nach rechts (auch \key{$\rightarrow$})\\
+  \cellSpaceNormal\keyStrg+\key{\textit{xx}} & Schalte zwischen dem Anfang der Zeile und der Cursorposition \textit{xx} um \cellSpaceLittle \\
+  \rowcolor{Gray}
+  \cellSpaceNormal\key{Tab} & Automatische Vervollständigung für Datei- und \newline Verzeichnisnamen \cellSpaceLittle \\
+  \cellSpaceNormal\keyStrg+\key{p} & Gehe zum vorherigen Kommando (auch \key{$\uparrow$}) \cellSpaceLittle \\
+  \rowcolor{Gray}
+  \cellSpaceNormal\keyStrg+\key{n} & Gehe zum nächsten Kommando (auch \key{$\downarrow$})\\
+  \hline
+\end{tabular}
+
+%\vfill
+
+\section{Kopieren und einfügen}
+\begin{tabular}{ p{2.5cm} p{8.5cm} }
+  \hline
+  \cellSpaceNormal\keyStrg+\key{w} & Schneide das Wort vor der akt. Cursorposition aus \cellSpaceLittle \\
+  \rowcolor{Gray}
+  \cellSpaceNormal\keyStrg+\key{k} & Schneide das Wort nach der akt. Cursorposition aus \cellSpaceLittle \\
+  \cellSpaceNormal\keyStrg+\key{u} & Schneide den Inhalt der Zeile vor der aktuellen Cursorposition aus \cellSpaceLittle \\
+  \rowcolor{Gray}
+  \cellSpaceNormal\keyStrg+\key{y} & Füge das zuvor ausgeschnittene Wort oder die Zeile ein \\
+  \hline
+\end{tabular}
+
+\columnbreak
+
+\section{Löschen von Zeichen und Worten\phantom{g}}
+\begin{tabular}{ p{2.5cm} p{8.5cm} }
+  \hline
+  \cellSpaceNormal\keyStrg+\key{l} & Lösche den Bildschirm \\
+  \rowcolor{Gray}
+  \cellSpaceNormal\keyAlt+\key{Entf} & Lösche das Wort vor dem Cursor \\
+  \cellSpaceNormal\keyAlt+\key{d} & Lösche das Wort nach dem Cursor \\
+  \rowcolor{Gray}
+  \cellSpaceNormal\keyStrg+\key{d} & Lösche das aktuelle Zeichen (auch \key{Entf})\\
+  \cellSpaceNormal\keyStrg+\key{h} & Lösche das Zeichen vor dem Cursor (\keyBackspace)\\
+  \rowcolor{Gray}
+  \cellSpaceNormal\keyStrg+\key{k} & Lösche alle Zeichen bis zum Ende der Zeile \cellSpaceLittle \\
+  \cellSpaceNormal\keyStrg+\key{x} + \newline \cellSpaceLittle\key{Backspace} & Lösche alle Zeichen bis zum Anfang der Zeile \cellSpaceLittle \\
+  \hline
+\end{tabular}
+
+%\vfill
+
+\section{Schreibweise ändern}
+\begin{tabular}{ p{2.5cm} p{8.5cm} }
+  \hline 
+  \cellSpaceNormal\keyAlt+\key{l} & Wandele jedes Zeichen in einen Kleinbuchstaben um (Cursorposition bis zum Ende des aktuellen Wortes) \cellSpaceLittle \\
+  \rowcolor{Gray}
+  \cellSpaceNormal\keyAlt+\key{u} & Wandele jedes Zeichen in einen Groß\-buchstaben um (Cursorposition bis zum Ende des aktuellen Wortes) \cellSpaceLittle \\
+  \cellSpaceNormal\keyAlt+\key{c} & Wandele den Buchstaben an der Cursorposition in einen Großbuchstaben um und springe zum Ende des Wortes \cellSpaceLittle \\
+  \rowcolor{Gray}
+  \cellSpaceNormal\keyAlt+\key{r} & Änderungen abbrechen und Originalzeile wiederherstellen (revert) \cellSpaceLittle \\
+  \cellSpaceNormal\keyAlt+\key{\_} & Letzte Aktion rückgängig machen \\
+  \hline
+\end{tabular}
+
+\end{multicols}
+
+\newpage
+
+\cheatsheet
+
+\begin{multicols}{2}
+
+\section{Zeichen und Worte vertauschen\phantom{g}}
+\begin{tabular}{ p{2.5cm} p{8.5cm} }
+  \hline
+  \cellSpaceNormal\keyAlt+\key{t} & Tausche das aktuelle Wort mit dem vorhergehenden aus \cellSpaceLittle\\
+  \rowcolor{Gray}
+  \cellSpaceNormal\keyStrg+\key{t} & Vertausche die letzten beiden Zeichen vor dem Cursor \\
+  \cellSpaceNormal\key{Esc}+\key{t} & Vertausche die letzten beiden Worte vor dem Cursor \cellSpaceLittle\\
+  \hline
+\end{tabular}
+
+\vfill
+
+\section{Kommandozeilenhistorie}
+
+\begin{tabular}{ p{2.5cm} p{8.5cm} }
+  \hline
+  \cellSpaceNormal \key{Strg}+\key{r} & Suche rückwärts in der Kommandozeilenhistorie. Rufe das letzte Kommando auf, welches die angegebenen Zeichen beinhaltet \cellSpaceLittle \\
+  \rowcolor{Gray}
+  \cellSpaceNormal \keyStrg+\key{p} & Gehe zum vorhergehenden Kommando in der Historie \\
+  \cellSpaceNormal \keyStrg+\key{n} & Gehe zum nächstes Kommando in der Historie \cellSpaceLittle \\
+  \rowcolor{Gray}
+  \cellSpaceNormal \keyStrg+\key{s} &  Gehe zurück zum nächsten, passendsten Kommando \cellSpaceLittle \\
+  \cellSpaceNormal \keyStrg+\key{o} & Führe das Kommando aus, welches vorher via \newline \keyStrg+\key{r} oder \keyStrg+\key{s} gefunden wurde\cellSpaceNormal\\
+  \rowcolor{Gray}
+  \cellSpaceNormal \keyStrg+\key{g} & Verlasse den Suchmodus der Historie \\
+  \cellSpaceNormal \key{!}~\key{!} & Wiederhole das vorhergehende Kommando\cellSpaceLittle \\
+  \rowcolor{Gray}
+  \cellSpaceNormal \key{Esc}+\key{.}, \newline \cellSpaceNormal \key{!\$} oder \newline \cellSpaceNormal \keyAlt+\key{.}\cellSpaceLittle & Hole das letzte Argument des vorhergehenden Kommandos \\
+  \hline
+\end{tabular}
+
+\columnbreak
+
+\section{Prozesssteuerung}
+\begin{tabular}{ p{2.5cm} p{8.5cm} }
+  \hline
+  \cellSpaceNormal \key{Strg}+\key{c} & Unterbreche den Prozess, der ausgeführt wird (SIGINT) \\
+  \rowcolor{Gray}
+  \cellSpaceNormal \keyStrg+\key{l} & Lösche den Bildschirm \\
+  \cellSpaceNormal \keyStrg+\key{s} & Beende die Ausgabe auf dem Bildschirm (für langlaufende, ausführliche Kommandos), benutze danach die Bewegungstasten \key{Bild $\uparrow$} und \key{Bild $\downarrow$}, um in der Ausgabe zu blättern \cellSpaceNormal\\
+  \rowcolor{Gray}
+  \cellSpaceNormal \keyStrg+\key{q} & Erlaube die Ausgabe auf dem Bildschirm (falls diese zuvor mit dem vorherigen Kommando unterbrochen wurde) \cellSpaceLittle \\
+  \cellSpaceNormal \keyStrg+\key{d} & Sende ein EOF-Zeichen sofern nicht durch eine Option abgeschaltet. Das schließt die aktuelle Shell (EXIT) \cellSpaceLittle\\
+  \rowcolor{Gray}
+  \cellSpaceNormal \keyStrg+\key{z} & Sende das Signal SIGTSTP an den aktuellen Prozess, dass ihn unterbricht. Um zu diesem später zurückzukehren, rufe \texttt{fg \textit{Auftragsummer}} auf (hole den Prozess wieder in den Vordergrund) \cellSpaceLittle \\
+  \hline
+\end{tabular}
+
+%\vfill
+
+\section{Tips und Tricks}
+%\begin{tabular}{ p{11.4cm}}
+\begin{tabular}{ p{4.5cm} p{6.5cm} }
+  \hline
+~ & ~ \\
+\multicolumn{2}{p{11.2cm}}{Sofern nicht anderweitig konfiguriert, läuft die Bash im Emacs-Modus. Sie schalten zwischen dem Vi- und Emacs-Modus wie folgt um:} \\
+~ & ~ \\
+Wechsel zum Vi-Modus: & \texttt{set -o vi} \\ 
+Wechsel zum Emacs-Modus: & \texttt{set -o emacs} \\ 
+~ & ~ \\
+Anzeige der Tastenkürzel: & \texttt{bind -p} \\ 
+~ & ~ \\
+  \hline
+\end{tabular}
+%\vfill 
+
+\end{multicols}
+\end{document}
