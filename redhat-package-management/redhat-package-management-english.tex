@@ -1,0 +1,326 @@
+% Red Hat Package Management
+% Version 0.3
+% (C) 2023,2024 Frank Hofmann <info@efho.de>
+% Available from https://github.com/hofmannedv/cheatsheets
+
+% Published under Creative Commons CC-BY-SA 4.0 International License
+% https://creativecommons.org/licenses/by-sa/4.0/
+
+\documentclass[10pt]{article}
+\usepackage{cheatsheet}
+
+\renewcommand{\cheatsheetTitle}{Red Hat Package \newline Management Cheatsheet}
+\renewcommand{\cheatsheetVersion}{Version 0.3}
+\renewcommand{\cheatsheetCopyright}{
+  \copyright~ 2023,2024 by Frank Hofmann \\ \faIcon{envelope} \href{mailto:info@efho.de}{info@efho.de}. Published under 
+ \href{https://creativecommons.org/licenses/by-sa/4.0/}{Creative Commons \\ CC-BY-SA 4.0 International License}. Created with \LaTeX. \\ \faIcon{github} \href{https://github.com/hofmannedv/cheatsheets}{https://github.com/hofmannedv/cheatsheets}~.
+}
+
+% add document metadata as XMP data
+% add keywords based on hyperref package
+\usepackage{hyperxmp}
+\hypersetup{
+    pdfauthor={Frank Hofmann}, 
+    pdftitle={Red Hat Package Management Cheatsheet},
+    pdfkeywords={Package management, Red Hat, rpm, yum},
+    pdfsubject={Commands for handling software packages effectively on Red Hat Linux},
+    pdfcopyright={Copyright (C) 2023,2024 by Frank Hofmann. Published under Creative Commons Attribution - Share Alike 4.0 International License (CC-BY-SA-4.0)}
+    pdfcopyrighturl={https://creativecommons.org/licenses/by-sa/4.0/legalcode.en}
+}
+
+\begin{document}
+
+\cheatsheet
+
+%\section{Update the local package list}
+
+\section{Install new software packages}
+\begin{tabular}{ p{3.5cm} p{9cm} p{11cm}}
+  \hline
+  \rowcolor{Gray}
+  \textbf{Tool} & \textbf{Command} & \textbf{Notes} \\
+  \hline 
+  \textbf{RPM} & \texttt{rpm -i \textit{package file}} \newline \texttt{rpm --install \textit{package file}} & Package file refers  to a local \texttt{.rpm} file in the current directory\\
+  \rowcolor{Gray}
+  & \texttt{rpm -i --nodeps \textit{package file}} \newline \texttt{rpm --install --nodeps \textit{package file}} & Package file refers  to a local \texttt{.rpm} file in the current directory; ignore package dependencies\\
+  & \texttt{rpm -ihv \textit{package file}} & Package file refers  to a local \texttt{.rpm} file in the current directory; installation with verbose output, and process bar\\
+  \rowcolor{Gray}
+  \textbf{YUM} & \texttt{yum groupinstall \textit{package group}} & Install all packages from a package group from a software repository\\
+  & \texttt{yum install \textit{package}} & Install a package from a software repository\\
+  \rowcolor{Gray}
+  & \texttt{yum localinstall \textit{package}} & Install a package from a local file, http, or ftp resource\\
+  & \texttt{yum reinstall \textit{package}} & Reinstall the current version of a package from a software repository\\
+  \hline
+\end{tabular}
+
+\section{Renew existing software packages}
+\begin{tabular}{ p{3.5cm} p{9cm} p{11cm}}
+  \hline
+  \rowcolor{Gray}
+  \textbf{Tool} & \textbf{Command} & \textbf{Notes} \\
+  \hline 
+  \textbf{RPM} & \texttt{rpm -F \textit{package file}} \newline \texttt{rpm --freshen \textit{package file}} & Upgrade an already installed package; based on a local file. \\
+  \rowcolor{Gray}
+  & \texttt{rpm -U \textit{package file}} \newline \texttt{rpm --upgrade \textit{package file}} & Upgrade an already installed package, or install package if not already installed; based on a local file. \\
+  \textbf{YUM} & \texttt{yum update} & Update all packages with available updates; based on a software repository \\
+  \rowcolor{Gray}
+  & \texttt{yum update \textit{package}} & Update the specified package, only; based on a software repository \\  
+  & \texttt{yum update --security} & Apply security-related package updates, only; based on a software repository \\  
+  \rowcolor{Gray}
+  & \texttt{yum update-to \textit{package-version}} & Update the specified package, or all packages up to a specific version; based on a software repository \\  
+  & \texttt{yum upgrade} & Update all installed packages taking obsoletes into account; based on a software repository \\  
+  \rowcolor{Gray}
+  & \texttt{yum upgrade \textit{package}} & Update the specified package taking obsoletes into account; based on a software repository \\  
+  \hline
+\end{tabular}
+
+\newpage
+
+\cheatsheet
+
+\section{Reinstall an existing software package}
+\begin{tabular}{ p{3.5cm} p{9cm} p{11cm}}
+  \hline
+  \rowcolor{Gray}
+  \textbf{Tool} & \textbf{Command} & \textbf{Notes} \\
+  \hline 
+  \textbf{RPM} & \texttt{rpm --reinstall \textit{package file}} & Package file refers to a local file \\
+  \rowcolor{Gray}
+  \textbf{YUM} & \texttt{yum reinstall \textit{package}} & Package is obtained from the package repository \\
+  \hline
+\end{tabular}
+
+\section{Install a previous version of a software package (downgrade)}
+\begin{tabular}{ p{3.5cm} p{9cm} p{11cm}}
+  \hline
+  \rowcolor{Gray}
+  \textbf{Tool} & \textbf{Command} & \textbf{Notes} \\
+  \hline 
+  \textbf{YUM} & \texttt{yum downgrade \textit{package}} & The previous version of the package is installed \\
+  \hline
+\end{tabular}
+
+\section{Download software packages, only}
+\begin{tabular}{ p{3.5cm} p{9cm} p{11cm}}
+  \hline
+  \rowcolor{Gray}
+  \textbf{Tool} & \textbf{Command} & \textbf{Notes} \\
+  \hline 
+  \textbf{YUM} & \texttt{yum install --downloadonly \textit{package}} & The package is obtained from the package repository, and stored in the package cache. After that it can be installed using the command \newline \texttt{rpm -i \textit{filename}}~.\\
+  \rowcolor{Gray}
+  & \texttt{yumdownloader \textit{package}} & The package is obtained from the package repository, and stored in the current directory. After that it can be installed using the command \newline \texttt{rpm -i \textit{filename}}~.\\
+  & \texttt{yumdownloader --resolve \textit{package}} & The package, and its dependencies are obtained from the package repository, and are stored in the current directory. After that these packages can be installed using the command \texttt{rpm -i \textit{filename}}~.\\
+  \hline
+\end{tabular}
+
+\section{Remove software packages as well as the configuration files}
+\begin{tabular}{ p{3.5cm} p{9cm} p{11cm}}
+  \hline
+  \rowcolor{Gray}
+  \textbf{Tool} & \textbf{Command} & \textbf{Notes} \\
+  \hline 
+  \textbf{RPM} & \texttt{rpm -e \textit{package}} \newline \texttt{rpm --erase \textit{package}}& \\
+  \rowcolor{Gray}
+  & \texttt{rpm -e --nodeps \textit{package}} \newline \texttt{rpm --erase  --nodeps\textit{package}} & Remove the package without a dependency check\\
+  \textbf{YUM} & \texttt{yum erase \textit{package}} \newline \texttt{yum remove \textit{package}} & Remove the package (and possibly dependencies)\\
+  \rowcolor{Gray}
+  \hline
+\end{tabular}
+
+\newpage
+
+\cheatsheet
+
+\section{List installed software packages}
+\begin{tabular}{ p{3.5cm} p{9cm} p{11cm}}
+  \hline
+  \rowcolor{Gray}
+  \textbf{Tool} & \textbf{Command} & \textbf{Notes} \\
+  \hline 
+  \textbf{RPM} & \texttt{rpm -qa} \newline \texttt{rpm --query --all} & List all installed packages\\
+  \rowcolor{Gray}
+  & \texttt{rpm -qa --last} \newline \texttt{rpm --query --all --last} & List all installed packages, display the most recent ones first\\
+  \textbf{YUM} & \texttt{yum list installed} & List all installed packages\\
+  \rowcolor{Gray}
+  & \texttt{yum list all} & List all installed, and available packages\\
+  & \texttt{yum list \textit{package}} & Show installed version for this package\\
+  \hline
+\end{tabular}
+
+\section{Display information about a single software package}
+\begin{tabular}{ p{3.5cm} p{9cm} p{11cm}}
+  \hline
+  \rowcolor{Gray}
+  \textbf{Tool} & \textbf{Command} & \textbf{Notes} \\
+  \hline 
+  \textbf{RPM} & \texttt{rpm -q \textit{package}} \newline \texttt{rpm --query \textit{package}} & Display installation status for the package \\
+  \rowcolor{Gray}
+  & \texttt{rpm -qp \textit{package file}} \newline \texttt{rpm --query --package \textit{package file}}& Display installation status for the local package file\\
+  & \texttt{rpm -qi \textit{package}} \newline \texttt{rpm --query --info \textit{package}} &  Display detailed package information \\
+  \rowcolor{Gray}
+  & \texttt{rpm -qpi \textit{package file}} \newline \texttt{rpm --query --package --info \textit{package file}} &  Display detailed information for the local package file\\
+  \textbf{YUM} & \texttt{yum info \textit{package}} &  Display detailed package information, and installation status \\
+  \hline
+\end{tabular}
+
+\section{Display package dependencies}
+\begin{tabular}{ p{3.5cm} p{9cm} p{11cm}}
+  \hline
+  \rowcolor{Gray}
+  \textbf{Tool} & \textbf{Command} & \textbf{Notes} \\
+  \hline 
+  \textbf{RPM} & \texttt{rpm -qR \textit{package}} \newline \texttt{rpm --query --requires \textit{package}} & Display required packages for an installed package \\
+  \rowcolor{Gray}
+  & \texttt{rpm -qpR \textit{package file}} \newline \texttt{rpm --query --package --requires \textit{package}} & Display required packages for a package available as a local file\\
+  \textbf{YUM} & \texttt{yum deplist \textit{package}} \newline \texttt{repoquery --requires \textit{package}} \newline \texttt{yumdownloader --resolve \textit{package}} & Display dependencies for a package \\
+  \hline
+\end{tabular}
+
+\newpage
+
+\cheatsheet
+
+\section{List files of a package prior to installation}
+\begin{tabular}{ p{3.5cm} p{9cm} p{11cm}}
+  \hline
+  \rowcolor{Gray}
+  \textbf{Tool} & \textbf{Command} & \textbf{Notes} \\
+  \hline 
+  \textbf{RPM} & \texttt{rpm -ql \textit{package}} \newline \texttt{rpm --query --list \textit{package}} & Show content of local package\\
+  \rowcolor{Gray}
+  & \texttt{rpm -qpl \textit{package file}} \newline \texttt{rpm --query --package --list \textit{package file}} & Show content of local, or remote package\\
+  \textbf{YUM} & \texttt{repoquery -l \textit{package}} \newline \texttt{repoquery --list \textit{package}} & Show content of local, or remote package\\
+  \hline
+\end{tabular}
+
+% -- TBD 
+
+\section{List files of an installed package}
+\begin{tabular}{ p{3.5cm} p{9cm} p{11cm}}
+  \hline
+  \rowcolor{Gray}
+  \textbf{Tool} & \textbf{Command} & \textbf{Notes} \\
+  \hline 
+  \textbf{RPM} & \texttt{rpm -ql \textit{package}} \newline \texttt{rpm --query --list \textit{package}} & Show content of local package\\
+  \rowcolor{Gray}
+  \textbf{YUM} & \texttt{repoquery -l \textit{package}} \newline \texttt{repoquery --list \textit{package}} & Show content of local, or remote package\\
+  \hline
+\end{tabular}
+
+\section{List configuration files of a package}
+\begin{tabular}{ p{3.5cm} p{9cm} p{11cm}}
+  \hline
+  \rowcolor{Gray}
+  \textbf{Tool} & \textbf{Command} & \textbf{Notes} \\
+  \hline 
+  \textbf{RPM} & \texttt{rpm -qc \textit{package}} \newline \texttt{rpm --query --configfiles \textit{package}} & List all the files from the package that are explicitly flagged as confi\-guration files\\
+  \hline
+\end{tabular}
+
+\section{List documentation files of a package}
+\begin{tabular}{ p{3.5cm} p{9cm} p{11cm}}
+  \hline
+  \rowcolor{Gray}
+  \textbf{Tool} & \textbf{Command} & \textbf{Notes} \\
+  \hline 
+  \textbf{RPM} & \texttt{rpm -qd \textit{package}} \newline \texttt{rpm --query --docfiles \textit{package}} & List all the files from the package that are explicitly flagged as documentation files\\
+  \hline
+\end{tabular}
+\newpage
+
+\cheatsheet
+
+\section{Identify the package from which a file originates}
+\begin{tabular}{ p{3.5cm} p{9cm} p{11cm}}
+  \hline
+  \rowcolor{Gray}
+  \textbf{Tool} & \textbf{Command} & \textbf{Notes} \\
+  \hline 
+  \textbf{RPM} & \texttt{rpm -qf \textit{filename}} \newline \texttt{rpm --query --file \textit{filename}} & Search for the file in all installed packages. Filename has to be specified with full path\\
+  \rowcolor{Gray}
+  \textbf{YUM} & \texttt{yum provides \textit{filename}} & Search for the file in all available packages. Filename has to be specified with full path\\
+  \hline
+\end{tabular}
+
+\section{Display package status}
+\begin{tabular}{ p{3.5cm} p{9cm} p{11cm}}
+  \hline
+  \rowcolor{Gray}
+  \textbf{Tool} & \textbf{Command} & \textbf{Notes} \\
+  \hline 
+  \textbf{RPM} & \texttt{rpm -qi \textit{package}} \newline \texttt{rpm --query --info \textit{package}} & Search in all available packages\\
+  \rowcolor{Gray}
+  & \texttt{rpm -qip \textit{package file}} \newline \texttt{rpm --query --info --package \textit{package file}} & Search in the locally available package file\\
+  \textbf{YUM} & \texttt{yum info \textit{package}} & Search in all installed packages\\
+  \hline
+\end{tabular}
+
+\section{Validate package signature}
+\begin{tabular}{ p{3.5cm} p{9cm} p{11cm}}
+  \hline
+  \rowcolor{Gray}
+  \textbf{Tool} & \textbf{Command} & \textbf{Notes} \\
+  \hline 
+  \textbf{RPM} & \texttt{rpm -K \textit{package}} \newline \texttt{rpm --checksig \textit{package}} & Validate the GPG signature of the package \\
+  \hline
+\end{tabular}
+
+\section{Check package for changes}
+\begin{tabular}{ p{3.5cm} p{9cm} p{11cm}}
+  \hline
+  \rowcolor{Gray}
+  \textbf{Tool} & \textbf{Command} & \textbf{Notes} \\
+  \hline 
+  \textbf{RPM} & \texttt{rpm -Vp \textit{package file}} \newline \texttt{rpm --verify --package \textit{package file}} & Check the local package file\\
+  \rowcolor{Gray}
+  & \texttt{rpm -Va \newline \texttt{rpm --verify --all }} & Check all packages \\
+  \textbf{YUM} & \texttt{yum verify \textit{package}} & Validate the installed package; requires YUM plugin \textit{yum-verify} \\
+  \hline
+\end{tabular}
+
+\newpage
+
+\cheatsheet
+
+\section{Display available packages}
+\begin{tabular}{ p{3.5cm} p{9cm} p{11cm}}
+  \hline
+  \rowcolor{Gray}
+  \textbf{Tool} & \textbf{Command} & \textbf{Notes} \\
+  \hline 
+  \textbf{YUM} & \texttt{yum list available} & List all available packages\\
+  \hline
+\end{tabular}
+
+\section{Display renewable packages}
+\begin{tabular}{ p{3.5cm} p{9cm} p{11cm}}
+  \hline
+  \rowcolor{Gray}
+  \textbf{Tool} & \textbf{Command} & \textbf{Notes} \\
+  \hline 
+  \textbf{YUM} & \texttt{yum check-update} & Query repositories for available package updates\\
+  \rowcolor{Gray}
+  & \texttt{yum updateinfo list available} & List available packages with a new version\\
+  & \texttt{yum updateinfo list sec} \newline \texttt{yum updateinfo list --security} & List available security updates, only \\
+  \hline
+\end{tabular}
+
+\section{Recommended books and resources}
+
+\begin{description}
+
+    \item[Edward C. Bailey: Maximum RPM] ~ \\
+        \begin{tabbing}
+            \= Available languages: \= \= English \\
+            \> Project website: \> \> \href{https://ftp.osuosl.org/pub/rpm/max-rpm/}{https://ftp.osuosl.org/pub/rpm/max-rpm/} \\
+            \> Contribute: \> \> not known \\
+        \end{tabbing}
+        
+    \item[RPM Documentation] ~ \\
+        \begin{tabbing}
+            \= Available languages: \= \= English \\
+            \> Project website: \> \> \href{https://rpm.org/documentation.html}{https://rpm.org/documentation.html} \\
+            \> Contribute: \> \> not known \\
+        \end{tabbing}
+    \end{description}
+\end{document}
