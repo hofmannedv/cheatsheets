@@ -1,5 +1,5 @@
 % Essential Linux Commands
-% Version 0.14
+% Version 0.15
 % (C) 2023-2024 Frank Hofmann <info@efho.de>
 % Available from https://github.com/hofmannedv/cheatsheets
 
@@ -10,7 +10,7 @@
 \usepackage{cheatsheeta4}
 
 \renewcommand{\cheatsheetTitle}{Essentielle Kommandos \newline für Linux}
-\renewcommand{\cheatsheetVersion}{Version 0.14}
+\renewcommand{\cheatsheetVersion}{Version 0.15}
 \renewcommand{\cheatsheetCopyright}{
   \copyright~ 2023-2024 Frank Hofmann \faIcon{envelope} \href{mailto:info@efho.de}{info@efho.de} \\ Veröffentlicht unter 
  \href{https://creativecommons.org/licenses/by-sa/4.0/}{Creative Commons CC-BY-SA 4.0 \\ International License}. Erstellt mit \LaTeX. \\ \faIcon{github} \href{https://github.com/hofmannedv/cheatsheets}{https://github.com/hofmannedv/cheatsheets}~.
@@ -24,7 +24,7 @@
     pdftitle={Essentielle Kommandos für Linux},
     pdfkeywords={Linux, Kommandozeile, Umgang mit der Shell, Paketverwaltung},
     pdfsubject={Effektiver Umgang mit der Linux-Kommandozeile},
-    pdfcopyright={Copyright (C) 2023-2024 by Frank Hofmann. Published under Creative Commons Attribution - Share Alike 4.0 International License (CC-BY-SA-4.0)}
+    pdfcopyright={Copyright (C) 2023-2024 Frank Hofmann. Veröffentlicht unter Creative Commons Attribution - Share Alike 4.0 International License (CC-BY-SA-4.0)}
     pdfcopyrighturl={https://creativecommons.org/licenses/by-sa/4.0/legalcode.en}
 }
 
@@ -103,7 +103,7 @@
   \texttt{rm} & Entferne eine oder mehrere Dateien oder Verzeichnisse \\
   \texttt{rmdir} & Entferne ein leeres Verzeichnis \\
   \rowcolor{Gray}
-  \texttt{rstat} & Zeige die Details zu einer Datei, einem Verzeichnis oder Link an \\
+  \texttt{stat} & Zeige die Details zu einer Datei, einem Verzeichnis oder Link an \\
   \texttt{touch} & Erzeuge eine leere Datei oder aktualisiere den Zeitstempel einer Datei \\
   \rowcolor{Gray}
   \texttt{umask} & Lege die Maske fest, die bei der Erzeugung von Dateien als Vorlage genutzt wird \\
@@ -144,28 +144,29 @@
   \texttt{hostname} & Zeige den Hostname des Systems an \\
   \rowcolor{Gray}
   \texttt{ifconfig}, \texttt{iwconfig} & Konfiguriere die Netzwerkschnittstellen und zeige deren Konfiguration an (veraltet)\\
-  \texttt{ifup} & Aktiviere eine Netzwerkschnittstelle\\
-  \rowcolor{Gray}
-  \texttt{ip} & Konfiguriere die Netzwerkschnittstellen und zeige deren Konfiguration an \\
   \texttt{ifdown} & Deaktiviere eine Netzwerkschnittstelle \\
+  \rowcolor{Gray}
+  \texttt{ifup} & Aktiviere eine Netzwerkschnittstelle\\
+  \texttt{ip} & Konfiguriere die Netzwerkschnittstellen und zeige deren Konfiguration an \\
   \rowcolor{Gray}
   \texttt{iwlist} & Liste die verfügbaren WLAN-Netze auf\\
   \texttt{nc}, \texttt{netcat} & Das Schweizer Taschenmesser zu TCP/IP \\
   \rowcolor{Gray}
   \texttt{netstat}, \texttt{ss} & Zeige Netzwerkstatistiken an \\
+  \texttt{nmap} & Scanne nach genutzten Ports \\
+  \rowcolor{Gray}
   \texttt{nslookup} & Suche in Namensdiensten (\textit{name server}) \\
-  \rowcolor{Gray}
   \texttt{ping}, \texttt{ping6} & Sende ein ICMP-Paket an einen Zielrechner oder Schnittstelle \\
+  \rowcolor{Gray}
   \texttt{route} & Zeige die Routingtabelle an \\
-  \rowcolor{Gray}
   \texttt{tcpdump} & Gib den Netzwerkverkehr aus \\
-  \texttt{traceroute}, \texttt{traceroute6} & Gib die Route eines Netzwerkpakets zum Zielrechner aus \\
   \rowcolor{Gray}
+  \texttt{traceroute}, \texttt{traceroute6} & Gib die Route eines Netzwerkpakets zum Zielrechner aus \\
   \texttt{wget} & Nicht-interaktiver Datentransfer von einer Quelle\\
   \hline
 \end{tabular}
 
-\hfill
+% \hfill
 %~ \\
 
 \section{Sichere Datenübertragung}
@@ -174,9 +175,9 @@
   \texttt{rsync}, \texttt{scp} & Synchronisiere Daten und Verzeichnisse lokal und zu einem anderen Rechner über einen verschlüsselten Kanal \\
   \rowcolor{Gray}
   \texttt{ssh} & Verbinde zu einem anderen Rechner über einen verschlüsselten Kanal\\
-  \texttt{ssh-copy-id} & Übertrage den öffentlichen Teil eines SSH-Schlüssels zu einem entfernten Rechner zur passwortlosen Authentifi\-zierung\\
+  \texttt{ssh-copy-id} & Übertrage den öffentlichen Teil eines Schlüsselpaars zu einem entfernten Rechner zur passwortlosen Authentifizierung\\
   \rowcolor{Gray}
-  \texttt{ssh-keygen} & Erzeuge ein SSH-Schlüsselpaar zur passwortlosen Authentifizierung\\
+  \texttt{ssh-keygen} & Erzeuge ein Schlüsselpaar zur passwortlosen Authentifizierung\\
   \hline
 \end{tabular}
 
@@ -209,7 +210,7 @@
   \texttt{groups} & Liste die Gruppen auf, zu denen ein Benutzer gehört \\
   \texttt{id} & Zeige die Informationen zu einem Benutzer an \\
   \rowcolor{Gray}
-  \texttt{last} & Zeige den Zeitpunkt der letzten Anmeldung eines Benutzers \\
+  \texttt{last}, \texttt{lastb} & Zeige den Zeitpunkt der letzten (nicht) erfolgreichen Anmeldung eines Benutzers \\
   \texttt{passwd}, \texttt{usermod} & Ändere das Passwort für einen Benutzer \\
   \rowcolor{Gray}
   \texttt{pwgen} & Generiere ein zufälliges Passwort \\
@@ -229,6 +230,7 @@
   \hline
 \end{tabular}
 
+~ \\
 ~ \\
 \noindent Anmerkungen: \\ ~\fbox{1} High-Level-Werkzeug ~\fbox{2}~Low-Level-Werkzeug
 
