@@ -1,0 +1,240 @@
+% Nano cheatsheets
+% Version 0.7
+% (C) 2023,2024 Frank Hofmann <info@efho.de>
+% Available from https://github.com/hofmannedv/cheatsheets
+
+% Published under Creative Commons CC-BY-SA 4.0 International License
+% https://creativecommons.org/licenses/by-sa/4.0/
+
+\documentclass[10pt]{article}
+\usepackage{cheatsheet}
+
+\renewcommand{\cheatsheetTitle}{Nano Cheatsheet}
+\renewcommand{\cheatsheetVersion}{Version 0.7}
+\renewcommand{\cheatsheetCopyright}{
+  \copyright~ 2023,2024 by Frank Hofmann \\ \faIcon{envelope} \href{mailto:info@efho.de}{info@efho.de}. Published under 
+ \href{https://creativecommons.org/licenses/by-sa/4.0/}{Creative Commons \\ CC-BY-SA 4.0 International License}. Created with \LaTeX. \\ \faIcon{github} \href{https://github.com/hofmannedv/cheatsheets}{https://github.com/hofmannedv/cheatsheets}~.
+}
+
+% add document metadata as XMP data
+% add keywords based on hyperref package
+\usepackage{hyperxmp}
+\hypersetup{
+    pdfauthor={Frank Hofmann}, 
+    pdftitle={Nano Cheatsheet},
+    pdfkeywords={Nano, text editor, keyboard shortcuts, editor usage},
+    pdfsubject={Keyboard shortcuts for the effective use of Nano text editor},
+    pdfcopyright={Copyright (C) 2023,2024 by Frank Hofmann. Published under Creative Commons Attribution - Share Alike 4.0 International License (CC-BY-SA-4.0)}
+    pdfcopyrighturl={https://creativecommons.org/licenses/by-sa/4.0/legalcode.en}
+}
+
+\begin{document}
+
+\cheatsheet
+
+\begin{multicols}{2}
+
+\section{File and buffer operations}
+\begin{tabular}{ p{4.5cm} p{6.5cm} }
+  \hline
+  \cellSpaceNormal\keyCtrl+\key{x} or \key{F2} & Close the current file buffer, quit Nano \\
+  \rowcolor{Gray}
+  \cellSpaceNormal\keyCtrl+\key{s} or \key{F3} & Save current buffer to disk \\
+  \cellSpaceNormal\keyCtrl+\key{o} & Save current buffer to disk as a new file\\
+  \rowcolor{Gray}
+  \cellSpaceNormal\keyCtrl+\key{r} or \key{F5} & Open a file into the buffer \\
+  \cellSpaceNormal\keyAlt+\key{<} or \keyAlt+\key{,} & Switch to the previous buffer \\
+  \rowcolor{Gray}
+  \cellSpaceNormal\keyAlt+\key{>} or \keyAlt+\key{.} & Switch to the next buffer \\  
+  \hline
+\end{tabular}
+
+\section{Display options}
+\begin{tabular}{ p{4.5cm} p{6.5cm} }
+  \hline
+  \cellSpaceNormal\keyCtrl+\key{c} or \key{F11} & Display the position of the cursor \\
+  \rowcolor{Gray}
+  \cellSpaceNormal\keyCtrl+\key{\_} or \keyAlt+\key{g} & Go to line, and column number \\
+  \cellSpaceNormal \keyCtrl+\key{g} or \key{F1} & Display help text \\
+  \rowcolor{Gray}
+  \cellSpaceNormal\keyAlt+\key{n} & Turn line numbers on, or off \\
+  \cellSpaceNormal\keyAlt+\key{p} & Show, or hide visible whitespace \\
+  \hline
+\end{tabular}
+
+\columnbreak
+
+\section{Undo and redo}
+
+\begin{tabular}{ p{4.5cm} p{6.5cm} }
+  \hline
+  \cellSpaceNormal \keyAlt+\key{u} & Undo the last operation \\
+  \rowcolor{Gray}
+  \cellSpaceNormal \keyAlt+\key{e} & Redo the last operation \\
+  \hline
+\end{tabular}
+
+\section{Search and replace}
+\begin{tabular}{ p{4.5cm} p{6.5cm} }
+  \hline
+  \cellSpaceNormal\keyCtrl+\key{q} & Start backwards search for a string, or regular expression \cellSpaceLittle \\
+  \rowcolor{Gray}
+  \cellSpaceNormal\keyCtrl+\key{w} or \key{F6} & Start forward search for a string, or regular expression \cellSpaceLittle \\
+  \cellSpaceNormal\keyCtrl+\key{\textbackslash} or  \keyAlt+\key{r} & Replace a string, or a regular expression \\
+  \rowcolor{Gray}
+  \cellSpaceNormal\keyAlt+\key{q} & Repeat last search, and find next occurence backward \cellSpaceLittle \\
+  \cellSpaceNormal\keyAlt+\key{w} or \key{F16} & Repeat the last search, and find next occurence forward \cellSpaceLittle \\
+  \rowcolor{Gray}
+  \cellSpaceNormal\keyAlt+\key{$]$} & Go to the matching bracket \\
+ \hline
+\end{tabular}
+
+\end{multicols}
+
+\newpage
+
+\cheatsheet
+
+\begin{multicols}{2}
+
+\section{Deleting characters and words}
+\begin{tabular}{ p{4.5cm} p{6.5cm} }
+  \hline
+  \cellSpaceNormal\keyCtrl+\key{d} or \key{Del} & Delete the character under the cursor \\
+  \rowcolor{Gray}
+  \cellSpaceNormal\keyCtrl+\key{h} or \newline \cellSpaceLittle\keyBackspace & Delete the character before the cursor \\
+  \cellSpaceNormal\keyAlt+\keyBackspace & Delete word to the left \cellSpaceLittle \\
+  \rowcolor{Gray}
+  \cellSpaceNormal\keyCtrl+\keyDel & Delete word to the right \\
+  \cellSpaceNormal\keyAlt+\keyDel & Delete current line \\
+  \hline
+\end{tabular}
+
+\section{Copy and paste}
+\begin{tabular}{ p{4.5cm} p{6.5cm} }
+  \hline
+  \cellSpaceNormal\keyCtrl+\key{w} & Cut the word before the cursor to the clipboard \cellSpaceLittle \\
+  \rowcolor{Gray}
+  \cellSpaceNormal\keyCtrl+\key{k} or \key{F9} & Cut the current line, and store it in the clipboard \cellSpaceLittle \\
+  \cellSpaceNormal\keyCtrl+\key{u} or \key{F10} & Paste the content of the clipboard into the current line \cellSpaceLittle \\
+  \rowcolor{Gray}
+  \cellSpaceNormal\keyAlt+\key{6} & Copy the current line, and store it in the clipboard \cellSpaceLittle\\
+  \cellSpaceNormal\keyAlt+\key{t} & Cut until the end of the file buffer, and store it in the clipboard \cellSpaceLittle\\
+  \hline
+\end{tabular}
+
+\columnbreak
+
+\section{Spell checker}
+
+\begin{tabular}{ p{4.5cm} p{6.5cm} }
+  \hline
+  \cellSpaceNormal \key{Ctrl}+\key{t} or \key{F12} & Invoke the spell checker, if available \\
+  \hline
+  ~ & ~ \\
+\end{tabular}
+\section{Moving the cursor}
+\begin{tabular}{ p{4.5cm} p{6.5cm} }
+  \hline
+  \cellSpaceNormal\keyCtrl+\key{a} or \keyHome & Go to the beginning of the current line \\
+  \rowcolor{Gray}
+  \cellSpaceNormal\keyCtrl+\key{e} or \key{End} & Go to the end of the current line \\
+  \cellSpaceNormal\keyAlt+\key{Space} or \newline \cellSpaceLittle\keyCtrl+\key{$\leftarrow$} & One word backward to the left \\
+  \rowcolor{Gray}
+  \cellSpaceNormal\keyCtrl+\key{Space} or \newline \cellSpaceLittle\keyCtrl+\key{$\rightarrow$} & One word forward to the right  \\
+  \cellSpaceNormal\keyCtrl+\key{b} or \key{$\leftarrow$} & One character backward to the left\\
+  \rowcolor{Gray}
+  \cellSpaceNormal\keyCtrl+\key{f} or \key{$\rightarrow$} & One character forward to the right\\
+  \cellSpaceNormal\keyCtrl+\key{p} or \key{$\uparrow$} & Go to the previous line \\
+  \rowcolor{Gray}
+  \cellSpaceNormal\keyCtrl+\key{n} or \key{$\downarrow$} & Go to the next line \\
+  \cellSpaceNormal\keyAlt+\key{\textbackslash} or \keyAlt+\key{|} & Go to the first line of the file \\
+  \rowcolor{Gray}
+  \cellSpaceNormal\keyAlt+\key{/} or \keyAlt+\key{?} & Go to the last line of the file \\
+  \hline
+\end{tabular}
+
+\end{multicols}
+
+\newpage
+
+\cheatsheet
+
+\begin{multicols}{2}
+
+\section{Text adjustments}
+
+\begin{tabular}{ p{4.5cm} p{6.5cm} }
+  \hline
+  \cellSpaceNormal \keyCtrl+\key{j} or \key{F4} & Justify the current paragraph \\
+  \rowcolor{Gray}
+  \cellSpaceNormal\keyAlt+\key{\}} & Indent the current line \\
+  \cellSpaceNormal\keyAlt+\key{\{} & Unindent the current line\\  
+  \rowcolor{Gray}
+  \cellSpaceNormal\keyAlt+\key{j} & Justify the entire file \\
+  \cellSpaceNormal\keyAlt+\key{3} & Comment, or uncomment the current line, or marked lines \cellSpaceLittle\\
+  \hline
+\end{tabular}
+
+\vfill
+
+\section{Moving the cursor per paragraph or page}
+\begin{tabular}{ p{4.5cm} p{6.5cm} }
+  \hline
+  \cellSpaceNormal\keyAlt+\key{9} or \keyAlt+\key{(} & Go to the beginning of the paragraph \\
+  \rowcolor{Gray}
+  \cellSpaceNormal\keyAlt+\key{0} or \keyAlt+\key{)} & Go to the end of the paragraph \\
+  \cellSpaceNormal\keyCtrl+\key{y}, \key{F7} or \newline \cellSpaceLittle \keyPageUp & One page up \\
+  \rowcolor{Gray}
+  \cellSpaceNormal\keyCtrl+\key{v}, \key{F8} or\newline \cellSpaceLittle \keyPageDown & One page down \\ 
+  \hline
+\end{tabular}
+
+\columnbreak
+
+\section{Moving the cursor per block}
+\begin{tabular}{ p{4.5cm} p{6.5cm} }
+  \hline
+  \cellSpaceNormal\keyCtrl+\key{$\uparrow$} or \newline \cellSpaceLittle \keyAlt+\key{7} & Go to the previous block \\
+  \rowcolor{Gray}
+  \cellSpaceNormal\keyCtrl+\key{$\downarrow$} or \newline \cellSpaceLittle \keyAlt+\key{8}& Go to the next block \\
+  \hline
+\end{tabular}
+
+\vfill
+
+\section*{Notes}
+\begin{tabular}{ p{4.5cm} p{6.5cm} }
+  \hline
+  ~ & ~ \\
+  \rowcolor{Gray}
+  ~ & ~ \\
+  ~ & ~ \\
+  \rowcolor{Gray}
+  ~ & ~ \\
+  ~ & ~ \\
+  \rowcolor{Gray}
+  ~ & ~ \\
+  ~ & ~ \\
+  \rowcolor{Gray}
+  ~ & ~ \\
+  ~ & ~ \\
+  \rowcolor{Gray}
+  ~ & ~ \\
+  ~ & ~ \\
+  \rowcolor{Gray}
+  ~ & ~ \\
+  ~ & ~ \\
+  \rowcolor{Gray}
+  ~ & ~ \\
+  ~ & ~ \\
+  \rowcolor{Gray}
+  ~ & ~ \\
+  ~ & ~ \\
+  \rowcolor{Gray}
+  ~ & ~ \\
+  \hline
+\end{tabular}
+
+\end{multicols}
+\end{document}
