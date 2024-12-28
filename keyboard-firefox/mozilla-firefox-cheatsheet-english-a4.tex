@@ -1,0 +1,277 @@
+% Cheatsheet for Mozilla Firefox
+% Version 0.1
+% (C) 2024 Frank Hofmann <info@efho.de>
+% Available from https://github.com/hofmannedv/cheatsheets
+
+% Published under Creative Commons CC-BY-SA 4.0 International License
+% https://creativecommons.org/licenses/by-sa/4.0/
+
+\documentclass[10pt]{article}
+\usepackage{cheatsheet}
+
+\renewcommand{\cheatsheetTitle}{
+  \begin{minipage}{2cm}
+    \includegraphics[width=1.5cm]{firefox-logo.png}
+  \end{minipage} ~ \begin{minipage}{3cm}
+    Cheatsheet for Mozilla Firefox
+  \end{minipage}
+}
+\renewcommand{\cheatsheetVersion}{Version 0.1}
+\renewcommand{\cheatsheetCopyright}{
+  \copyright~ 2024 Frank Hofmann \faIcon{envelope} \href{mailto:info@efho.de}{info@efho.de} \\
+  Published under
+  \href{https://creativecommons.org/licenses/by-sa/4.0/}{Creative Commons CC-BY-SA 4.0 \\ International License}. Created with \LaTeX. \\ 
+  \faIcon{github} \href{https://github.com/hofmannedv/cheatsheets}{https://github.com/hofmannedv/cheatsheets}~.
+}
+
+% add document metadata as XMP data
+% add keywords based on hyperref package
+\usepackage{hyperxmp}
+\hypersetup{
+    pdfauthor={Frank Hofmann}, 
+    pdftitle={Cheatsheet for Mozilla Firefox},
+    pdfkeywords={Firefox, web browser, keybindings, navigation},
+    pdfsubject={Keybindings for Mozilla Firefox web browser},
+    pdfcopyright={Copyright (C) 2024 Frank Hofmann. Published under Creative Commons Attribution - Share Alike 4.0 International License (CC-BY-SA-4.0)}
+    pdfcopyrighturl={https://creativecommons.org/licenses/by-sa/4.0/legalcode.en}
+}
+
+\begin{document}
+
+\cheatsheet
+
+\begin{multicols}{2}
+
+\section{General navigation}
+\begin{tabular}{ p{5cm} p{6cm} }
+  \hline
+  \cellSpaceNormal\keyAlt+\key{$\leftarrow$} or \keyCtrl+\key{[} & Return to previously visited web page \cellSpaceLittle \\
+  \rowcolor{Gray}
+  \cellSpaceNormal\keyAlt+\key{$\rightarrow$} or \keyCtrl+\key{]} &  Go forward to the web page visited afterwards \cellSpaceLittle \\
+  \cellSpaceNormal\keyAlt+\key{Home} & Return to initial web page \cellSpaceLittle \\
+  \rowcolor{Gray}
+  \cellSpaceNormal\key{Shift}+\key{Tab} & Jump to the previous link or to the previous input field in the current tab \cellSpaceLittle \\
+  \cellSpaceNormal\key{Tab} & Jump to the next link or to the next input field in the current tab  \cellSpaceLittle \\
+  \rowcolor{Gray}
+  \cellSpaceNormal\key{Page $\uparrow$} or \cellSpaceNormal \key{Shift}+\key{Space} & Scroll up one screen page \cellSpaceLittle \\
+  \cellSpaceNormal\key{Page $\downarrow$} or \cellSpaceNormal \key{Space} & Scroll down one screen page \cellSpaceLittle \\ 
+  \rowcolor{Gray}
+  \cellSpaceNormal\key{Home} or \keyCtrl+\key{$\uparrow$} & Scroll to the top of the web page \cellSpaceLittle \\
+  \cellSpaceNormal\key{End} or \keyCtrl+\key{$\downarrow$} & Scroll to the bottom of the web page\cellSpaceLittle \\
+  \rowcolor{Gray}
+  \cellSpaceNormal\key{Shift}+\key{F6} & Go to the previous frame, or pop-up \cellSpaceLittle \\
+  \cellSpaceNormal\key{F6} & Go to the next frame, or pop-up \cellSpaceLittle \\
+  \rowcolor{Gray}
+  \cellSpaceNormal\key{ESC} & Cancel the current action \cellSpaceLittle \\
+  \hline
+\end{tabular}
+
+~ \vfill
+
+\section{Handling the web browser history}
+\begin{tabular}{ p{5cm} p{6cm} }
+  \hline
+  \cellSpaceNormal\keyCtrl+\key{h} & Open, or close the panel with the web browser history \cellSpaceLittle\\
+  \rowcolor{Gray}
+  \cellSpaceNormal\keyCtrl+\key{Shift}+\key{Del} & Remove the entries in the web browser history \cellSpaceLittle\\
+  \hline
+\end{tabular}
+
+\columnbreak
+
+\section{Currently displayed web page}
+\begin{tabular}{ p{4.5cm} p{6.5cm} }
+  \hline
+  \cellSpaceNormal\keyCtrl+\key{o} & Open a (local) web page to view \cellSpaceLittle \\
+  \rowcolor{Gray}
+  \cellSpaceNormal\keyCtrl+\key{r} or \key{F5} & Reload the current web page \cellSpaceLittle \\
+  \cellSpaceNormal\keyCtrl+\key{Shift}+\key{r} or \newline \cellSpaceNormal \keyCtrl+\key{F5} & Reload the current web page without taking the browser cache into account \cellSpaceLittle \\
+  \rowcolor{Gray}
+  \cellSpaceNormal\keyCtrl+\key{p} & Print the current web page \cellSpaceLittle \\
+  \cellSpaceNormal\keyCtrl+\key{s} & Save the current web page \cellSpaceLittle \\
+  \rowcolor{Gray}
+  \cellSpaceNormal\keyCtrl+\key{+} & Enlarge the view (zoom in) \cellSpaceLittle \\
+  \cellSpaceNormal\keyCtrl+\key{-} & Minimise the view (zoom out) \cellSpaceLittle \\
+  \rowcolor{Gray}
+  \cellSpaceNormal\keyCtrl+\key{0} & Reset the view to default  \cellSpaceLittle \\
+  \hline
+\end{tabular}
+
+~ \vfill
+
+\section{Presentation and tools}
+\begin{tabular}{ p{5cm} p{6cm} }
+  \hline
+  \cellSpaceNormal\key{Alt} or \key{F10} & (De-)Activate the menu bar \cellSpaceLittle\\
+  \rowcolor{Gray}
+  \cellSpaceNormal\key{F11} & (De-)Activate the full-screen mode \cellSpaceLittle\\
+  \cellSpaceNormal\keyCtrl+\key{Shift}+\key{a} & (De-)Activate the download window \cellSpaceLittle\\
+  \rowcolor{Gray}
+  \cellSpaceNormal\keyCtrl+\key{Shift}+\key{i} or\newline \cellSpaceNormal\key{F12} & (De-)Activate the window for the development tools \cellSpaceLittle\\
+  \cellSpaceNormal\keyCtrl+\key{Shift}+\key{j} & (De-)Activate the  web browser console \cellSpaceLittle\\
+  \rowcolor{Gray}
+  \cellSpaceNormal\key{Shift}+\key{F5} & (De-)Activate the profiler window \cellSpaceLittle\\  \hline
+\end{tabular}
+
+% ~ \\
+~ \vfill
+
+\end{multicols}
+
+\newpage
+
+\cheatsheet
+
+\begin{multicols}{2}
+
+\section{Handling tabs}
+\begin{tabular}{ p{5cm} p{6cm} }
+  \hline
+  \cellSpaceNormal\keyCtrl+\key{t} & Open a new tab \cellSpaceLittle\\
+  \rowcolor{Gray}
+  \cellSpaceNormal\keyCtrl+\key{Tab} & Go through the tabs in the order of use \\
+  \cellSpaceNormal\keyCtrl+\key{Tab} or \newline \cellSpaceNormal\keyCtrl+\key{Page $\downarrow$} & Go one tab to the right \cellSpaceLittle\\
+  \rowcolor{Gray}
+  \cellSpaceNormal\keyCtrl+\key{Shift}+\key{Tab} or \newline \cellSpaceNormal \keyCtrl+\key{Page $\uparrow$} & Go one tab to the left \cellSpaceLittle\\
+  \cellSpaceNormal\keyAlt+\key{1} to \keyAlt+\key{8} & Go to tab 1 to 8 \cellSpaceLittle\\
+  \rowcolor{Gray}
+  \cellSpaceNormal\keyAlt+\key{9} & Go to the last tab \cellSpaceLittle\\
+  \cellSpaceNormal\keyCtrl+\key{Shift}+\key{Page $\downarrow$} & Move the current tab to the right \cellSpaceLittle\\
+  \rowcolor{Gray}
+  \cellSpaceNormal\keyCtrl+\key{Shift}+\key{Page $\uparrow$} & Move the current tab to the left \cellSpaceLittle\\
+  \cellSpaceNormal\keyCtrl+\key{Shift}+\key{End} & Move the tab to the very end \cellSpaceLittle\\
+  \rowcolor{Gray}
+  \cellSpaceNormal\keyCtrl+\key{Shift}+\key{Home} & Move the tab to the very beginning \cellSpaceLittle\\
+  \cellSpaceNormal\keyCtrl+\key{w} or \newline \cellSpaceNormal\keyCtrl+\key{F4} & Close the tab unless it is pinned \cellSpaceLittle\\
+  \rowcolor{Gray}
+  \cellSpaceNormal\keyCtrl+\key{Shift}+\key{t} & Reopen the previously closed tab \cellSpaceLittle\\
+  \hline
+  ~ & ~ \\
+\end{tabular}
+
+~ \\
+~ \vfill
+
+\columnbreak
+
+\section{Handling web browser windows}
+\begin{tabular}{ p{5cm} p{6cm} }
+  \hline
+  \cellSpaceNormal\keyCtrl+\key{n} & Open a new web browser window \cellSpaceLittle\\
+  \rowcolor{Gray}
+  \cellSpaceNormal\keyCtrl+\key{Shift}+\key{p} & Open a new new, private web browser window \cellSpaceLittle\\
+  \cellSpaceNormal\keyCtrl+\key{Shift}+\key{w} or \newline \cellSpaceNormal\keyAlt+\key{F4} & Close the current web browser window \cellSpaceLittle\\
+  \rowcolor{Gray}
+  \cellSpaceNormal\keyCtrl+\key{Shift}+\key{n} & Reopen the currently closed web browser window \cellSpaceLittle\\
+  \cellSpaceNormal\keyCtrl+\key{q} & Quit Firefox, and close all web browser windows \cellSpaceLittle\\
+  \hline
+\end{tabular}
+
+% ~ \vfill
+
+\section{Handling bookmarks}
+\begin{tabular}{ p{5cm} p{6cm} }
+  \hline
+  \cellSpaceNormal\keyCtrl+\key{b} & Open, or close bookmark panel \cellSpaceLittle\\
+  \rowcolor{Gray}
+  \cellSpaceNormal\keyCtrl+\key{d} & Add the current web site to the list of bookmarks \cellSpaceLittle\\
+  \cellSpaceNormal\keyCtrl+\key{Shift}+\key{b} & Open, or close the toolbox panel for the bookmarks \cellSpaceLittle\\
+  \hline
+\end{tabular}
+
+~ \\
+~ \\
+~ \\
+~ \\
+~ \vfill
+
+\end{multicols}
+
+\newpage
+
+\cheatsheet
+
+\begin{multicols}{2}
+
+\section{Search engines that are in use}
+\begin{tabular}{ p{5cm} p{6cm} }
+  \hline
+  \cellSpaceNormal\keyAlt+\key{$\uparrow$} or \keyAlt+\key{$\downarrow$} & Switch back and forth between the stored search engines after an entry in the address line \cellSpaceLittle\\
+  \rowcolor{Gray}
+  \cellSpaceNormal\keyAlt+\key{$\uparrow$}, \keyAlt+\key{$\downarrow$}, or \newline \cellSpaceNormal \key{F4} & Show the selection menu of the stored search engines when the search field is selected \cellSpaceLittle\\
+  \cellSpaceNormal\keyCtrl+\key{$\uparrow$} or \keyCtrl+\key{$\downarrow$} & Change the saved search engine when searching via the search field \cellSpaceLittle\\
+  \rowcolor{Gray}
+  \cellSpaceNormal\key{?} \key{Space} & Use the default search engine when searching via the address bar \cellSpaceLittle \\
+  \cellSpaceNormal\keyCtrl+\key{k} or \keyCtrl+\key{j} & If the search field is not displayed, use the address line to search with the search engine provided \cellSpaceLittle\\
+  \rowcolor{Gray}
+  \cellSpaceNormal\keyCtrl+\key{k} or \keyCtrl+\key{j} & Use the search field to search with the search engine stored if the search field is displayed \cellSpaceLittle\\
+  \hline
+\end{tabular}
+
+% ~\\
+% \vfill
+
+\columnbreak
+
+\section{Search in the currently displayed web page}
+\begin{tabular}{ p{4.5cm} p{6.5cm} }
+  \hline
+  \cellSpaceNormal\keyCtrl+\key{f} & Search with additional options \cellSpaceLittle \\
+  \rowcolor{Gray}
+  \cellSpaceNormal\key{/} & Search without additional options \cellSpaceLittle \\
+  \cellSpaceNormal\key{'} & Search in the link texts, only \cellSpaceLittle \\
+  \rowcolor{Gray}
+  \cellSpaceNormal\keyCtrl+\key{g} or \key{F3} & Continue current search (forward search) \\
+  \cellSpaceNormal\keyCtrl+\key{Shift}+\key{g} or \newline \cellSpaceNormal \key{Shift}+\key{F3} & Continue current search (backward search) \cellSpaceLittle \\
+  \hline
+\end{tabular}%~\\
+
+%~\\
+%\vfill
+
+
+%\section*{Notizen}
+
+%\begin{tabular}{ p{4.5cm} p{6.5cm} }
+%  \hline
+%  ~ & ~ \\
+%  \rowcolor{Gray}
+%  ~ & ~ \\
+%  ~ & ~ \\
+%  \rowcolor{Gray}
+%  ~ & ~ \\
+%  ~ & ~ \\
+%  \rowcolor{Gray}
+%  ~ & ~ \\
+%  ~ & ~ \\
+%  \rowcolor{Gray}
+%  ~ & ~ \\
+%  ~ & ~ \\
+%  \rowcolor{Gray}
+%  ~ & ~ \\
+%  ~ & ~ \\
+%  \rowcolor{Gray}
+%  ~ & ~ \\
+%  ~ & ~ \\
+%  \rowcolor{Gray}
+%  ~ & ~ \\
+%  ~ & ~ \\
+%  \rowcolor{Gray}
+%  ~ & ~ \\
+%  ~ & ~ \\
+%  \rowcolor{Gray}
+%  ~ & ~ \\
+%  ~ & ~ \\
+%  \rowcolor{Gray}
+%  ~ & ~ \\
+%  ~ & ~ \\
+%  \rowcolor{Gray}
+%  ~ & ~ \\
+%  \hline
+%\end{tabular}
+
+%~\\
+% \vfill
+
+\end{multicols}
+\end{document}
