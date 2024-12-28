@@ -1,5 +1,5 @@
 % Essential Linux Commands
-% Version 0.8
+% Version 0.9
 % (C) 2023,2024 Frank Hofmann <info@efho.de>
 % Available from https://github.com/hofmannedv/cheatsheets
 
@@ -10,7 +10,7 @@
 \usepackage{cheatsheeta4}
 
 \renewcommand{\cheatsheetTitle}{Commandes essentielles \\ pour Linux}
-\renewcommand{\cheatsheetVersion}{Version 0.8}
+\renewcommand{\cheatsheetVersion}{Version 0.9}
 \renewcommand{\cheatsheetCopyright}{
   \copyright~ 2023,2024 Frank Hofmann \faIcon{envelope} \href{mailto:info@efho.de}{info@efho.de}. Relecture et correction par Jean-Marc Trobrillant. Publié sous licence 
  \href{https://creativecommons.org/licenses/by-sa/4.0/}{Creative Commons CC-BY-SA 4.0 International License}. Créé avec \LaTeX{}. \\ \faIcon{github} \href{https://github.com/hofmannedv/cheatsheets}{https://github.com/hofmannedv/cheatsheets}~.
@@ -144,30 +144,31 @@
   \texttt{hostname} & Afficher le nom d'hôte du système \\
   \rowcolor{Gray}
   \texttt{ifconfig}, \texttt{iwconfig} & Configurer les interfaces réseau et afficher leur confi\-guration (obsolète)\\
-  \texttt{ifup} & Activer une interface de réseau\\
-  \rowcolor{Gray}
-  \texttt{ip} & Configurer les interfaces réseau et afficher leur confi\-guration\\
   \texttt{ifdown} & Désactiver une interface réseau \\
+  \rowcolor{Gray}
+  \texttt{ifup} & Activer une interface de réseau\\
+  \texttt{ip} & Configurer les interfaces réseau et afficher leur confi\-guration\\
   \rowcolor{Gray}
   \texttt{iwlist} & Lister les réseaux WLAN disponibles\\
   \texttt{nc}, \texttt{netcat} & Le couteau suisse du TCP/IP \\
   \rowcolor{Gray}
   \texttt{netstat}, \texttt{ss} & Afficher les statistiques du réseau \\
+  \texttt{nmap} & Rechercher les ports ouverts \\
+  \rowcolor{Gray}
   \texttt{nslookup} & Rechercher dans les services de noms (\textit{name server}) \\
-  \rowcolor{Gray}
   \texttt{ping}, \texttt{ping6} & Envoyer un paquet ICMP à un ordinateur cible ou à une interface\\
+  \rowcolor{Gray}
   \texttt{route} & Afficher la table de routage \\
-  \rowcolor{Gray}
   \texttt{tcpdump} & Donner le trafic réseau \\
-  \texttt{traceroute}, \texttt{traceroute6} & Donner l'itinéraire d'un paquet réseau vers \newline l'ordinateur de destination \\
   \rowcolor{Gray}
+  \texttt{traceroute}, \texttt{traceroute6} & Donner l'itinéraire d'un paquet réseau vers \newline l'ordinateur de destination \\
   \texttt{wget} & Transfert de données non interactif \\
   \hline
 \end{tabular}
 
 \hfill
 ~ \\
-~ \\
+%~ \\
 
 \section{Transmission sécurisée des données}
 \begin{tabular}{ p{2.5cm} p{8.5cm} }
@@ -208,7 +209,7 @@
   \texttt{groups} & Afficher les groupes dont un utilisateur fait partie \\
   \rowcolor{Gray}
   \texttt{id} & Afficher les informations d'un utilisateur \\
-  \texttt{last} & Afficher l'heure de la dernière connexion d'un utilisateur \\
+  \texttt{last}, \texttt{lastb} & Afficher l'heure de la dernière connexion d'un utilisateur (sans succès)\\
   \rowcolor{Gray}
   \texttt{passwd}, \texttt{usermod} & Changer le mot de passe d'un utilisateur \\
   \texttt{pwgen} & Générer un mot de passe aléatoire \\
@@ -228,7 +229,7 @@
 \end{tabular}
 
 ~ \\
-\noindent Commentaires: \\ ~\fbox{1} Outil de haut niveau ~ \fbox{2}~Outil de bas niveau
+\noindent Commentaires: ~\fbox{1} Outil de haut niveau ~ \fbox{2}~Outil de bas niveau
 
 \end{multicols}
 
