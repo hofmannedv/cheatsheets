@@ -1,0 +1,266 @@
+% Nano cheatsheet
+% Version 0.1
+% (C) 2023,2024 Frank Hofmann <info@efho.de>
+% Available from https://github.com/hofmannedv/cheatsheets
+
+% Published under Creative Commons CC-BY-SA 4.0 International License
+% https://creativecommons.org/licenses/by-sa/4.0/
+
+\documentclass[10pt,a4paper]{article}
+\usepackage{cheatsheeta4}
+
+\renewcommand{\cheatsheetTitle}{Aide-mémoire Nano}
+\renewcommand{\cheatsheetVersion}{Version 0.1}
+\renewcommand{\cheatsheetCopyright}{
+  \copyright~ 2023,2024 Frank Hofmann \faIcon{envelope} \href{mailto:info@efho.de}{info@efho.de}. Relecture et correction par Jean-Marc Trobrillant. Publié sous licence 
+ \href{https://creativecommons.org/licenses/by-sa/4.0/}{Creative Commons CC-BY-SA 4.0 International License}. Créé avec \LaTeX{}. \\ \faIcon{github} \href{https://github.com/hofmannedv/cheatsheets}{https://github.com/hofmannedv/cheatsheets}~.
+}
+
+% add document metadata as XMP data
+% add keywords based on hyperref package
+\usepackage{hyperxmp}
+\hypersetup{
+    pdfauthor={Frank Hofmann}, 
+    pdftitle={Aide-mémoire pour l'éditeur de texte Nano},
+    pdfkeywords={Éditeur de texte, raccourcis clavier, utilisation},
+    pdfsubject={Raccourcis clavier pour une utilisation efficace de l'éditeur de texte Nano},
+    pdfcopyright={Copyright (C) 2023,2024 Frank Hofmann. Publié sous licence Creative Commons Attribution - Share Alike 4.0 International License (CC-BY-SA-4.0)}
+    pdfcopyrighturl={https://creativecommons.org/licenses/by-sa/4.0/legalcode.fr}
+}
+
+\begin{document}
+
+\cheatsheet
+
+\begin{multicols}{2}
+
+\section{Actions sur les fichiers et l'étage séparateur}
+\begin{tabular}{ p{4.5cm} p{6.5cm} }
+  \hline
+  \cellSpaceNormal\keyCtrl+\key{x} ou \key{F2} & Fermer l'étage séparateur du fichier en cours, quitter Nano\cellSpaceLittle \\
+  \rowcolor{Gray}
+  \cellSpaceNormal\keyCtrl+\key{s} ou \key{F3} & Enregistrer le contenu d'étage séparateur du fichier en cours \cellSpaceLittle \\
+  \cellSpaceNormal\keyCtrl+\key{o} & Enregistrer le contenu de l'étage séparateur du fichier actuel en tant que nouveau fichier \cellSpaceLittle \\
+  \rowcolor{Gray}
+  \cellSpaceNormal\keyCtrl+\key{r} ou \key{F5} & Ouvrir un fichier et charger son contenu dans l'étage séparateur actuel\cellSpaceLittle \\
+  \cellSpaceNormal\keyAlt+\key{<} ou \keyAlt+\key{,} & Passer au l'étage séparateur du fichier précédent \cellSpaceLittle \\
+  \rowcolor{Gray}
+  \cellSpaceNormal\keyAlt+\key{>} ou \keyAlt+\key{.} & Passer au l'étage séparateur du fichier suivant \cellSpaceLittle \\  
+  \hline
+\end{tabular}
+
+%~\\
+%\vfill
+\section{Options de présentation}
+\begin{tabular}{ p{4.5cm} p{6.5cm} }
+  \hline
+  \cellSpaceNormal\keyCtrl+\key{c} ou \key{F11} & Afficher la position du curseur \\
+  \rowcolor{Gray}
+  \cellSpaceNormal\keyCtrl+\key{\_} ou \keyAlt+\key{g} & Aller à la ligne et à la colonne indiquées \\
+  \cellSpaceNormal \keyCtrl+\key{g} ou \key{F1} & Afficher le texte d'aide \\
+  \rowcolor{Gray}
+  \cellSpaceNormal\keyAlt+\key{n} & Activer ou désactiver l'affichage des \newline numéros de ligne \cellSpaceLittle \\
+  \cellSpaceNormal\keyAlt+\key{p} & Afficher ou masquer l'espace vide visible \\
+  \hline
+\end{tabular}
+
+\columnbreak
+
+\section{Annuler et répéter}
+
+\begin{tabular}{ p{4.5cm} p{6.5cm} }
+  \hline
+  \cellSpaceNormal \keyAlt+\key{u} & Annuler la dernière action \\
+  \rowcolor{Gray}
+  \cellSpaceNormal \keyAlt+\key{e} & Répéter la dernière action \\
+  \hline
+\end{tabular}
+
+~ \\
+\vfill
+
+\section{Rechercher et remplacer}
+\begin{tabular}{ p{4.5cm} p{6.5cm} }
+  \hline
+  \cellSpaceNormal\keyCtrl+\key{q} & Commencer la recherche inversée d'une chaîne de caractères ou d'une expression régulière \cellSpaceLittle \\
+  \rowcolor{Gray}
+  \cellSpaceNormal\keyCtrl+\key{w} ou \key{F6} & Commencer la recherche en avant d'une chaîne de caractères ou d'une expression régulière \cellSpaceLittle \\
+  \cellSpaceNormal\keyCtrl+\key{\textbackslash} ou \keyAlt+\key{r} & Remplacer une chaîne de caractères ou une expression régulière \cellSpaceLittle \\
+  \rowcolor{Gray}
+  \cellSpaceNormal\keyAlt+\key{q} & Répéter la recherche précédente et trouver la correspondance suivante (en arrière) \cellSpaceLittle \\
+  \cellSpaceNormal\keyAlt+\key{w} ou \key{F16} & Répéter la recherche précédente et trouver la correspondance suivante (en avant) \cellSpaceLittle \\
+  \rowcolor{Gray}
+  \cellSpaceNormal\keyAlt+\key{$]$} & Aller à la parenthèse correspondante \\
+ \hline
+\end{tabular}
+\end{multicols}
+
+\newpage
+
+\cheatsheet
+
+\begin{multicols}{2}
+
+\section{Suppression de caractères et de mots}
+\begin{tabular}{ p{4.5cm} p{6.5cm} }
+  \hline
+  \cellSpaceNormal\keyCtrl+\key{d} ou \key{Suppr} & Supprimer le caractère sous le curseur \\
+  \rowcolor{Gray}
+  \cellSpaceNormal\keyCtrl+\key{h} ou \newline \cellSpaceLittle \key{Suppr arrière} & Supprimer le caractère à gauche du curseur \\
+  \cellSpaceNormal\keyAlt+\key{Suppr arrière} & Supprimer le mot à gauche du curseur \cellSpaceLittle \\
+  \rowcolor{Gray}
+  \cellSpaceNormal\keyCtrl+\key{Suppr} & Supprimer le mot à droite du curseur \\
+  \cellSpaceNormal\keyAlt+\key{Suppr} & Supprimer la ligne actuelle \\
+  \hline
+\end{tabular}
+
+~\\
+\vfill
+
+\section{Copier et coller}
+\begin{tabular}{ p{4.5cm} p{6.5cm} }
+  \hline
+  \cellSpaceNormal\keyCtrl+\key{w} & Couper le mot devant le curseur et l'enregistrer dans le presse-papiers \cellSpaceLittle \\
+  \rowcolor{Gray}
+  \cellSpaceNormal\keyCtrl+\key{k} ou \key{F9} & Couper la ligne actuelle et l'enregistrer dans le presse-papiers \cellSpaceLittle \\
+  \cellSpaceNormal\keyCtrl+\key{u} ou \key{F10} & Coller le contenu du presse-papiers dans la ligne actuelle \cellSpaceLittle \\
+  \rowcolor{Gray}
+  \cellSpaceNormal\keyAlt+\key{6} & Copier la ligne actuelle et l'enregistrer dans le presse-papiers \cellSpaceLittle\\
+  \cellSpaceNormal\keyAlt+\key{t} & Couper jusqu'à la fin du fichier et enregistrer les caractères dans le presse-papiers \cellSpaceLittle\\
+  \hline
+\end{tabular}
+
+\columnbreak 
+
+\section{Déplacer le curseur}
+\begin{tabular}{ p{4.5cm} p{6.5cm} }
+  \hline
+  \cellSpaceNormal\keyCtrl+\key{a} ou \key{$\nwarrow$} & Aller au début de la ligne actuelle \\
+  \rowcolor{Gray}
+  \cellSpaceNormal\keyCtrl+\key{e} ou \key{Fin} & Aller au fin de la ligne actuelle \\
+  \cellSpaceNormal\keyAlt+\key{Espace} ou \newline \cellSpaceLittle\keyCtrl+\key{$\rightarrow$} & Aller d'un mot vers la gauche\\
+  \rowcolor{Gray}
+  \cellSpaceNormal\keyCtrl+\key{Espace} ou \newline \cellSpaceLittle\keyCtrl+\key{$\rightarrow$} & Aller d'un mot vers la droite  \\
+  \cellSpaceNormal\keyCtrl+\key{b} ou \key{$\leftarrow$} & Aller d'un caractère vers la gauche\\
+  \rowcolor{Gray}
+  \cellSpaceNormal\keyCtrl+\key{f} ou \key{$\rightarrow$} & Aller d'un caractère vers la droite\\
+  \cellSpaceNormal\keyCtrl+\key{p} ou \key{$\uparrow$} & Aller à la ligne précédente \\
+  \rowcolor{Gray}
+  \cellSpaceNormal\keyCtrl+\key{n} ou \key{$\downarrow$} & Aller à la ligne suivante \\
+  \cellSpaceNormal\keyAlt+\key{\textbackslash} ou \keyAlt+\key{|} & Aller à la première ligne du fichier \\
+  \rowcolor{Gray}
+  \cellSpaceNormal\keyAlt+\key{/} ou \keyAlt+\key{?} & Aller à la dernière ligne du fichier \\
+  \hline
+  ~ & ~ \\
+\end{tabular}
+
+~\\
+\vfill
+
+\section{Vérifier l'orthographe}
+
+\begin{tabular}{ p{4.5cm} p{6.5cm} }
+  \hline
+  \cellSpaceNormal \key{Strg}+\key{t} ou \key{F12} & Appeler le correcteur orthographique, s'il est disponible \cellSpaceLittle\\
+  \hline
+\end{tabular}
+
+\end{multicols}
+
+\newpage
+
+\cheatsheet
+
+\begin{multicols}{2}
+
+\section{Modifications de texte}
+
+\begin{tabular}{ p{4.5cm} p{6.5cm} }
+  \hline
+  \cellSpaceNormal \keyCtrl+\key{j} ou \key{F4} & Aligner le paragraphe actuel \\
+  \rowcolor{Gray}
+  \cellSpaceNormal\keyAlt+\key{\}} & Retourner à la ligne actuelle \\
+  \cellSpaceNormal\keyAlt+\key{\{} & Annuler l'indentation de la ligne en cours \\  
+  \rowcolor{Gray}
+  \cellSpaceNormal\keyAlt+\key{j} & Aligner le fichier entier \\
+  \cellSpaceNormal\keyAlt+\key{3} & Commenter soit la ligne actuelle, soit les lignes sélectionnées (on ou off) \cellSpaceLittle\\
+  \rowcolor{Gray}
+  \cellSpaceNormal \keyCtrl+\key{t} ou \key{F12} & Appeler le correcteur orthographique, si disponible \cellSpaceLittle \\  
+  \hline
+\end{tabular}
+
+~ \\
+\vfill
+%~ \\
+
+\section{Déplacer le curseur paragraphe par paragraphe ou page par page}
+\begin{tabular}{ p{4.5cm} p{6.5cm} }
+  \hline
+  \cellSpaceNormal\keyAlt+\key{9} ou \keyAlt+\key{(} & Aller au début du paragraphe \\
+  \rowcolor{Gray}
+  \cellSpaceNormal\keyAlt+\key{0} ou \keyAlt+\key{)} & Aller au fin du paragraphe \\
+  \cellSpaceNormal\keyCtrl+\key{y}, \key{F7} ou \newline \cellSpaceLittle \keyPageUp & Remonter d'une page \\
+  \rowcolor{Gray}
+  \cellSpaceNormal\keyCtrl+\key{v}, \key{F8} ou\newline \cellSpaceLittle \keyPageDown & Descendre d'un côté \\ 
+  \hline
+\end{tabular}
+
+\columnbreak
+
+\section{Déplace le curseur bloc par bloc}
+\begin{tabular}{ p{4.5cm} p{6.5cm} }
+  \hline
+  \cellSpaceNormal\keyCtrl+\key{$\uparrow$} ou \cellSpaceLittle \keyAlt+\key{7} & Aller au bloc précédent \\
+  \rowcolor{Gray}
+  \cellSpaceNormal\keyCtrl+\key{$\downarrow$} ou \keyAlt+\key{8}& Aller au bloc suivant \\
+  \hline
+\end{tabular}
+
+\vfill
+~\\
+
+\section*{Notes}
+
+\begin{tabular}{ p{4.5cm} p{6.5cm} }
+  \hline
+  ~ & ~ \\
+  \rowcolor{Gray}
+  ~ & ~ \\
+  ~ & ~ \\
+  \rowcolor{Gray}
+  ~ & ~ \\
+  ~ & ~ \\
+  \rowcolor{Gray}
+  ~ & ~ \\
+  ~ & ~ \\
+  \rowcolor{Gray}
+  ~ & ~ \\
+  ~ & ~ \\
+  \rowcolor{Gray}
+  ~ & ~ \\
+  ~ & ~ \\
+  \rowcolor{Gray}
+  ~ & ~ \\
+  ~ & ~ \\
+  \rowcolor{Gray}
+  ~ & ~ \\
+  ~ & ~ \\
+  \rowcolor{Gray}
+  ~ & ~ \\
+  ~ & ~ \\
+  \rowcolor{Gray}
+  ~ & ~ \\
+  ~ & ~ \\
+  \rowcolor{Gray}
+  ~ & ~ \\
+  ~ & ~ \\
+  \rowcolor{Gray}
+  ~ & ~ \\
+  ~ & ~ \\
+  \rowcolor{Gray}
+  ~ & ~ \\
+  \hline
+\end{tabular}
+
+\end{multicols}
+\end{document}
