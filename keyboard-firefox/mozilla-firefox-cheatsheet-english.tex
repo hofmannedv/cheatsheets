@@ -1,5 +1,5 @@
 % Cheatsheet for Mozilla Firefox
-% Version 0.1
+% Version 0.2
 % (C) 2024 Frank Hofmann <info@efho.de>
 % Available from https://github.com/hofmannedv/cheatsheets
 
@@ -16,7 +16,7 @@
     Cheatsheet for Mozilla Firefox
   \end{minipage}
 }
-\renewcommand{\cheatsheetVersion}{Version 0.1}
+\renewcommand{\cheatsheetVersion}{Version 0.2}
 \renewcommand{\cheatsheetCopyright}{
   \copyright~ 2024 Frank Hofmann \faIcon{envelope} \href{mailto:info@efho.de}{info@efho.de} \\
   Published under
@@ -66,7 +66,26 @@
   \hline
 \end{tabular}
 
-~ \vfill
+% ~ \\
+% ~ \\
+
+% ~ \vfill
+
+\columnbreak
+
+\section{Presentation and tools}
+\begin{tabular}{ p{5cm} p{6cm} }
+  \hline
+  \cellSpaceNormal\key{Alt} or \key{F10} & (De-)Activate the menu bar \cellSpaceLittle\\
+  \rowcolor{Gray}
+  \cellSpaceNormal\key{F11} & (De-)Activate the full-screen mode \cellSpaceLittle\\
+  \cellSpaceNormal\keyCtrl+\key{Shift}+\key{a} & (De-)Activate the download window \cellSpaceLittle\\
+  \rowcolor{Gray}
+  \cellSpaceNormal\keyCtrl+\key{Shift}+\key{i} or\newline \cellSpaceNormal\key{F12} & (De-)Activate the window for the development tools \cellSpaceLittle\\
+  \cellSpaceNormal\keyCtrl+\key{Shift}+\key{j} & (De-)Activate the  web browser console \cellSpaceLittle\\
+  \rowcolor{Gray}
+  \cellSpaceNormal\key{Shift}+\key{F5} & (De-)Activate the profiler window \cellSpaceLittle\\  \hline
+\end{tabular}
 
 \section{Handling the web browser history}
 \begin{tabular}{ p{5cm} p{6cm} }
@@ -77,7 +96,23 @@
   \hline
 \end{tabular}
 
-\columnbreak
+\end{multicols}
+
+\newpage
+
+\cheatsheet
+
+\begin{multicols}{2}
+
+\section{Handling bookmarks}
+\begin{tabular}{ p{5cm} p{6cm} }
+  \hline
+  \cellSpaceNormal\keyCtrl+\key{b} & Open, or close bookmark panel \cellSpaceLittle\\
+  \rowcolor{Gray}
+  \cellSpaceNormal\keyCtrl+\key{d} & Add the current web site to the list of bookmarks \cellSpaceLittle\\
+  \cellSpaceNormal\keyCtrl+\key{Shift}+\key{b} & Open, or close the toolbox panel for the bookmarks \cellSpaceLittle\\
+  \hline
+\end{tabular}
 
 \section{Currently displayed web page}
 \begin{tabular}{ p{4.5cm} p{6.5cm} }
@@ -97,32 +132,7 @@
   \hline
 \end{tabular}
 
-~ \vfill
-
-\section{Presentation and tools}
-\begin{tabular}{ p{5cm} p{6cm} }
-  \hline
-  \cellSpaceNormal\key{Alt} or \key{F10} & (De-)Activate the menu bar \cellSpaceLittle\\
-  \rowcolor{Gray}
-  \cellSpaceNormal\key{F11} & (De-)Activate the full-screen mode \cellSpaceLittle\\
-  \cellSpaceNormal\keyCtrl+\key{Shift}+\key{a} & (De-)Activate the download window \cellSpaceLittle\\
-  \rowcolor{Gray}
-  \cellSpaceNormal\keyCtrl+\key{Shift}+\key{i} or\newline \cellSpaceNormal\key{F12} & (De-)Activate the window for the development tools \cellSpaceLittle\\
-  \cellSpaceNormal\keyCtrl+\key{Shift}+\key{j} & (De-)Activate the  web browser console \cellSpaceLittle\\
-  \rowcolor{Gray}
-  \cellSpaceNormal\key{Shift}+\key{F5} & (De-)Activate the profiler window \cellSpaceLittle\\  \hline
-\end{tabular}
-
-% ~ \\
-~ \vfill
-
-\end{multicols}
-
-\newpage
-
-\cheatsheet
-
-\begin{multicols}{2}
+\columnbreak
 
 \section{Handling tabs}
 \begin{tabular}{ p{5cm} p{6cm} }
@@ -146,14 +156,15 @@
   \rowcolor{Gray}
   \cellSpaceNormal\keyCtrl+\key{Shift}+\key{t} & Reopen the previously closed tab \cellSpaceLittle\\
   \hline
-  ~ & ~ \\
 \end{tabular}
 
-~ \\
-~ \vfill
+\end{multicols}
 
-\columnbreak
+\newpage
 
+\cheatsheet
+
+\begin{multicols}{2}
 \section{Handling web browser windows}
 \begin{tabular}{ p{5cm} p{6cm} }
   \hline
@@ -167,31 +178,24 @@
   \hline
 \end{tabular}
 
-% ~ \vfill
+% ~ \\
+%~ \vfill
 
-\section{Handling bookmarks}
-\begin{tabular}{ p{5cm} p{6cm} }
+
+\section{Search in the currently displayed web page}
+\begin{tabular}{ p{4.5cm} p{6.5cm} }
   \hline
-  \cellSpaceNormal\keyCtrl+\key{b} & Open, or close bookmark panel \cellSpaceLittle\\
+  \cellSpaceNormal\keyCtrl+\key{f} & Search with additional options \cellSpaceLittle \\
   \rowcolor{Gray}
-  \cellSpaceNormal\keyCtrl+\key{d} & Add the current web site to the list of bookmarks \cellSpaceLittle\\
-  \cellSpaceNormal\keyCtrl+\key{Shift}+\key{b} & Open, or close the toolbox panel for the bookmarks \cellSpaceLittle\\
+  \cellSpaceNormal\key{/} & Search without additional options \cellSpaceLittle \\
+  \cellSpaceNormal\key{'} & Search in the link texts, only \cellSpaceLittle \\
+  \rowcolor{Gray}
+  \cellSpaceNormal\keyCtrl+\key{g} or \key{F3} & Continue current search (forward search) \\
+  \cellSpaceNormal\keyCtrl+\key{Shift}+\key{g} or \newline \cellSpaceNormal \key{Shift}+\key{F3} & Continue current search (backward search) \cellSpaceLittle \\
   \hline
 \end{tabular}
 
-~ \\
-~ \\
-~ \\
-~ \\
-~ \vfill
-
-\end{multicols}
-
-\newpage
-
-\cheatsheet
-
-\begin{multicols}{2}
+\columnbreak
 
 \section{Search engines that are in use}
 \begin{tabular}{ p{5cm} p{6cm} }
@@ -207,24 +211,6 @@
   \cellSpaceNormal\keyCtrl+\key{k} or \keyCtrl+\key{j} & Use the search field to search with the search engine stored if the search field is displayed \cellSpaceLittle\\
   \hline
 \end{tabular}
-
-% ~\\
-% \vfill
-
-\columnbreak
-
-\section{Search in the currently displayed web page}
-\begin{tabular}{ p{4.5cm} p{6.5cm} }
-  \hline
-  \cellSpaceNormal\keyCtrl+\key{f} & Search with additional options \cellSpaceLittle \\
-  \rowcolor{Gray}
-  \cellSpaceNormal\key{/} & Search without additional options \cellSpaceLittle \\
-  \cellSpaceNormal\key{'} & Search in the link texts, only \cellSpaceLittle \\
-  \rowcolor{Gray}
-  \cellSpaceNormal\keyCtrl+\key{g} or \key{F3} & Continue current search (forward search) \\
-  \cellSpaceNormal\keyCtrl+\key{Shift}+\key{g} or \newline \cellSpaceNormal \key{Shift}+\key{F3} & Continue current search (backward search) \cellSpaceLittle \\
-  \hline
-\end{tabular}%~\\
 
 %~\\
 %\vfill
