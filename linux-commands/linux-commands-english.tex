@@ -1,5 +1,5 @@
 % Essential Linux Commands
-% Version 0.12
+% Version 0.13
 % (C) 2023,2024 by Frank Hofmann <info@efho.de>
 % Available from https://github.com/hofmannedv/cheatsheets
 
@@ -10,7 +10,7 @@
 \usepackage{cheatsheet}
 
 \renewcommand{\cheatsheetTitle}{Essential Linux Commands Cheatsheet}
-\renewcommand{\cheatsheetVersion}{Version 0.12}
+\renewcommand{\cheatsheetVersion}{Version 0.13}
 \renewcommand{\cheatsheetCopyright}{
   \copyright~ 2023,2024 by Frank Hofmann \\ \faIcon{envelope} \href{mailto:info@efho.de}{info@efho.de}. Published under 
  \href{https://creativecommons.org/licenses/by-sa/4.0/}{Creative Commons \\ CC-BY-SA 4.0 International License}. Created with \LaTeX. \\ \faIcon{github} \href{https://github.com/hofmannedv/cheatsheets}{https://github.com/hofmannedv/cheatsheets}~.
@@ -139,15 +139,6 @@
 
 \begin{multicols}{2}
 
-\section{Using pagers}
-\begin{tabular}{ p{2.5cm} p{8.5cm} }
-  \hline
-  \texttt{less}, \texttt{more} & Display data page by page \\
-  \rowcolor{Gray}
-  \texttt{most} & Display data page by page, and in multiple windows \\
-  \hline
-\end{tabular}
-
 \section{Network commands}
 \begin{tabular}{ p{2.5cm} p{8.5cm} }
   \hline
@@ -157,23 +148,24 @@
   \texttt{hostname} & Display the system's hostname \\
   \rowcolor{Gray}
   \texttt{ifconfig}, \texttt{iwconfig} & Configure network interfaces, and display interface configuration (deprecated)\\
-  \texttt{ifup} & Enable a network interface \\
-  \rowcolor{Gray}
-  \texttt{ip} & Configure network interfaces, and display interface configuration \\
   \texttt{ifdown} & Disable a network interface \\
+  \rowcolor{Gray}
+  \texttt{ifup} & Enable a network interface \\
+  \texttt{ip} & Configure network interfaces, and display interface configuration \\
   \rowcolor{Gray}
   \texttt{iwlist} & List available wireless networks \\
   \texttt{nc}, \texttt{netcat} & TCP/IP swiss army knife \\
   \rowcolor{Gray}
   \texttt{netstat}, \texttt{ss} & Display network statistics \\
+  \texttt{nmap} & Scan network ports \\
+  \rowcolor{Gray}
   \texttt{nslookup} & Lookup name service entries \\
-  \rowcolor{Gray}
   \texttt{ping}, \texttt{ping6} & Send ICMP package to a host \\
+  \rowcolor{Gray}
   \texttt{route} & Display routing table \\
-  \rowcolor{Gray}
   \texttt{tcpdump} & Dump traffic on a network \\
-  \texttt{traceroute}, \texttt{traceroute6} & Print the route packets trace to network host\\
   \rowcolor{Gray}
+  \texttt{traceroute}, \texttt{traceroute6} & Print the route packets trace to network host\\
   \texttt{wget} & Non-interactive data transfer\\
   \hline
 \end{tabular}
@@ -181,9 +173,9 @@
 \section{Secure data transfer}
 \begin{tabular}{ p{2.5cm} p{8.5cm} }
   \hline
-  \texttt{rsync}, \texttt{scp} & Synchronize data locally, or remotely \newline using a secure, encrypted channel \\
+  \texttt{rsync}, \texttt{scp} & Synchronize data locally, or remotely using a secure, encrypted channel \\
   \rowcolor{Gray}
-  \texttt{ssh} & Connect to a remote system using a \newline secure, encrypted channel\\
+  \texttt{ssh} & Connect to a remote system using a secure, encrypted channel\\
   \texttt{ssh-copy-id} & Transfer an SSH public key to a remote system for password-less authentification\\
   \rowcolor{Gray}
   \texttt{ssh-keygen} & Generate an SSH key pair for password-less authentification\\
@@ -218,7 +210,7 @@
   \texttt{groups} & Display the groups a user belongs to \\
   \texttt{id} & Display user information \\
   \rowcolor{Gray}
-  \texttt{last} & Show last login time for a user \\
+  \texttt{last}, \texttt{lastb} & Show last (unsuccessful) login time for a user \\
   \texttt{passwd}, \texttt{usermod} & Modify password for a user account \\
   \rowcolor{Gray}
   \texttt{pwgen} & Generate a random password\\
@@ -242,7 +234,7 @@
 \fbox{2} Low-level tool
 
 %~\\
-\vfill
+\hfill
 %~\\
 
 \end{multicols}
@@ -264,10 +256,15 @@
   \texttt{manpath} & Manage the path for manual pages \\
   \texttt{whatis} & Looks up the index database for short help texts explaining the given command\\
   \hline
-  & \\
-  & \\
-  & \\
-  & \\
+\end{tabular}
+
+\section{Using pagers}
+\begin{tabular}{ p{2.5cm} p{8.5cm} }
+  \hline
+  \texttt{less}, \texttt{more} & Display data page by page \\
+  \rowcolor{Gray}
+  \texttt{most} & Display data page by page, and in multiple windows \\
+  \hline
 \end{tabular}
 
 \section{Processes and job control}
@@ -296,6 +293,8 @@
   \texttt{watch} & Execute a program periodically, showing output fullscreen \\
   \hline
 \end{tabular}
+
+\columnbreak
 
 \section{Text and data stream processing}
 \begin{tabular}{ p{2.5cm} p{8.5cm} }
@@ -333,6 +332,8 @@
   \texttt{wc} & Count lines, words, and characters of a file\\
   \hline
 \end{tabular}
+
+\hfill
 
 \section{Dealing with log files}
 \begin{tabular}{ p{2.5cm} p{8.5cm} }
