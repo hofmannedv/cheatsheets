@@ -11,13 +11,13 @@ the following UNIX/Linux tools:
 - [Essential commands for Linux](https://github.com/hofmannedv/cheatsheets/tree/master/linux-commands)
 - [How to use the Nano text editor](https://github.com/hofmannedv/cheatsheets/tree/master/nano)
 - [Keyboard layouts](https://github.com/hofmannedv/cheatsheets/tree/master/keyboard)
+- [Keyboard shortcuts for the Mozilla Firefox webbrowser](https://github.com/hofmannedv/cheatsheets/tree/master/keyboard-firefox)
 
 I use these in my Linux training courses as an aid and learning material.
 
 In preparation are cheatsheets for the following tools:
 
 - Subcommands for the revision control system Git
-- Keyboard shortcuts for the Mozilla Firefox webbrowser
 - Keyboard shortcuts for the Chromium webbrowser
 - Keyboard shortcuts for the Links webbrowser
 
