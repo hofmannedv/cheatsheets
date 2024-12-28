@@ -1,6 +1,6 @@
 % Debian Package Management
-% Version 0.4
-% (C) 2023 Frank Hofmann <info@efho.de>
+% Version 0.7
+% (C) 2023,2024 Frank Hofmann <info@efho.de>
 % Available from https://github.com/hofmannedv/cheatsheets
 
 % Published under Creative Commons CC-BY-SA 4.0 International License
@@ -10,11 +10,24 @@
 \usepackage{cheatsheet}
 
 \renewcommand{\cheatsheetTitle}{Debian Package \newline Management Cheatsheet}
-\renewcommand{\cheatsheetVersion}{Version 0.4}
+\renewcommand{\cheatsheetVersion}{Version 0.7}
 \renewcommand{\cheatsheetCopyright}{
-  \copyright~ 2023 Frank Hofmann \faIcon{envelope} \href{mailto:info@efho.de}{info@efho.de} \\ Published under 
- \href{https://creativecommons.org/licenses/by-sa/4.0/}{Creative Commons CC-BY-SA 4.0 \\ International License}. Created with \LaTeX. \\ \faIcon{github} \href{https://github.com/hofmannedv/cheatsheets}{https://github.com/hofmannedv/cheatsheets}~.
+  \copyright~ 2023,2024 by Frank Hofmann \\ \faIcon{envelope} \href{mailto:info@efho.de}{info@efho.de}. Published under 
+ \href{https://creativecommons.org/licenses/by-sa/4.0/}{Creative Commons \\ CC-BY-SA 4.0 International License}. Created with \LaTeX. \\ \faIcon{github} \href{https://github.com/hofmannedv/cheatsheets}{https://github.com/hofmannedv/cheatsheets}~.
 }
+
+% add document metadata as XMP data
+% add keywords based on hyperref package
+\usepackage{hyperxmp}
+\hypersetup{
+    pdfauthor={Frank Hofmann}, 
+    pdftitle={Debian Package Management Cheatsheet},
+    pdfkeywords={Package management, Debian GNU/Linux, dpkg, apt},
+    pdfsubject={Commands for handling sofware packages effectively on  Debian GNU/Linux},
+    pdfcopyright={Copyright (C) 2023,2024 by Frank Hofmann. Published under Creative Commons Attribution - Share Alike 4.0 International License (CC-BY-SA-4.0)}
+    pdfcopyrighturl={https://creativecommons.org/licenses/by-sa/4.0/legalcode.en}
+}
+
 \begin{document}
 
 \cheatsheet
@@ -114,6 +127,10 @@
   \hline
 \end{tabular}
 
+\newpage
+
+\cheatsheet
+
 \section{Remove software packages as well as the configuration files}
 \begin{tabular}{ p{3.5cm} p{9cm} p{11cm}}
   \hline
@@ -131,10 +148,6 @@
   & \texttt{dpkg --purge \textit{package}} & \\
   \hline
 \end{tabular}
-
-\newpage
-
-\cheatsheet
 
 \section{List installed software packages}
 \begin{tabular}{ p{3.5cm} p{9cm} p{11cm}}
@@ -173,6 +186,10 @@
   \hline
 \end{tabular}
 
+\newpage
+
+\cheatsheet
+
 \section{Display package dependencies}
 \begin{tabular}{ p{3.5cm} p{9cm} p{11cm}}
   \hline
@@ -196,10 +213,6 @@
   & \texttt{grep-status -P -s Depends \textit{package}} & Display dependencies \\
   \hline
 \end{tabular}
-
-\newpage
-
-\cheatsheet
 
 \section{List files of a package prior to installation}
 \begin{tabular}{ p{3.5cm} p{9cm} p{11cm}}
@@ -234,6 +247,10 @@
   \hline
 \end{tabular}
 
+\newpage
+
+\cheatsheet
+
 \section{List configuration files of a package}
 \begin{tabular}{ p{3.5cm} p{9cm} p{11cm}}
   \hline
@@ -267,10 +284,6 @@
   \hline
 \end{tabular}
 
-\newpage
-
-\cheatsheet
-
 \section{Display package status}
 \begin{tabular}{ p{3.5cm} p{9cm} p{11cm}}
   \hline
@@ -292,6 +305,9 @@
   \hline
 \end{tabular}
 
+\newpage
+
+\cheatsheet
 \section{Validate package signature}
 \begin{tabular}{ p{3.5cm} p{9cm} p{11cm}}
   \hline
@@ -300,7 +316,7 @@
   \hline 
   \textbf{Debsums} & \texttt{debsums \textit{package}} & Validate all files from the package (except configuration files)\\
   \rowcolor{Gray}
-  \textbf{Debsums} & \texttt{debsums} & Validate all files for all packages (except configuration files) \\
+  ~ & \texttt{debsums} & Validate all files for all packages (except configuration files) \\
   \textbf{Dpkg} & \texttt{dpkg -V \textit{package}} & Validate all files from the package \\
   \rowcolor{Gray}
   & \texttt{dpkg --verify \textit{package}} & Validate all files from the package \\
