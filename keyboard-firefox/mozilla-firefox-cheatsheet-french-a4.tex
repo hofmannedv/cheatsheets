@@ -1,0 +1,301 @@
+% Cheatsheet for Mozilla Firefox
+% Version 0.1
+% (C) 2024 Frank Hofmann <info@efho.de>
+% Available from https://github.com/hofmannedv/cheatsheets
+
+% Published under Creative Commons CC-BY-SA 4.0 International License
+% https://creativecommons.org/licenses/by-sa/4.0/
+
+\documentclass[10pt,a4paper]{article}
+\usepackage{cheatsheeta4}
+
+\renewcommand{\cheatsheetTitle}{
+  \begin{minipage}{2cm}
+    \includegraphics[width=1.5cm]{firefox-logo.png}
+  \end{minipage} ~ \begin{minipage}{4cm}
+    Aide-mémoire du navigateur web Mozilla \\ Firefox
+  \end{minipage}
+}
+\renewcommand{\cheatsheetVersion}{Version 0.1}
+\renewcommand{\cheatsheetCopyright}{
+  \copyright~ 2024 Frank Hofmann \faIcon{envelope} \href{mailto:info@efho.de}{info@efho.de} \\
+  Publié sous licence
+  \href{https://creativecommons.org/licenses/by-sa/4.0/}{Creative Commons CC-BY-SA 4.0 \\ International License}. Créé avec \LaTeX. \\ 
+  \faIcon{github} \href{https://github.com/hofmannedv/cheatsheets}{https://github.com/hofmannedv/cheatsheets}~.
+}
+
+% add document metadata as XMP data
+% add keywords based on hyperref package
+\usepackage{hyperxmp}
+\hypersetup{
+    pdfauthor={Frank Hofmann}, 
+    pdftitle={Aide-mémoire du Mozilla Firefox},
+    pdfkeywords={Firefox, navigateur web, combinaison des touches, utilisation},
+    pdfsubject={combinaisons de touches pour l'utilisation du navigateur web Mozilla Firefox},
+    pdfcopyright={Copyright (C) 2024 Frank Hofmann. Publié sous licence Creative Commons Attribution - Share Alike 4.0 International License (CC-BY-SA-4.0)}
+    pdfcopyrighturl={https://creativecommons.org/licenses/by-sa/4.0/legalcode.en}
+}
+
+\begin{document}
+
+\cheatsheet
+
+\begin{multicols}{2}
+
+\section{Navigation générale}
+\begin{tabular}{ p{5cm} p{6cm} }
+  \hline
+  \cellSpaceNormal\keyAlt+\key{$\leftarrow$} et \keyCtrl+\key{[} & Retourner au site web précédemment visité \cellSpaceLittle \\
+  \rowcolor{Gray}
+  \cellSpaceNormal\keyAlt+\key{$\rightarrow$} et \keyCtrl+\key{]} & Avancer à la site web visitée ensuite \cellSpaceLittle \\
+  \cellSpaceNormal\keyAlt+\key{Début} & Retourner à la page d'accueil \cellSpaceLittle \\
+  \rowcolor{Gray}
+  \cellSpaceNormal\key{Majuscule}+\key{Tab} & Passer au lien précédent ou au champ de saisie précédent dans l'onglet actuel \cellSpaceLittle \\
+  \cellSpaceNormal\key{Tab} & Passer au lien suivant ou au champ de saisie suivant dans l'onglet actuel \cellSpaceLittle \\
+  \rowcolor{Gray}
+  \cellSpaceNormal\key{$\Uparrow$} et \key{Majuscule}+\key{Espace} & Remonter d'une page d'écran \cellSpaceLittle \\
+  \cellSpaceNormal\key{$\Downarrow$} et \cellSpaceNormal \key{Espace} & 
+  Descendre d'une page d'écran \cellSpaceLittle \\ 
+  \rowcolor{Gray}
+  \cellSpaceNormal\key{Début} et \keyCtrl+\key{$\uparrow$} & Aller en haut de la page \cellSpaceLittle \\
+  \cellSpaceNormal\key{Fin} et \keyCtrl+\key{$\downarrow$}& Aller en bas de la page \cellSpaceLittle \\
+  \rowcolor{Gray}
+  \cellSpaceNormal\key{Majuscule}+\key{F6} & Aller au cadre ou au pop-up précédent \\
+  \cellSpaceNormal\key{F6} & Aller au cadre ou au pop-up suivant \\
+  \rowcolor{Gray}
+  \cellSpaceNormal\key{ESC} & Annuler l'action actuelle \cellSpaceLittle \\
+  \hline
+\end{tabular}
+
+\columnbreak
+
+\section{Chronique et historique de navigation}
+\begin{tabular}{ p{5cm} p{6cm} }
+  \hline
+  \cellSpaceNormal\keyCtrl+\key{h} & Ouvrir ou fermer la barre d'historique de navigation \cellSpaceLittle\\
+  \rowcolor{Gray}
+  \cellSpaceNormal\keyCtrl+\key{Majuscule}+\key{Suppr} & Supprimer les entrées de l'historique de navigation \cellSpaceLittle\\
+  \hline
+\end{tabular}
+
+\section{La site web actuellement affiché}
+\begin{tabular}{ p{4.5cm} p{6.5cm} }
+  \hline
+  \cellSpaceNormal\keyCtrl+\key{o} & Ouvrir une page web pour la consulter \cellSpaceLittle \\
+  \rowcolor{Gray}
+  \cellSpaceNormal\keyCtrl+\key{r} et \key{F5} & Recharger la page web actuelle \cellSpaceLittle \\
+  \cellSpaceNormal \keyCtrl+\key{F5} et \newline 
+  \cellSpaceNormal \keyCtrl+\key{Majuscule}+\key{r} & Recharger la page web actuelle sans tenir compte de la mémoire cache du navigateur \cellSpaceLittle \\
+  \rowcolor{Gray}
+  \cellSpaceNormal\keyCtrl+\key{p} & Imprimer la page web actuelle \cellSpaceLittle \\
+  \cellSpaceNormal\keyCtrl+\key{s} & Mémoriser la page web actuelle \cellSpaceLittle \\
+  \rowcolor{Gray}
+  \cellSpaceNormal\keyCtrl+\key{+} & Agrandir la représentation (zoom in) \cellSpaceLittle \\
+  \cellSpaceNormal\keyCtrl+\key{-} & Réduire la représentation (zoom out) \cellSpaceLittle \\
+  \rowcolor{Gray}
+  \cellSpaceNormal\keyCtrl+\key{0} & Réinitialiser la représentation \cellSpaceLittle \\
+  \hline
+\end{tabular}
+
+\end{multicols}
+
+\newpage
+
+\cheatsheet
+
+\begin{multicols}{2}
+
+\section{Gestion des fenêtres du navigateur web}
+\begin{tabular}{ p{5cm} p{6cm} }
+  \hline
+  \cellSpaceNormal\keyCtrl+\key{n} & Ouvrir une nouvelle fenêtre \cellSpaceLittle\\
+  \rowcolor{Gray}
+  \cellSpaceNormal\keyCtrl+\key{Majuscule}+\key{p} & Ouvrir une nouvelle fenêtre privée \cellSpaceLittle\\
+  \cellSpaceNormal\keyCtrl+\key{Majuscule}+\key{w} et \newline \cellSpaceNormal\keyAlt+\key{F4} & Fermer la fenêtre actuelle \cellSpaceLittle\\
+  \rowcolor{Gray}
+  \cellSpaceNormal\keyCtrl+\key{Majuscule}+\key{n} & Rouvrir la fenêtre qui vient d'être fermée \cellSpaceLittle\\
+  \cellSpaceNormal\keyCtrl+\key{q} & Quitter Firefox et fermer toutes les fenêtres \cellSpaceLittle\\
+  \hline
+\end{tabular}
+
+~ \vfill
+
+\section{Gestion des favoris}
+\begin{tabular}{ p{5cm} p{6cm} }
+  \hline
+  \cellSpaceNormal\keyCtrl+\key{b} & Ouvrir ou fermer la barre de favoris \cellSpaceLittle\\
+  \rowcolor{Gray}
+  \cellSpaceNormal\keyCtrl+\key{d} & Ajouter la page web actuelle aux favoris \cellSpaceLittle\\
+  \cellSpaceNormal\keyCtrl+\key{Majuscule}+\key{b} & Ouvrir ou fermer la barre d'outils des favoris \cellSpaceLittle\\
+  \hline
+\end{tabular}
+
+\columnbreak
+
+\section{Gestion des onglets}
+\begin{tabular}{ p{5cm} p{6cm} }
+  \hline
+  \cellSpaceNormal\keyCtrl+\key{t} & Ouvrir un nouvel onglet \cellSpaceLittle\\
+  \rowcolor{Gray}
+  \cellSpaceNormal\keyCtrl+\key{Tab} & Traverser les onglets en suivant leur ordre d'utilisation \cellSpaceLittle\\
+  \cellSpaceNormal\keyCtrl+\key{Tab} et \keyCtrl+\key{$\Downarrow$} & Aller un onglet vers la droite \cellSpaceLittle\\
+  \rowcolor{Gray}
+  \cellSpaceNormal \keyCtrl+\key{$\Uparrow$} et \newline \cellSpaceNormal \keyCtrl+\key{Majuscule}+\key{Tab} & Aller un onglet vers la gauche \cellSpaceLittle\\
+  \cellSpaceNormal\keyAlt+\key{1} à \keyAlt+\key{8} & Aller aux onglets 1 à 8 \cellSpaceLittle\\
+  \rowcolor{Gray}
+  \cellSpaceNormal\keyAlt+\key{9} & Aller au dernier onglet \cellSpaceLittle\\
+  \cellSpaceNormal\keyCtrl+\key{Majuscule}+\key{$\Downarrow$} & Déplacer l'onglet vers la droite \cellSpaceLittle\\
+  \rowcolor{Gray}
+  \cellSpaceNormal\keyCtrl+\key{Majuscule}+\key{$\Uparrow$} & Déplacer l'onglet vers la gauche \cellSpaceLittle\\
+  \cellSpaceNormal\keyCtrl+\key{Majuscule}+\key{Fin} & Déplacer l'onglet tout à droite, à la fin \cellSpaceLittle\\
+  \rowcolor{Gray}
+  \cellSpaceNormal\keyCtrl+\key{Majuscule}+\key{Début} & Déplacer l'onglet tout à gauche, au début \cellSpaceLittle\\
+  \cellSpaceNormal\keyCtrl+\key{w} et \cellSpaceNormal\keyCtrl+\key{F4} & Fermer l'onglet, sauf s'il est épinglé \cellSpaceLittle\\
+  \rowcolor{Gray}
+  \cellSpaceNormal\keyCtrl+\key{Majuscule}+\key{t} & Rouvrir l'onglet qui vient d'être fermé \cellSpaceLittle\\
+  \hline
+\end{tabular}
+
+%~\\
+%\vfill
+
+\end{multicols}
+
+\newpage
+
+\cheatsheet
+
+\begin{multicols}{2}
+
+\section{Moteurs de recherche utilisés\cellSpaceLittle}
+\begin{tabular}{ p{5cm} p{6cm} }
+  \hline
+  \cellSpaceNormal\keyAlt+\key{$\uparrow$} et \keyAlt+\key{$\downarrow$} & Après une saisie dans la barre d'adresse, passer d'un moteur de recherche à l'autre \cellSpaceLittle\\
+  \rowcolor{Gray}
+  \cellSpaceNormal\keyAlt+\key{$\uparrow$}, \keyAlt+\key{$\downarrow$} et \newline \cellSpaceNormal \key{F4} & Afficher le menu de sélection des moteurs de recherche déposés lorsque le champ de recherche est sélectionné \cellSpaceLittle\\
+  \cellSpaceNormal\keyCtrl+\key{$\uparrow$} et \keyCtrl+\key{$\downarrow$} & Changer le moteur de recherche enregistré lors de la recherche via le champ de recherche \cellSpaceLittle\\
+  \rowcolor{Gray}
+  \cellSpaceNormal\key{?} \key{Espace} & Utiliser le moteur de recherche par défaut lors de la recherche via la barre d'adresse \cellSpaceLittle \\
+  \cellSpaceNormal\keyCtrl+\key{k} et \keyCtrl+\key{j} & Utiliser la ligne d'adresse pour effectuer une recherche avec le moteur de recherche enregistré, si le champ de recherche n'est pas affiché \cellSpaceLittle\\
+  \rowcolor{Gray}
+  \cellSpaceNormal\keyCtrl+\key{k} et \keyCtrl+\key{j} & Utiliser le champ de recherche pour effectuer une recherche avec le moteur de recherche enregistré, si le champ de recherche est affiché \cellSpaceLittle\\
+  \hline
+\end{tabular}
+
+~ \vfill
+
+\columnbreak
+
+\section{Rechercher dans la page actuellement affiché\cellSpaceLittle}
+
+\begin{tabular}{ p{4.5cm} p{6.5cm} }
+  \hline
+  \cellSpaceNormal\keyCtrl+\key{f} & Rechercher avec des options supplémentaires \cellSpaceLittle \\
+  \rowcolor{Gray}
+  \cellSpaceNormal\key{/} & Rechercher sans options supplémentaires \cellSpaceLittle \\
+  \cellSpaceNormal\key{'} & Rechercher uniquement dans les textes des liens \cellSpaceLittle \\
+  \rowcolor{Gray}
+  \cellSpaceNormal\keyCtrl+\key{g} et \key{F3} & Continuer la recherche vers l'avant \cellSpaceLittle \\
+  \cellSpaceNormal \key{Majuscule}+\key{F3} et \newline \cellSpaceNormal \keyCtrl+\key{Majuscule}+\key{g} & Continuer la recherche en arrière \cellSpaceLittle \\
+  \hline
+\end{tabular}
+
+~ \vfill
+
+\end{multicols}
+
+\newpage
+
+\cheatsheet
+
+\begin{multicols}{2}
+
+\section{Présentation et outils}
+\begin{tabular}{ p{5cm} p{6cm} }
+  \hline
+  \cellSpaceNormal\key{Alt} et \key{F10} & (Dés)activer la barre de menu \cellSpaceLittle\\
+  \rowcolor{Gray}
+  \cellSpaceNormal\key{F11} & (Dés)activer le mode plein écran \cellSpaceLittle\\
+  \cellSpaceNormal\keyCtrl+\key{Majuscule}+\key{a} & (Dés)activer la fenêtre de téléchargement \cellSpaceLittle\\
+  \rowcolor{Gray}
+  \cellSpaceNormal\keyCtrl+\key{Majuscule}+\key{i} et\newline \cellSpaceNormal\key{F12} & (Dés)activer la fenêtre des outils de développement \cellSpaceLittle\\
+  \cellSpaceNormal\keyCtrl+\key{Majuscule}+\key{j} & (Dés)activer la fenêtre avec Browser Console \cellSpaceLittle\\
+  \rowcolor{Gray}
+  \cellSpaceNormal\key{Majuscule}+\key{F5} & (Dés)activer la fenêtre avec le profiler \cellSpaceLittle\\  \hline
+\end{tabular}
+
+~ \\
+~ \\
+~ \\
+~ \\
+~ \\
+~ \\
+~ \\
+~ \\
+~ \\
+~ \\
+~ \\
+~ \\
+~ \\
+~ \\
+~ \\
+~ \vfill
+
+\columnbreak
+
+\section*{Notes}
+
+\begin{tabular}{ p{4.5cm} p{6.5cm} }
+  \hline
+  ~ & ~ \\
+  \rowcolor{Gray}
+  ~ & ~ \\
+  ~ & ~ \\
+  \rowcolor{Gray}
+  ~ & ~ \\
+  ~ & ~ \\
+  \rowcolor{Gray}
+  ~ & ~ \\
+  ~ & ~ \\
+  \rowcolor{Gray}
+  ~ & ~ \\
+  ~ & ~ \\
+  \rowcolor{Gray}
+  ~ & ~ \\
+  ~ & ~ \\
+  \rowcolor{Gray}
+  ~ & ~ \\
+  ~ & ~ \\
+  \rowcolor{Gray}
+  ~ & ~ \\
+  ~ & ~ \\
+  \rowcolor{Gray}
+  ~ & ~ \\
+  ~ & ~ \\
+  \rowcolor{Gray}
+  ~ & ~ \\
+  ~ & ~ \\
+  \rowcolor{Gray}
+  ~ & ~ \\
+  ~ & ~ \\
+  \rowcolor{Gray}
+  ~ & ~ \\
+  ~ & ~ \\
+  \rowcolor{Gray}
+  ~ & ~ \\
+  ~ & ~ \\
+  \rowcolor{Gray}
+  ~ & ~ \\
+  ~ & ~ \\
+  \rowcolor{Gray}
+  ~ & ~ \\
+  ~ & ~ \\
+  \rowcolor{Gray}
+  ~ & ~ \\
+  \hline
+\end{tabular}
+
+~ \vfill
+
+\end{multicols}
+\end{document}
