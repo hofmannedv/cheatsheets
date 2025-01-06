@@ -1,6 +1,6 @@
 % Essential Linux Commands
-% Version 0.9
-% (C) 2023,2024 Frank Hofmann <info@efho.de>
+% Version 0.10
+% (C) 2023-2025 Frank Hofmann <info@efho.de>
 % Available from https://github.com/hofmannedv/cheatsheets
 
 % Published under Creative Commons CC-BY-SA 4.0 International License
@@ -10,9 +10,9 @@
 \usepackage{cheatsheeta4}
 
 \renewcommand{\cheatsheetTitle}{Commandes essentielles \\ pour Linux}
-\renewcommand{\cheatsheetVersion}{Version 0.9}
+\renewcommand{\cheatsheetVersion}{Version 0.10}
 \renewcommand{\cheatsheetCopyright}{
-  \copyright~ 2023,2024 Frank Hofmann \faIcon{envelope} \href{mailto:info@efho.de}{info@efho.de}. Relecture et correction par Jean-Marc Trobrillant. Publié sous licence 
+  \copyright~ 2023-2025 Frank Hofmann \faIcon{envelope} \href{mailto:info@efho.de}{info@efho.de}. Relecture et correction par Jean-Marc Trobrillant. Publié sous licence 
  \href{https://creativecommons.org/licenses/by-sa/4.0/}{Creative Commons CC-BY-SA 4.0 International License}. Créé avec \LaTeX{}. \\ \faIcon{github} \href{https://github.com/hofmannedv/cheatsheets}{https://github.com/hofmannedv/cheatsheets}~.
 }
 
@@ -24,7 +24,7 @@
     pdftitle={Commandes essentielles pour Linux},
     pdfkeywords={Linux, la ligne de commande, utilisation du shell, gestion des paquets},
     pdfsubject={Utilisation effective de la ligne de commande Linux},
-    pdfcopyright={Copyright (C) 2023,2024 Frank Hofmann. Publié sous licence Creative Commons Attribution - Share Alike 4.0 International License (CC-BY-SA-4.0)}
+    pdfcopyright={Copyright (C) 2023-2025 Frank Hofmann. Publié sous licence Creative Commons Attribution - Share Alike 4.0 International License (CC-BY-SA-4.0)}
     pdfcopyrighturl={https://creativecommons.org/licenses/by-sa/4.0/legalcode.fr}
 }
 
@@ -42,7 +42,7 @@
   \texttt{cfdisk}, \texttt{fdisk} & Modifier la table de partition \\
   \texttt{cpu-info}, \texttt{cpuid}, \texttt{lscpu} & Donner des informations détaillées sur les processeurs \\
   \rowcolor{Gray}
-  \texttt{df}, \texttt{dfc}, \texttt{duf} & Afficher l'espace de stackage libre \\
+  \texttt{df}, \texttt{dfc}, \texttt{duf} & Afficher l'espace de stockage libre \\
   \texttt{du}, \texttt{duf} & Afficher l'espace de stockage utilisé \\
   \rowcolor{Gray}
   \texttt{free} & Afficher la RAM disponible, la RAM utilisée et la mémoire d'échange (swap)\\
@@ -54,7 +54,7 @@
   \texttt{lsdev}, \texttt{lshw} & Afficher des informations sur les composants matériels installés\\
   \texttt{lsof} & Lister tous les fichiers ouverts\\
   \rowcolor{Gray}
-  \texttt{lspci} & Lister de tous les périphériques PCI\\
+  \texttt{lspci} & Lister tous les périphériques PCI\\
   \texttt{lsusb} & Lister tous les ports USB\\
   \rowcolor{Gray}
   \texttt{mailq} & Lister le contenu de la file d'attente du courrier\\
@@ -439,18 +439,18 @@
 \section{Archives et compression des données}
 \begin{tabular}{ p{2.75cm} p{8.25cm} }
   \hline 
-  \texttt{bunzip2} & Décompresse un fichier compressé au format Bzip2 \\
+  \texttt{bunzip2} & Décomprimer un fichier compressé au format Bzip2 \\
   \rowcolor{Gray}
   \texttt{bzcat} & Afficher le contenu d'un fichier compressé avec Bzip2 sur \texttt{stdout}\\
   \texttt{bzegrep}, \texttt{bzfgrep}, \texttt{bzgrep} & Rechercher dans un fichier compressé au format Bzip2 \\
   \rowcolor{Gray}
   \texttt{bzip2} & Comprimer un fichier au format Bzip2 \\
-  \texttt{gunzip} & Décompresse un fichier compressé au format Gzip \\
+  \texttt{gunzip} & Décomprimer un fichier compressé au format Gzip \\
   \rowcolor{Gray}
   \texttt{gzip} & Comprimer un fichier au format Gzip \\
   \texttt{tar} & Créer et gérer une archive de bandes (\textit{tar file}) \\
   \rowcolor{Gray}
-  \texttt{unzip} & Décompresse un fichier compressé au format Zip \\
+  \texttt{unzip} & Décomprimer un fichier compressé au format Zip \\
   \texttt{xz} & Comprimer un fichier au format Xz \\
   \rowcolor{Gray}
   \texttt{xzcat} & Afficher le contenu d'un fichier compressé avec Xz sur \texttt{stdout} \\
