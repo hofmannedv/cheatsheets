@@ -1,17 +1,17 @@
 % Bash cheatsheets
-% Version 0.7
-% (C) 2023,2024 Frank Hofmann <info@efho.de>
+% Version 0.8
+% (C) 2023-2025 Frank Hofmann <info@efho.de>
 % Available from https://github.com/hofmannedv/cheatsheets
 
 % Published under Creative Commons CC-BY-SA 4.0 International License
 % https://creativecommons.org/licenses/by-sa/4.0/
 
-\documentclass[10pt]{article}
+\documentclass[10pt,a4paper]{article}
 \usepackage{cheatsheeta4}
 
 \renewcommand{\cheatsheetTitle}{Aide-mémoire Bash}
-\renewcommand{\cheatsheetVersion}{Version 0.7}
-\renewcommand{\cheatsheetCopyright}{\copyright~ 2023,2024 Frank Hofmann 
+\renewcommand{\cheatsheetVersion}{Version 0.8}
+\renewcommand{\cheatsheetCopyright}{\copyright~ 2023-2025 Frank Hofmann 
 \faIcon{envelope} \href{mailto:info@efho.de}{info@efho.de}. Traduction de Mohamed Azerkane. Relecture et correction par Jean-Marc Trobrillant. Publié sous licence \href{https://creativecommons.org/licenses/by-sa/4.0/}{Creative Commons CC-BY-SA 4.0 International License}. Créé avec \LaTeX{}.}
 
 % add document metadata as XMP data
@@ -22,7 +22,7 @@
     pdftitle={Aide-mémoire Bash},
     pdfkeywords={Bash, Ligne de commande, raccourcis clavier, utilisation},
     pdfsubject={Raccourcis clavier pour une utilisation effective de Bash},
-    pdfcopyright={Copyright (C) 2023,2024 Frank Hofmann. Publié sous Creative Commons Attribution - Share Alike 4.0 International License (CC-BY-SA-4.0)}
+    pdfcopyright={Copyright (C) 2023-2025 Frank Hofmann. Publié sous Creative Commons Attribution - Share Alike 4.0 International License (CC-BY-SA-4.0)}
     pdfcopyrighturl={https://creativecommons.org/licenses/by-sa/4.0/legalcode.fr}
 }
 
@@ -132,9 +132,10 @@
   \cellSpaceNormal \keyCtrl+\key{q} & Autoriser l’affichage à l’écran (si arrêté précédemment avec la commande ci-dessus) \cellSpaceLittle \\
   \cellSpaceNormal \keyCtrl+\key{d} & Envoyer un caractère EOF à moins qu’une option ne le désactive. Cela fermera le shell actuel (EXIT) \cellSpaceLittle \\
   \rowcolor{Gray}
-  \cellSpaceNormal \keyCtrl+\key{z} & Envoyer le signal SIGTSTP à la tâche actuelle, ce qui la suspend. Pour y revenir plus tard, entrez \texttt{fg \textit{numero de commande}} (premier plan) \cellSpaceLittle \\
+  \cellSpaceNormal \keyCtrl+\key{z} & Envoyer le signal SIGTSTP à la tâche actuelle, ce qui la suspend \cellSpaceLittle \\
   \hline
 \end{tabular}
+~ \\
 \columnbreak
 
 \section{Historique}
@@ -159,14 +160,12 @@
 \begin{tabular}{ p{10.9cm}}
   \hline
 ~ \\
-À moins d'être configuré différemment, Bash s'exécute avec les paramètres Emacs par défaut. Si vous préférez, vous pouvez passer aux raccourcis Vi à la place. Activez le mode Vi dans Bash comme suit: \\
+À moins d'être configuré différemment, Bash s'exécute avec les paramètres Emacs par défaut. Si vous préférez, vous pouvez passer aux raccourcis Vi à la place. \\
 ~ \\
-\texttt{set -o vi}  \\
+Activez le mode Vi dans Bash comme suit: \texttt{set -o vi}  \\
+Activez le mode Emacs dans Bash comme suit: \texttt{set -o emacs} \\
 ~ \\
-Activez le mode Emacs dans Bash comme suit: \\
 ~ \\
-\texttt{set -o emacs} 
-
 \end{tabular}
 \vfill 
 
