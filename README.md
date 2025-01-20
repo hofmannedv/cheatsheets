@@ -48,13 +48,15 @@ preparation for obtaining a Linux certificate.
 Currently, these cheatsheets are included:
 
 - Vi/Vim text editor
+- How to use the Nano text editor
 - Working with Bash
+- Essential commands for Linux
 - Package management under Debian GNU/Linux, and Ubuntu
 - Package management under RedHat Linux, and Fedora Linux
-- Essential commands for Linux
-- How to use the Nano text editor
+- Keyboard shortcuts for Mozilla Firefox webbrowser
+- Keyboard layouts for US keyboards (German, and French version of the book, only)
 
-50 pages, coloured, including 25 pages of cheatsheets.
+50 pages, coloured, including 30 pages of cheatsheets.
 
 You can obtain them from Amazon as follows:
 
