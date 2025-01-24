@@ -1,0 +1,349 @@
+% Red Hat Paketmanagement
+% Version 0.2
+% (C) 2023-2025 Frank Hofmann <info@efho.de>
+% Available from https://github.com/hofmannedv/cheatsheets
+
+% Published under Creative Commons CC-BY-SA 4.0 International License
+% https://creativecommons.org/licenses/by-sa/4.0/
+
+\documentclass[10pt,a4paper]{article}
+\usepackage{cheatsheeta4}
+
+\renewcommand{\cheatsheetTitle}{Aide-mémoire pour la gestion des paquets Red Hat}
+\renewcommand{\cheatsheetVersion}{Version 0.2}
+\renewcommand{\cheatsheetCopyright}{
+  \copyright~ 2023-2025 Frank Hofmann \faIcon{envelope} \href{mailto:info@efho.de}{info@efho.de}. Relecture et correction par Jean-Marc Trobrillant. Publié sous licence \href{https://creativecommons.org/licenses/by-sa/4.0/}{Creative Commons CC-BY-SA 4.0 International License}. Créé avec \LaTeX{}. \\ \faIcon{github} \href{https://github.com/hofmannedv/cheatsheets}{https://github.com/hofmannedv/cheatsheets}~.
+}
+
+% add document metadata as XMP data
+% add keywords based on hyperref package
+\usepackage{hyperxmp}
+\hypersetup{
+    pdfauthor={Frank Hofmann}, 
+    pdftitle={Aide-mémoire pour la gestion des paquets Red Hat},
+    pdfkeywords={Gestion des paquets, Red Hat, rpm, yum},
+    pdfsubject={Commandes pour une utilisation efficace de la gestion des paquets sous Red Hat Linux},
+    pdfcopyright={Copyright (C) 2023,2024 Frank Hofmann. Publié sous licence Creative Commons Attribution - Share Alike 4.0 International License (CC-BY-SA-4.0)}
+    pdfcopyrighturl={https://creativecommons.org/licenses/by-sa/4.0/legalcode.fr}
+}
+
+\newcommand{\tabellenkopf}{
+  \textbf{L'outil} & \textbf{Séquence de commande} & \textbf{Commentaires} \\
+}
+
+\begin{document}
+
+\cheatsheet
+
+\section{Installer de nouveaux paquets de logiciels}
+\begin{tabular}{ p{3.5cm} p{9cm} p{11cm}}
+  \hline
+  \rowcolor{Gray}
+  \tabellenkopf
+  %\textbf{Werkzeug} & \textbf{Kommando} & \textbf{Anmerkungen} \\
+  \hline 
+  \textbf{RPM} & \texttt{rpm -i \textit{fichier de paquet}} \newline \texttt{rpm --install \textit{fichier de paquet}} & Fichier de paquet désigne un fichier local \texttt{.rpm} \\
+  \rowcolor{Gray}
+  & \texttt{rpm -i --nodeps \textit{fichier de paquet}} \newline \texttt{rpm --install --nodeps \textit{fichier de paquet}} & Fichier de paquet désigne un fichier local \texttt{.rpm}; les dépendances de paquet ne sont pas prises en compte\\
+  & \texttt{rpm -ihv \textit{fichier de paquet}} & Fichier de paquet désigne un fichier local \texttt{.rpm}; installation avec sortie supplémentaire et barre de progression\\
+  \rowcolor{Gray}
+  \textbf{YUM} & \texttt{yum groupinstall \textit{groupe de paquets}} & Installer tous les paquets du groupe de paquets à partir d'une source de paquets\\
+  & \texttt{yum install \textit{nom du paquet}} & Installer le paquet à partir d'une source de paquets\\
+  \rowcolor{Gray}
+  & \texttt{yum localinstall \textit{nom du paquet}} & Installer un paquet à partir d'un fichier local ou d'une source de paquets accessible via HTTP ou FTP\\
+  & \texttt{yum reinstall \textit{nom du paquet}} & Réinstaller la dernière version du paquet à partir d'une source de paquets \\
+  \hline
+\end{tabular}
+
+\section{Renouveler les paquets de logiciels déjà existants}
+\begin{tabular}{ p{3.5cm} p{9cm} p{11cm}}
+  \hline
+  \rowcolor{Gray}
+  \tabellenkopf
+%  \textbf{Werkzeug} & \textbf{Kommando} & \textbf{Anmerkungen} \\
+  \hline 
+  \textbf{RPM} & \texttt{rpm --reinstall \textit{fichier de paquet}} & Le fichier de paquet désigne un fichier local \texttt{.rpm} \\
+  \rowcolor{Gray}
+  \textbf{YUM} & \texttt{yum reinstall \textit{nom du paquet}} & Le paquet est obtenu à partir d'une source de paquets \\
+  \hline
+\end{tabular}
+
+\section{Installer une version précédente d'un logiciel (rétrogradation)}
+\begin{tabular}{ p{3.5cm} p{9cm} p{11cm}}
+  \hline
+  \rowcolor{Gray}
+  \tabellenkopf
+  %\textbf{Werkzeug} & \textbf{Kommando} & \textbf{Anmerkungen} \\
+  \hline 
+  \textbf{YUM} & \texttt{yum downgrade \textit{nom du paquet}} & La version précédente du paquet est installée \\
+  \hline
+\end{tabular}
+
+\newpage
+
+\cheatsheet
+
+\section{Télécharger uniquement les paquets de logiciels}
+\begin{tabular}{ p{3.5cm} p{9cm} p{11cm}}
+  \hline
+  \rowcolor{Gray}
+  \tabellenkopf
+  %\textbf{Werkzeug} & \textbf{Kommando} & \textbf{Anmerkungen} \\
+  \hline 
+  \textbf{YUM} & \texttt{yum install --downloadonly \textit{nom du paquet}} & Le paquet est obtenu à partir d'une seule source de paquets et stocké dans le cache des paquets\\
+  \rowcolor{Gray}
+  & \texttt{yumdownloader \textit{nom du paquet}} & Le paquet est obtenu à partir d'une seule source de paquets et stocké dans le répertoire courant\\
+  & \texttt{yumdownloader --resolve \textit{nom du paquet}} & Le paquet et ses dépendances sont obtenus à partir d'une source de paquets et enregistrés dans le répertoire actuel\\
+  \hline
+\end{tabular}
+
+\section{Mettre à jour les paquets de logiciels existants}
+\begin{tabular}{ p{3.5cm} p{9cm} p{11cm}}
+  \hline
+  \rowcolor{Gray}
+  \tabellenkopf
+  %\textbf{Werkzeug} & \textbf{Kommando} & \textbf{Anmerkungen} \\
+  \hline 
+  \textbf{RPM} & \texttt{rpm -F \textit{fichier de paquet}} \newline \texttt{rpm --freshen \textit{fichier de paquet}} & Mettre à jour un paquet déjà installé; la base est un fichier local \\
+  \rowcolor{Gray}
+  & \texttt{rpm -U \textit{fichier de paquet}} \newline \texttt{rpm --upgrade \textit{fichier de paquet}} & Mettre à jour un paquet déjà installé ou installer le paquet s'il n'est pas encore installé; la base est un fichier local \\
+  \textbf{YUM} & \texttt{yum update} & Mettre à jour tous les paquets pour lesquels des mises à jour sont disponibles; la base est une source de paquets \\
+  \rowcolor{Gray}
+  & \texttt{yum update \textit{nom du paquet}} & Mettre à jour uniquement le paquet spécifié; la base est une source de paquets \\  
+  & \texttt{yum update --security} & N'appliquer que les mises à jour de sécurité; la base est une source de paquets \\  
+  \rowcolor{Gray}
+  & \texttt{yum update-to \textit{nom du paquet-Version}} & Mettre à jour uniquement le paquet indiqué ou tous les paquets indiqués vers la version indiquée; la base est une source de paquets \\  
+  & \texttt{yum upgrade} & Mettre à jour tous les paquets déjà installés, y compris les paquets qui ne sont plus maintenus; la base est une source de paquets \\  
+  \rowcolor{Gray}
+  & \texttt{yum upgrade \textit{nom du paquet}} & Ne mettez à jour que le paquet déjà installé, même s'il n'est plus maintenu; la base est une source de paquets \\  
+  \hline
+\end{tabular}
+
+\newpage
+
+\cheatsheet
+
+\section{Afficher des informations sur un seul paquet de logiciels}
+\begin{tabular}{ p{3.5cm} p{9cm} p{11cm}}
+  \hline
+  \rowcolor{Gray}
+  \tabellenkopf
+  %\textbf{Werkzeug} & \textbf{Kommando} & \textbf{Anmerkungen} \\
+  \hline 
+  \textbf{RPM} & \texttt{rpm -q \textit{nom du paquet}} \newline \texttt{rpm --query \textit{nom du paquet}} & Afficher la condition d'installation\\
+  \rowcolor{Gray}
+  & \texttt{rpm -qp \textit{fichier de paquet}} \newline \texttt{rpm --query --package \textit{fichier de paquet}}& Afficher l'état de l'installation pour le fichier de paquet\\
+  & \texttt{rpm -qi \textit{nom du paquet}} \newline \texttt{rpm --query --info \textit{nom du paquet}} & Afficher des informations détaillées sur le paquet \\
+  \rowcolor{Gray}
+  & \texttt{rpm -qpi \textit{fichier de paquet}} \newline \texttt{rpm --query --package --info \textit{fichier de paquet}} &  Afficher des informations détaillées sur le paquet pour le fichier de paquet local\\
+  \textbf{YUM} & \texttt{yum info \textit{nom du paquet}} & Afficher des informations détaillées sur le paquet et l'état de l'installation \\
+  \hline
+\end{tabular}
+
+\section{Afficher les dépendances de paquets de logiciels}
+\begin{tabular}{ p{3.5cm} p{9cm} p{11cm}}
+  \hline
+  \rowcolor{Gray}
+  \tabellenkopf
+  %\textbf{Werkzeug} & \textbf{Kommando} & \textbf{Anmerkungen} \\
+  \hline 
+  \textbf{RPM} & \texttt{rpm -qR \textit{nom du paquet}} \newline \texttt{rpm --query --requires \textit{nom du paquet}} & Afficher les paquets requis pour le paquet déjà installé \\
+  \rowcolor{Gray}
+  & \texttt{rpm -qpR \textit{fichier de paquet}} \newline \texttt{rpm --query --package --requires \textit{fichier de paquet}} & Afficher les paquets requis pour le fichier de paquet local \\
+  \textbf{YUM} & \texttt{yum deplist \textit{nom du paquet}} \newline \texttt{repoquery --requires \textit{nom du paquet}} \newline \texttt{yumdownloader --resolve \textit{nom du paquet}} & Afficher les dépendances du paquet \\
+  \hline
+\end{tabular}
+
+\newpage
+
+\cheatsheet
+
+\section{Afficher les fichiers d'un paquet avant l'installation}
+\begin{tabular}{ p{3.5cm} p{9cm} p{11cm}}
+  \hline
+  \rowcolor{Gray}
+  \tabellenkopf
+  %\textbf{Werkzeug} & \textbf{Kommando} & \textbf{Anmerkungen} \\
+  \hline 
+  \textbf{RPM} & \texttt{rpm -ql \textit{nom du paquet}} \newline \texttt{rpm --query --list \textit{nom du paquet}} & Afficher le contenu du paquet\\
+  \rowcolor{Gray}
+  & \texttt{rpm -qpl \textit{fichier de paquet}} \newline \texttt{rpm --query --package --list \textit{fichier de paquet}} & Afficher le contenu du fichier de paquets local ou à distance\\
+  \textbf{YUM} & \texttt{repoquery -l \textit{nom du paquet}} \newline \texttt{repoquery --list \textit{nom du paquet}} & Afficher le contenu du fichier de paquets local ou à distance \\
+  \hline
+\end{tabular}
+
+\section{Supprimer les paquets de logiciels et les fichiers de configuration}
+\begin{tabular}{ p{3.5cm} p{9cm} p{11cm}}
+  \hline
+  \rowcolor{Gray}
+  \tabellenkopf
+  %\textbf{Werkzeug} & \textbf{Kommando} & \textbf{Anmerkungen} \\
+  \hline 
+  \textbf{RPM} & \texttt{rpm -e \textit{nom du paquet}} \newline \texttt{rpm --erase \textit{nom du paquet}} & Supprimer le paquet en tenant compte des dépendances du paquet \\
+  \rowcolor{Gray}
+  & \texttt{rpm -e --nodeps \textit{nom du paquet}} \newline \texttt{rpm --erase  --nodeps \textit{nom du paquet}} & Supprimer le paquet sans tenir compte des dépendances du paquet \\
+  \textbf{YUM} & \texttt{yum erase \textit{nom du paquet}} \newline \texttt{yum remove \textit{nom du paquet}} & Supprimer le paquet et les éventuelles dépendances \\
+  \rowcolor{Gray}
+  \hline
+\end{tabular}
+
+\section{Lister les fichiers d'un paquet installé}
+\begin{tabular}{ p{3.5cm} p{9cm} p{11cm}}
+  \hline
+  \rowcolor{Gray}
+  \tabellenkopf
+  %\textbf{Werkzeug} & \textbf{Kommando} & \textbf{Anmerkungen} \\
+  \hline 
+  \textbf{RPM} & \texttt{rpm -ql \textit{nom du paquet}} \newline \texttt{rpm --query --list \textit{nom du paquet}} & Afficher le contenu du paquet installé localement\\
+  \rowcolor{Gray}
+  \textbf{YUM} & \texttt{repoquery -l \textit{nom du paquet}} \newline \texttt{repoquery --list \textit{nom du paquet}} & Afficher le contenu du paquet local à distance \\
+  \hline
+\end{tabular}
+\newpage
+
+\cheatsheet
+
+\section{Lister les paquets de logiciels installés}
+\begin{tabular}{ p{3.5cm} p{9cm} p{11cm}}
+  \hline
+  \rowcolor{Gray}
+  \tabellenkopf
+  %\textbf{Werkzeug} & \textbf{Kommando} & \textbf{Anmerkungen} \\
+  \hline 
+  \textbf{RPM} & \texttt{rpm -qa} \newline \texttt{rpm --query --all} & Lister tous les paquets installés\\
+  \rowcolor{Gray}
+  & \texttt{rpm -qa --last} \newline \texttt{rpm --query --all --last} & Lister tous les paquets installés, les derniers paquets installés apparaissent en premier\\
+  \textbf{YUM} & \texttt{yum list installed} & Lister tous les paquets installés\\
+  \rowcolor{Gray}
+  & \texttt{yum list all} & Lister tous les paquets disponibles et installés\\
+  & \texttt{yum list \textit{nom du paquet}} & Afficher la version installée du paquet \\
+  \hline
+\end{tabular}
+
+
+\section{Lister les fichiers d'un paquet installé}
+\begin{tabular}{ p{3.5cm} p{9cm} p{11cm}}
+  \hline
+  \rowcolor{Gray}
+  \tabellenkopf
+  %\textbf{Werkzeug} & \textbf{Kommando} & \textbf{Anmerkungen} \\
+  \hline 
+  \textbf{RPM} & \texttt{rpm -qc \textit{nom du paquet}} \newline \texttt{rpm --query --configfiles \textit{nom du paquet}} & Lister tous les fichiers du paquet qui sont marqués comme fichiers de configuration\\
+  \hline
+\end{tabular}
+
+\section{Lister les fichiers de documentation d'un paquet}
+\begin{tabular}{ p{3.5cm} p{9cm} p{11cm}}
+  \hline
+  \rowcolor{Gray}
+  \tabellenkopf
+  %\textbf{Werkzeug} & \textbf{Kommando} & \textbf{Anmerkungen} \\
+  \hline 
+  \textbf{RPM} & \texttt{rpm -qd \textit{nom du paquet}} \newline \texttt{rpm --query --docfiles \textit{nom du paquet}} & Lister tous les fichiers du paquet qui sont marqués comme fichiers de documentation\\
+  \hline
+\end{tabular}
+\newpage
+
+\cheatsheet
+
+\section{Identifier le paquet d'où provient un fichier}
+\begin{tabular}{ p{3.5cm} p{9cm} p{11cm}}
+  \hline
+  \rowcolor{Gray}
+  \tabellenkopf
+  %\textbf{Werkzeug} & \textbf{Kommando} & \textbf{Anmerkungen} \\
+  \hline 
+  \textbf{RPM} & \texttt{rpm -qf \textit{nom de fichier}} \newline \texttt{rpm --query --file \textit{nom de fichier}} & Recherche du fichier dans tous les paquets installés. Le nom du fichier doit être indiqué avec le chemin complet.\\
+  \rowcolor{Gray}
+  \textbf{YUM} & \texttt{yum provides \textit{nom de fichier}} & Recherche du fichier dans tous les paquets disponibles. Le nom du fichier doit être indiqué avec le chemin complet. \\
+  \hline
+\end{tabular}
+
+\section{Afficher la condition du paquet du logiciel}
+\begin{tabular}{ p{3.5cm} p{9cm} p{11cm}}
+  \hline
+  \rowcolor{Gray}
+  \tabellenkopf
+  %\textbf{Werkzeug} & \textbf{Kommando} & \textbf{Anmerkungen} \\
+  \hline 
+  \textbf{RPM} & \texttt{rpm -qi \textit{nom du paquet}} \newline \texttt{rpm --query --info \textit{nom du paquet}} & Recherche dans tous les paquets disponibles\\
+  \rowcolor{Gray}
+  & \texttt{rpm -qip \textit{nom du paquet}} \newline \texttt{rpm --query --info --package \textit{nom du paquet}} & Recherche dans les fichiers de paquets disponibles localement\\
+  \textbf{YUM} & \texttt{yum info \textit{nom du paquet}} & Recherche dans tous les paquets installés\\
+  \hline
+\end{tabular}
+
+\section{Vérifier la signature des paquets}
+\begin{tabular}{ p{3.5cm} p{9cm} p{11cm}}
+  \hline
+  \rowcolor{Gray}
+  \tabellenkopf
+  %\textbf{Werkzeug} & \textbf{Kommando} & \textbf{Anmerkungen} \\
+  \hline 
+  \textbf{RPM} & \texttt{rpm -K \textit{nom du paquet}} \newline \texttt{rpm --checksig \textit{nom du paquet}} & Vérifier la signature GPG du paquet \\
+  \hline
+\end{tabular}
+
+\section{Vérifier les modifications d'un paquet déjà installé}
+\begin{tabular}{ p{3.5cm} p{9cm} p{11cm}}
+  \hline
+  \rowcolor{Gray}
+  \tabellenkopf
+  %\textbf{Werkzeug} & \textbf{Kommando} & \textbf{Anmerkungen} \\
+  \hline 
+  \textbf{RPM} & \texttt{rpm -Vp \textit{fichier de paquet}} \newline \texttt{rpm --verify --package \textit{fichier de paquet}} & Vérifier le fichier de paquets local\\
+  \rowcolor{Gray}
+  & \texttt{rpm -Va \newline \texttt{rpm --verify --all }} & Vérifier tous les paquets installés \\
+  \textbf{YUM} & \texttt{yum verify \textit{nom du paquet}} & Vérifier le paquet installé; nécessite le plugin YUM \textit{yum-verify} \\
+  \hline
+\end{tabular}
+
+\newpage
+
+\cheatsheet
+
+\section{Lister les paquets disponibles}
+\begin{tabular}{ p{3.5cm} p{9cm} p{11cm}}
+  \hline
+  \rowcolor{Gray}
+  \tabellenkopf
+  %\textbf{Werkzeug} & \textbf{Kommando} & \textbf{Anmerkungen} \\
+  \hline 
+  \textbf{YUM} & \texttt{yum list available} & Lister tous les paquets disponibles \\
+  \hline
+\end{tabular}
+
+\section{Afficher les paquets à mettre à jour}
+\begin{tabular}{ p{3.5cm} p{9cm} p{11cm}}
+  \hline
+  \rowcolor{Gray}
+  \tabellenkopf
+  %\textbf{Werkzeug} & \textbf{Kommando} & \textbf{Anmerkungen} \\
+  \hline 
+  \textbf{YUM} & \texttt{yum check-update} & Vérifier toutes les sources de paquets pour les mises à jour de paquets \\
+  \rowcolor{Gray}
+  & \texttt{yum updateinfo list available} & Lister les paquets disponibles avec la nouvelle version \\
+  & \texttt{yum updateinfo list sec} \newline \texttt{yum updateinfo list --security} & Lister uniquement toutes les mises à jour de sécurité \\
+  \hline
+\end{tabular}
+
+\section{Livres et matériel recommandés}
+
+\begin{description}
+
+    \item[Edward C. Bailey: Maximum RPM] ~ \\
+        \begin{tabbing}
+            \= Langues disponibles: \= \= anglais \\
+            \> Site web du projet: \> \> \href{https://ftp.osuosl.org/pub/rpm/max-rpm/}{https://ftp.osuosl.org/pub/rpm/max-rpm/} \\
+            \> Participation: \> \> unconnu \\
+        \end{tabbing}
+        
+    \item[La documentation de RPM] ~ \\
+        \begin{tabbing}
+            \= Langues disponibles: \= \= anglais \\
+            \> Site web du projet: \> \> \href{https://rpm.org/documentation.html}{https://rpm.org/documentation.html} \\
+            \> Participation: \> \> unconnu \\
+        \end{tabbing}
+    \end{description}
+
+\end{document}
