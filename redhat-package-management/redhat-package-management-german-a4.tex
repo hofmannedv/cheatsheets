@@ -1,6 +1,6 @@
 % Red Hat Paketmanagement
-% Version 0.4
-% (C) 2023,2024 Frank Hofmann <info@efho.de>
+% Version 0.5
+% (C) 2023,2025 Frank Hofmann <info@efho.de>
 % Available from https://github.com/hofmannedv/cheatsheets
 
 % Published under Creative Commons CC-BY-SA 4.0 International License
@@ -10,9 +10,9 @@
 \usepackage{cheatsheeta4}
 
 \renewcommand{\cheatsheetTitle}{Cheatsheet für das Red Hat Paketmanagement}
-\renewcommand{\cheatsheetVersion}{Version 0.4}
+\renewcommand{\cheatsheetVersion}{Version 0.5}
 \renewcommand{\cheatsheetCopyright}{
-  \copyright~ 2023-2024 Frank Hofmann \\ \faIcon{envelope} \href{mailto:info@efho.de}{info@efho.de}~. Veröffentlicht unter 
+  \copyright~ 2023-2025 Frank Hofmann \\ \faIcon{envelope} \href{mailto:info@efho.de}{info@efho.de}~. Veröffentlicht unter 
  \href{https://creativecommons.org/licenses/by-sa/4.0/}{Creative Commons \\ CC-BY-SA 4.0 International License}. Erstellt mit \LaTeX. \\ \faIcon{github} \href{https://github.com/hofmannedv/cheatsheets}{https://github.com/hofmannedv/cheatsheets}~.
 }
 
@@ -94,7 +94,7 @@
   \rowcolor{Gray}
   \textbf{Werkzeug} & \textbf{Kommando} & \textbf{Anmerkungen} \\
   \hline 
-  \textbf{YUM} & \texttt{yum downgrade \textit{package}} & Die vorherige Version des Pakets wird installiert \\
+  \textbf{YUM} & \texttt{yum downgrade \textit{Paketname}} & Die vorherige Version des Pakets wird installiert \\
   \hline
 \end{tabular}
 
@@ -117,9 +117,9 @@
   \rowcolor{Gray}
   \textbf{Werkzeug} & \textbf{Kommando} & \textbf{Anmerkungen} \\
   \hline 
-  \textbf{RPM} & \texttt{rpm -e \textit{Paketname}} \newline \texttt{rpm --erase \textit{package}} & Entferne das Paket mit Berücksichtigung der Paketabhängigkeiten\\
+  \textbf{RPM} & \texttt{rpm -e \textit{Paketname}} \newline \texttt{rpm --erase \textit{Paketname}} & Entferne das Paket mit Berücksichtigung der Paketabhängigkeiten\\
   \rowcolor{Gray}
-  & \texttt{rpm -e --nodeps \textit{Paketname}} \newline \texttt{rpm --erase  --nodeps\textit{Paketname}} & Entferne das Paket ohne Berücksichtigung der Paketabhängigkeiten\\
+  & \texttt{rpm -e --nodeps \textit{Paketname}} \newline \texttt{rpm --erase  --nodeps \textit{Paketname}} & Entferne das Paket ohne Berücksichtigung der Paketabhängigkeiten\\
   \textbf{YUM} & \texttt{yum erase \textit{Paketname}} \newline \texttt{yum remove \textit{Paketname}} & Entferne das Paket und mögliche Abhängigkeiten\\
   \rowcolor{Gray}
   \hline
