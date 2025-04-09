@@ -1,6 +1,6 @@
 % Essential Linux Commands
-% Version 0.16
-% (C) 2023-2024 Frank Hofmann <info@efho.de>
+% Version 0.17
+% (C) 2023-2025 Frank Hofmann <info@efho.de>
 % Available from https://github.com/hofmannedv/cheatsheets
 
 % Published under Creative Commons CC-BY-SA 4.0 International License
@@ -10,9 +10,9 @@
 \usepackage{cheatsheeta4}
 
 \renewcommand{\cheatsheetTitle}{Essentielle Kommandos \newline für Linux}
-\renewcommand{\cheatsheetVersion}{Version 0.16}
+\renewcommand{\cheatsheetVersion}{Version 0.17}
 \renewcommand{\cheatsheetCopyright}{
-  \copyright~ 2023-2024 Frank Hofmann \faIcon{envelope} \href{mailto:info@efho.de}{info@efho.de} \\ Veröffentlicht unter 
+  \copyright~ 2023-2025 Frank Hofmann \faIcon{envelope} \href{mailto:info@efho.de}{info@efho.de} \\ Veröffentlicht unter 
  \href{https://creativecommons.org/licenses/by-sa/4.0/}{Creative Commons CC-BY-SA 4.0 \\ International License}. Erstellt mit \LaTeX. \\ \faIcon{github} \href{https://github.com/hofmannedv/cheatsheets}{https://github.com/hofmannedv/cheatsheets}~.
 }
 
@@ -24,7 +24,7 @@
     pdftitle={Essentielle Kommandos für Linux},
     pdfkeywords={Linux, Kommandozeile, Umgang mit der Shell, Paketverwaltung},
     pdfsubject={Effektiver Umgang mit der Linux-Kommandozeile},
-    pdfcopyright={Copyright (C) 2023-2024 Frank Hofmann. Veröffentlicht unter Creative Commons Attribution - Share Alike 4.0 International License (CC-BY-SA-4.0)}
+    pdfcopyright={Copyright (C) 2023-2025 Frank Hofmann. Veröffentlicht unter Creative Commons Attribution - Share Alike 4.0 International License (CC-BY-SA-4.0)}
     pdfcopyrighturl={https://creativecommons.org/licenses/by-sa/4.0/legalcode.en}
 }
 
@@ -35,34 +35,26 @@
 \begin{multicols}{2}
 
 \section{Systeminformationen und -administration}
+\rowcolors{1}{}{Gray}
 \begin{tabular}{ p{2.5cm} p{8.5cm} }
   \hline
   \texttt{blkid} & Gib die Blockgeräte samt deren IDs aus\\
-  \rowcolor{Gray}
-  \texttt{cfdisk}, \texttt{fdisk} & Ändere die Partitionstabelle \\
+  \texttt{cfdisk}, \texttt{fdisk}, \texttt{gfdisk} & Ändere die Partitionstabelle \\
   \texttt{cpu-info}, \texttt{cpuid}, \texttt{lscpu} & Gib detaillierte Informationen zu den Prozessoren aus \\
-  \rowcolor{Gray}
   \texttt{df}, \texttt{dfc}, \texttt{duf} & Zeige den freien Speicherplatz von Datenträgern an \\
   \texttt{du}, \texttt{duf} & Zeige den belegten Speicherplatz von Datenträgern an \\
-  \rowcolor{Gray}
   \texttt{free} & Zeige sowohl den verfügbaren, als auch den benutzten RAM und Auslagerungsspeicher (Swap) an\\
   \texttt{halt}, \texttt{poweroff}, \texttt{shutdown} & Halte das System an\\
-  \rowcolor{Gray}
   \texttt{journalctl} & Liefere Informationen zu den Logeinträgen via Systemd \\
   \texttt{lsblk} & Zeige Informationen zu den Blockgeräten an\\
-  \rowcolor{Gray}
   \texttt{lsdev}, \texttt{lshw} & Zeige Informationen zu den installierten Hardwarekomponenten an\\
   \texttt{lsof} & Liste die geöffneten Dateien auf \\
-  \rowcolor{Gray}
   \texttt{lspci} & Liste alle PCI-Geräte auf\\
   \texttt{lsusb} & Liste alle USB-Anschlüsse auf\\
-  \rowcolor{Gray}
   \texttt{mailq} & Liste den Inhalt der Mailwarteschlange auf \\
   \texttt{reboot} & Starte das System neu\\
-  \rowcolor{Gray}
   \texttt{systemctl} & Steuere die Systemdienste \\
   \texttt{systemd-cat} & Verbinde eine Pipe oder eine Programm\-ausgabe mit dem Journal (Logfile) \\
-  \rowcolor{Gray}
   \texttt{uname} & Zeige Informationen zum aktuellen Linux\-kernel an \\
   \texttt{uptime} & Gib die Zeitdauer seit dem Systemstart aus \\
   \hline
@@ -72,10 +64,10 @@
 \vfill
 
 \section{Finde Dateien und Verzeichnisse}
+\rowcolors{1}{}{Gray}
 \begin{tabular}{ p{2.5cm} p{8.5cm} }
   \hline
   \texttt{find} & Finde Dateien und Verzeichnisse anhand \newline verschiedener Kriterien \\
-  \rowcolor{Gray}
   \texttt{locate} & Finde Dateien und Verzeichnisse anhand des Namens über die Locate-Datenbank \\
   \texttt{updatedb} & Initialisiere und aktualisiere die Locate-Datenbank \\
   \hline
@@ -86,28 +78,22 @@
 \columnbreak
 
 \section{Datei- und Verzeichnisoperationen}
+\rowcolors{1}{}{Gray}
 \begin{tabular}{ p{2.5cm} p{8.5cm} }
   \hline
   \texttt{cd} & Wechsele in ein Verzeichnis \\
-  \rowcolor{Gray}
   \texttt{cp} & Kopiere eine Datei \\
   \texttt{file} & Identifiziere den Typ einer Datei\\
-  \rowcolor{Gray}
   \texttt{ln} & Erzeuge einen Link (Verknüpfung) \\
   \texttt{ls} & Liste den Inhalt eines Verzeichnisses auf \\
-  \rowcolor{Gray}
   \texttt{mkdir} & Lege ein Verzeichnis an\\
   \texttt{mmv} & Benenne um oder verschiebe mehrere Dateien und Verzeichnisse \\
-  \rowcolor{Gray}
   \texttt{mv} & Benenne um oder verschiebe eine einzelne Datei oder ein Verzeichnis \\
   \texttt{pwd} & Gib das aktuelle Arbeitsverzeichnis aus \\
-  \rowcolor{Gray}
   \texttt{rm} & Entferne eine oder mehrere Dateien oder Verzeichnisse \\
   \texttt{rmdir} & Entferne ein leeres Verzeichnis \\
-  \rowcolor{Gray}
   \texttt{stat} & Zeige die Details zu einer Datei, einem Verzeichnis oder Link an \\
   \texttt{touch} & Erzeuge eine leere Datei oder aktualisiere den Zeitstempel einer Datei \\
-  \rowcolor{Gray}
   \texttt{umask} & Lege die Maske fest, die bei der Erzeugung von Dateien als Vorlage genutzt wird \\
   \hline
 \end{tabular}
@@ -116,13 +102,12 @@
 \hfill
 
 \section{Paketverwaltung (Auswahl)}
+\rowcolors{1}{}{Gray}
 \begin{tabular}{ p{2.5cm} p{8.5cm} }
   \hline 
   \texttt{apt}, \texttt{apt-get}, \texttt{aptitude}, \texttt{dpkg}, \texttt{synaptic} & Installiere, aktualisiere, und entferne Software-\newline pakete~\fbox{1} \\
-  \rowcolor{Gray}
   \texttt{apt-cache} & Verwalte und befrage den Paketcache~\fbox{1} \\
   \texttt{\small{dpkg-reconfigure}} & Wiederhole die Paketkonfiguration~\fbox{1} \\
-  \rowcolor{Gray}
   \texttt{rpm}, \texttt{yum} & Installiere, aktualisiere und entferne Software-\newline pakete~\fbox{2} \\
   \hline
 \end{tabular}
@@ -139,31 +124,25 @@
 \begin{multicols}{2}
 
 \section{Netzwerkkommandos}
+\rowcolors{1}{}{Gray}
 \begin{tabular}{ p{2.5cm} p{8.5cm} }
   \hline
   \texttt{dhclient} & Beziehe eine dynamische IP-Adresse \\
-  \rowcolor{Gray}
   \texttt{dig}, \texttt{host} & Löse einen Hostnamen über das DNS auf \\
   \texttt{hostname} & Zeige den Hostname des Systems an \\
-  \rowcolor{Gray}
+  \texttt{hostnamectl} & Ändere den Hostname des Systems\\
   \texttt{ifconfig}, \texttt{iwconfig} & Konfiguriere die Netzwerkschnittstellen und zeige deren Konfiguration an (veraltet)\\
   \texttt{ifdown} & Deaktiviere eine Netzwerkschnittstelle \\
-  \rowcolor{Gray}
   \texttt{ifup} & Aktiviere eine Netzwerkschnittstelle\\
   \texttt{ip} & Konfiguriere die Netzwerkschnittstellen und zeige deren Konfiguration an \\
-  \rowcolor{Gray}
   \texttt{iwlist} & Liste die verfügbaren WLAN-Netze auf\\
   \texttt{nc}, \texttt{netcat} & Das Schweizer Taschenmesser zu TCP/IP \\
-  \rowcolor{Gray}
   \texttt{netstat}, \texttt{ss} & Zeige Netzwerkstatistiken an \\
   \texttt{nmap} & Scanne nach genutzten Ports \\
-  \rowcolor{Gray}
   \texttt{nslookup} & Suche in Namensdiensten (\textit{name server}) \\
   \texttt{ping}, \texttt{ping6} & Sende ein ICMP-Paket an einen Zielrechner oder Schnittstelle \\
-  \rowcolor{Gray}
   \texttt{route} & Zeige die Routingtabelle an \\
   \texttt{tcpdump} & Gib den Netzwerkverkehr aus \\
-  \rowcolor{Gray}
   \texttt{traceroute}, \texttt{traceroute6} & Gib die Route eines Netzwerkpakets zum Zielrechner aus \\
   \texttt{wget} & Nicht-interaktiver Datentransfer von einer Quelle\\
   \hline
@@ -173,13 +152,12 @@
 %~ \\
 
 \section{Sichere Datenübertragung}
+\rowcolors{1}{}{Gray}
 \begin{tabular}{ p{2.5cm} p{8.5cm} }
   \hline
-  \texttt{rsync}, \texttt{scp} & Synchronisiere Daten und Verzeichnisse lokal und zu einem anderen Rechner über einen verschlüsselten Kanal \\
-  \rowcolor{Gray}
+  \texttt{rsync}, \texttt{scp} & Synchronisiere Daten lokal und zu einem anderen Rechner über einen verschlüsselten Kanal \\
   \texttt{ssh} & Verbinde zu einem anderen Rechner über einen verschlüsselten Kanal\\
   \texttt{ssh-copy-id} & Übertrage den öffentlichen Teil eines Schlüsselpaars zu einem entfernten Rechner zur passwortlosen Authentifizierung\\
-  \rowcolor{Gray}
   \texttt{ssh-keygen} & Erzeuge ein Schlüsselpaar zur passwortlosen Authentifizierung\\
   \hline
 \end{tabular}
@@ -189,55 +167,44 @@
 \columnbreak
 
 \section{Benutzer, Gruppen und Zugangskontrolle}
+\rowcolors{1}{}{Gray}
 \begin{tabular}{ p{2.5cm} p{8.5cm} }
   \hline
   \texttt{addgroup} & Füge eine neue Gruppe hinzu~\fbox{1} \\
-  \rowcolor{Gray}
   \texttt{adduser} & Füge einen neuen Benutzer hinzu~\fbox{1} \\
   \texttt{chage} & Ändere die Gültigkeit eines Benutzers\\
-  \rowcolor{Gray}
   \texttt{chgrp} & Ändere die Gruppe für Datei oder Verzeichnis\\
   \texttt{chmod} & Ändere die Zugriffsrechte für Datei oder Verzeichnis \\
-  \rowcolor{Gray}
   \texttt{chown} & Ändere den Eigentümer für Datei oder Verzeichnis\\
+  \texttt{chsh} & Ändere die Login-Shell eines bestehenden Benutzers\\
   \texttt{delgroup} & Entferne eine bestehende Gruppe~\fbox{1} \\
-  \rowcolor{Gray}
   \texttt{deluser} & Entferne einen bestehenden Benutzer~\fbox{1} \\
   \texttt{getent} & Suche die Benutzerinformationen aus den lokalen Datenbanken heraus \\
-  \rowcolor{Gray}
   \texttt{getfacl} & Liste die ACLs für Datei oder Verzeichnis auf \\
   \texttt{groupadd} & Lege eine neue Gruppe an~\fbox{2} \\
-  \rowcolor{Gray}
   \texttt{groupdel} & Entferne eine bestehende Gruppe~\fbox{2} \\
   \texttt{groupmod} & Ändere eine bestehende Gruppe~\fbox{2} \\
-  \rowcolor{Gray}
   \texttt{groups} & Liste die Gruppen auf, zu denen ein Benutzer gehört \\
   \texttt{id} & Zeige die Informationen zu einem Benutzer an \\
-  \rowcolor{Gray}
   \texttt{last}, \texttt{lastb} & Zeige den Zeitpunkt der letzten (nicht) erfolgreichen Anmeldung eines Benutzers \\
   \texttt{passwd}, \texttt{usermod} & Ändere das Passwort für einen Benutzer \\
-  \rowcolor{Gray}
   \texttt{pwgen} & Generiere ein zufälliges Passwort \\
   \texttt{setfacl} & Setze die ACLs für Datei oder Verzeichnis \\
-  \rowcolor{Gray}
   \texttt{su} & Wechsele zu einem anderen Benutzer\\
   \texttt{sudo} & Führe ein Kommando als administrativer Benutzer aus \\
-  \rowcolor{Gray}
   \texttt{useradd} & Füge einen neuen Benutzer hinzu~\fbox{2} \\
   \texttt{userdel} & Entferne einen bestehenden Benutzer~\fbox{2} \\
-  \rowcolor{Gray}
   \texttt{usermod} & Ändere einen bestehenden Benutzer~\fbox{2} \\
   \texttt{users}, \texttt{w}, \texttt{who} & Liste die angemeldeten Benutzer auf \\
-  \rowcolor{Gray}
   \texttt{wall} & Schreibe eine Nachricht an alle gerade angemeldeten Benutzer \\
   \texttt{whoami} & Zeige den aktuellen Benutzernamen an \\
   \hline
 \end{tabular}
 
 ~ \\
-\noindent Anmerkungen: ~\fbox{1} High-Level-Werkzeug ~\fbox{2}~Low-Level-Werkzeug
-
-~ \hfill
+\noindent Anmerkungen: ~\fbox{1} High-Level-Werkzeug ~\fbox{2}~Low-Level-Werkzeug \\
+~ \\
+%~ \hfill
 
 \end{multicols}
 
@@ -247,91 +214,78 @@
 
 \begin{multicols}{2}   
 
-\section{Hilfe bekommen\phantom{g}}
+\section{Systemzeit, Datum, Kalender und Lokalisierung}
+\rowcolors{1}{}{Gray}
 \begin{tabular}{ p{2.5cm} p{8.5cm} }
   \hline
-  \texttt{apropos} & Zeige einen kurzen Hilfetext für das Kommando an \\
-  \rowcolor{Gray}
-  \texttt{info} & Zeige die Hilfe aus dem GNU Info-System an\\
-  \texttt{man} & Zeige eine erweiterte Hilfe für das Kommando an \\
-  \rowcolor{Gray}
-  \texttt{manpath} & Steuere den Pfad zu den Hilfeseiten \\
-  \texttt{whatis} & Schaue in der Index-Datenbank für kurze Hilfetexte zu dem angegebenen Kommando nach \\
+  \texttt{cal}, \texttt{ncal} & Zeige einen Kalender an\\
+  \texttt{date} & Gib einen Zeitstempel in verschiedenen Formaten aus \\
+  \texttt{hwclock} & Steuere sowohl Hardware- als auch die Systemuhr\\
+  \texttt{locale} & Zeige die Informationen zur aktuell genutzten Lokalisierung an \\
+  \texttt{localectl} & Ändere die aktuell genutzte Lokalisierung \\
+  \texttt{ntpdate}, \texttt{ntpsec-ntpdate} & Beziehe die Zeitinformationen von einem NTP-Server \\
+  \texttt{timedatectl} & Steuere die Systemzeit und das Datum \\
   \hline
 \end{tabular}
+
 
 ~ \\
 \vfill
 
 \section{Prozesse und Auftragsverwaltung}
+\rowcolors{1}{}{Gray}
 \begin{tabular}{ p{2.5cm} p{8.5cm} }
   \hline
   \texttt{bg} & Sende einen Prozess in den Hintergrund \\
-  \rowcolor{Gray}
   \texttt{fg} & Bringe einen Prozess in den Vordergrund \\
   \texttt{htop}, \texttt{top} & Ein Prozessmonitor \\
-  \rowcolor{Gray}
   \texttt{jobs} & Liste die laufenden Aufträge auf \\
   \texttt{kill} & Sende ein Signal an einen Prozess \\
-  \rowcolor{Gray}
   \texttt{killall} & Sende ein Signal an mehrere Prozesse\\
   \texttt{nice}, \texttt{renice} & Ändere die Priorität eines Prozesses \\
-  \rowcolor{Gray}
   \texttt{pgrep} & Finde einen Prozess anhand seines Namens oder eines Regulären Ausdrucks \\
   \texttt{pkill} & Finde Prozesse oder sende ein Signal an sie basierend auf dem Prozessnamen und anderen Attributen\\
-  \rowcolor{Gray}
   \texttt{ps} & Liste die laufenden Prozesse auf \\
   \texttt{pstree} & Liste die laufenden Prozesse als Baumstruktur auf \\
-  \rowcolor{Gray}
   \texttt{pwdx} & Zeige das aktuelle Arbeitsverzeichnis eines Prozesses an \\
   \texttt{sleep} & Unterbreche (pausiere) die Ausführung eines Kommandos \\
-  \rowcolor{Gray}
   \texttt{watch} & Führe ein Kommando periodisch aus und zeige dessen Ausgabe im Vollbildmodus \\
   \hline
 \end{tabular}
 
 \section{Verarbeitung von Text und Datenströmen}
+\rowcolors{1}{}{Gray}
 \begin{tabular}{ p{2.5cm} p{8.5cm} }
   \hline
   \texttt{awk} & Ändere und extrahiere Daten, bevorzugt spaltenweise \\
-  \rowcolor{Gray}
   \texttt{cat} & Gib die Daten vom Anfang bis zum Ende aus\\
   \texttt{cmp}, \texttt{diff} & Vergleiche zwei Dateien und zeige die Unterschiede zwischen beiden an\\
-  \rowcolor{Gray}
   \texttt{colrm} & Entferne eine Spalte aus den Daten \\
   \texttt{column} & Gib die Daten spaltenweise aus \\
-  \rowcolor{Gray}
   \texttt{cut} &  Extrahiere die Daten spaltenweise\\
   \texttt{egrep}, \texttt{fgrep}, \texttt{grep} & Filtere Daten zeilenweise anhand eines Musters\\
-  \rowcolor{Gray}
   \texttt{head} & Gib die ersten Zeilen der Daten aus\\
   \texttt{hexdump} & Gib die Daten in hexadezimaler Schreibweise aus\\
-  \rowcolor{Gray}
   \texttt{nl} & Nummeriere die ausgegebenen Zeilen \\
   \texttt{paste} & Verbinde mehrere Dateien zu einer \\
-  \rowcolor{Gray}
   \texttt{rev} & Gib Text in umgekehrter Reihenfolge aus \\
   \texttt{sed} & Ändere die Daten zeilenweise \\
-  \rowcolor{Gray}
   \texttt{sort} & Sortiere die Daten anhand von Kriterien\\
   \texttt{split} & Teile die Daten anhand von Bedingungen \\
-  \rowcolor{Gray}
   \texttt{tac} & Gib die Daten vom Ende bis zum Anfang aus\\
   \texttt{tail} & Gib die letzten Zeilen der Daten aus\\
-  \rowcolor{Gray}
   \texttt{tee} & Lies von \texttt{stdin} und gib die Daten in eine Datei und auf \texttt{stdout} aus\\
   \texttt{tr} & Ersetze einzelne Zeichen in den Daten\\
-  \rowcolor{Gray}
   \texttt{uniq} & Finde und entferne doppelte Zeilen \\
   \texttt{wc} & Zähle in den Daten die Zeilen, Worte und Zeichen\\
   \hline
 \end{tabular}
 
 \section{Umgang mit Logdateien}
+\rowcolors{1}{}{Gray}
 \begin{tabular}{ p{2.5cm} p{8.5cm} }
   \hline
   \texttt{journalctl} & Liefere Informationen zu den Logeinträgen via Systemd \\
-  \rowcolor{Gray}
   \texttt{logger} & Eine Schnittstelle zu Syslog \\
   \texttt{logrotate} & Rotieren, komprimieren und versenden von  systembezogenen Logdateien \\
   \hline
@@ -345,52 +299,43 @@
 
 \begin{multicols}{2} 
 \section{Umgang mit Dateisystemen}
+\rowcolors{1}{}{Gray}
 \begin{tabular}{ p{2.5cm} p{8.5cm} }
   \hline
   \texttt{e2fsck}, \texttt{fsck} & Führe einen Dateisystemcheck durch \\
-  \rowcolor{Gray}
   \texttt{findmnt} & Suche und zeige eingebundene Dateisysteme an \\
   \texttt{mkfs} & Erzeuge ein Dateisystem \\
-  \rowcolor{Gray}
   \texttt{mkswap} & Bereite eine Partition zur Nutzung als SWAP vor \\
   \texttt{mount} & Binde ein Dateisystem ein \\
-  \rowcolor{Gray}
   \texttt{swapoff} & Deaktiviere eine SWAP-Partition \\
   \texttt{swapon} & Aktiviere eine SWAP-Partition \\
-  \rowcolor{Gray}
   \texttt{tune2fs} & Ändere ein bestehendes Dateisystem \\
   \texttt{umount} & Hänge ein Dateisystem aus \\
+  \texttt{xfs\_reair} & Repariere ein XFS-Dateisystem\\
   \hline
 \end{tabular}
 
 % ~ \\
 
 \section{Arbeiten mit der Shell, Arbeitsumgebung}
+\rowcolors{1}{}{Gray}
 \begin{tabular}{ p{2.5cm} p{8.5cm} }
   \hline
   \texttt{alias} & Auflisten und anpassen der Aliase für Kommmandos \\
-  \rowcolor{Gray}
   \texttt{clear} & Lösche den Bildschirm \\
   \texttt{echo} & Gib Text auf dem Bildschirm aus \\
-  \rowcolor{Gray}
   \texttt{env} & Zeige die Umgebungsvariablen an \\
   \texttt{exit}, \texttt{logout} & Beende die aktuelle Shell-Sitzung \\
-  \rowcolor{Gray}
-  \texttt{fc} & Bearbeite die Historie der bisher genutzten Kommandos\\
+  \texttt{fc} & Bearbeite die Historie der bisherigen Kommandos\\
   \texttt{history} & Zeige die vorher genutzten Kommandos an \\
-  \rowcolor{Gray}
   \texttt{screen}, \texttt{tmux} & Ein Terminalmultiplexer \\
   \texttt{set} & Aktiviere oder ändere Laufzeitparameter \\
-  \rowcolor{Gray}
   \texttt{time} & Messe die Ausführungszeit eines Kommandos \\
   \texttt{type} & Identifiziere den Kommandotyp \\
-  \rowcolor{Gray}
   \texttt{unalias} & Entferne einen Alias für ein Kommando \\
   \texttt{unset} & Entferne oder deaktiviere einen Laufzeitparameter \\
-  \rowcolor{Gray}
   \texttt{whatis} & Durchsuche die Indexdatenbank nach Kommando\-beschreibungen \\
   \texttt{whereis} & Suche nach Binärdateien, Quellcode und Handbuchseiten zu einem Kommando \\
-  \rowcolor{Gray}
   \texttt{which} & Identifiziere, welches Kommando von der Shell ausgeführt wird\\
   \texttt{xargs} & Stelle Kommandos auf der Basis der Standardeingabe zusammen und führe diese aus \\
   \hline
@@ -400,48 +345,45 @@
 %\vfill
 
 \section{Mit dem Linuxkernel umgehen}
+\rowcolors{1}{}{Gray}
 \begin{tabular}{ p{2.5cm} p{8.5cm} }
   \hline
   \texttt{dmesg} & Zeige und steuere den Kernel-Ringpuffer\\
-  \rowcolor{Gray}
   \texttt{insmod} & Füge ein Kernelmodul in den aktuell laufenden Linux\-kernel ein\\
   \texttt{lsmod} & Liste die Kernelmodule des aktuell laufenden Linux\-kernels auf\\
-  \rowcolor{Gray}
   \texttt{modinfo} & Zeige detaillierte Informationen über ein  Kernelmodul an\\
   \texttt{modprobe} & Versuche, ein Kernelmodul zum aktuell laufenden Linux\-kernel hinzuzufügen \\
-  \rowcolor{Gray}
   \texttt{rmmod} & Entferne ein Kernelmodul vom aktuell laufenden Linux\-kernel \\
   \texttt{uname} & Zeige Informationen über den aktuell laufenden \newline Linuxkernel an\\
   \hline
 \end{tabular}
 
 \section{Drucken}
+\rowcolors{1}{}{Gray}
 \begin{tabular}{ p{2.5cm} p{8.5cm} }
   \hline
   \texttt{lp}, \texttt{lpr} & Drucke Dateien oder ändere einen bestehenden Druckauftrag\\
-  \rowcolor{Gray}
   \texttt{lpc} & Verwalte die Drucker \\
   \texttt{lpq} & Gib den Inhalt der Druckerwarteschlange aus\\
-  \rowcolor{Gray}
   \texttt{lprm} & Entferne einen bestehenden Auftrag aus der Druckerwarteschlange \\
   \hline
 \end{tabular}
 
 \section{Systembibliotheken}
 
+\rowcolors{1}{}{Gray}
 \begin{tabular}{ p{2.5cm} p{8.5cm} }
   \hline 
   \texttt{ldd} & Gib die Abhängigkeiten der Shared Librarys aus \\
-  \rowcolor{Gray}
   \texttt{ldconfig} & Konfiguriere die Laufzeitbindung des dynamischen Linkers \\
   \hline
 \end{tabular}
 
 \section{Benutzen von Pagern}
+\rowcolors{1}{}{Gray}
 \begin{tabular}{ p{2.5cm} p{8.5cm} }
   \hline
   \texttt{less}, \texttt{more} & Zeige Daten seitenweise an \\
-  \rowcolor{Gray}
   \texttt{most} & Zeige Daten seitenweise oder in mehreren Fenstern an \\
   \hline
 \end{tabular}
@@ -459,47 +401,38 @@
 
 \begin{multicols}{2}
 
-\section{Systemzeit, Datum, Kalender und Lokalisierung}
+\section{Hilfe bekommen\phantom{g}}
+\rowcolors{1}{}{Gray}
 \begin{tabular}{ p{2.5cm} p{8.5cm} }
   \hline
-  \texttt{cal}, \texttt{ncal} & Zeige einen Kalender an\\
-  \rowcolor{Gray}
-  \texttt{date} & Gib einen Zeitstempel in verschiedenen Formaten aus \\
-  \texttt{hwclock} & Steuere sowohl Hardware- als auch die Systemuhr\\
-  \rowcolor{Gray}
-  \texttt{locale} & Zeige die Informationen zur aktuell genutzten Lokalisierung an \\
-  \texttt{ntpdate}, \texttt{ntpsec-ntpdate} & Beziehe die Zeitinformationen von einem NTP-Server \\
-  \rowcolor{Gray}
-  \texttt{timedatectl} & Steuere die Systemzeit und das Datum \\
+  \texttt{apropos} & Zeige einen kurzen Hilfetext für das Kommando an \\
+  \texttt{info} & Zeige die Hilfe aus dem GNU Info-System an\\
+  \texttt{man} & Zeige eine erweiterte Hilfe für das Kommando an \\
+  \texttt{manpath} & Steuere den Pfad zu den Hilfeseiten \\
+  \texttt{whatis} & Schaue in der Index-Datenbank für kurze Hilfetexte zu dem angegebenen Kommando nach \\
   \hline
 \end{tabular}
-
 %~ \\
 %\vfill
 
 \section{Archive und Datenkomprimierung}
+\rowcolors{1}{}{Gray}
 \begin{tabular}{ p{2.5cm} p{8.5cm} }
   \hline 
   \texttt{bunzip2} & Entpacke eine komprimierte Datei (Bzip2-Format) \\
-  \rowcolor{Gray}
   \texttt{bzcat} & Gib den Inhalt der mit Bzip2 kompri\-mierten Datei auf \texttt{stdout} aus\\
   \texttt{bzegrep}, \texttt{bzfgrep}, \texttt{bzgrep} & Suche in einer bz-komprimierten Datei \\
-  \rowcolor{Gray}
   \texttt{bzip2} & Komprimiere eine Datei (Bzip2-Format) \\
   \texttt{gunzip} & Entpacke eine komprimierte Datei (Gzip-Format) \\
-  \rowcolor{Gray}
   \texttt{gzip} & Komprimiere eine Datei (Gzip-Format) \\
   \texttt{tar} & Erzeuge und verwalte ein Bandarchiv (\textit{tar file}) \\
-  \rowcolor{Gray}
+  \texttt{unxz} & Entpacke eine komprimierte Datei (Xz-Format) \\
   \texttt{unzip} & Entpacke eine komprimierte Datei (Zip-Format) \\
   \texttt{xz} & Komprimiere eine Datei (Xz-Format) \\
-  \rowcolor{Gray}
   \texttt{xzcat} & Gib den Inhalt der mit Xz komprimierten Datei auf \texttt{stdout} aus \\
   \texttt{xzegrep}, \texttt{xzfgrep}, \texttt{xzgrep} & Suche in einer xz-komprimierten Datei \\
-  \rowcolor{Gray}
   \texttt{zip} & Komprimiere eine Datei (Zip-Format) \\
   \texttt{zcat} & Gib den Inhalt der mit Gzip kompri\-mierten Datei auf \texttt{stdout} aus \\
-  \rowcolor{Gray}
   \texttt{zegrep}, \texttt{zfgrep}, \texttt{zgrep} & Suche in einer zip-komprimierten Datei \\
   \hline
 \end{tabular}
@@ -509,58 +442,42 @@
 
 \section*{Notizen\phantom{g}}
 
+\rowcolors{1}{}{Gray}
 \begin{tabular}{ p{2.5cm} p{8.5cm} }
   \hline
   ~ & \\
-  \rowcolor{Gray}
   ~ & \\
   ~ & \\
-  \rowcolor{Gray}
   ~ & \\
   ~ & \\
-  \rowcolor{Gray}
   ~ & \\
   ~ & \\
-  \rowcolor{Gray}
   ~ & \\
   ~ & \\
-  \rowcolor{Gray}
   ~ & \\
   ~ & \\
-  \rowcolor{Gray}
   ~ & \\
   ~ & \\
-  \rowcolor{Gray}
   ~ & \\
   ~ & \\
-  \rowcolor{Gray}
   ~ & \\
   ~ & \\
-  \rowcolor{Gray}
   ~ & \\
   ~ & \\
-  \rowcolor{Gray}
   ~ & \\
   ~ & \\
-  \rowcolor{Gray}
   ~ & \\
   ~ & \\
-  \rowcolor{Gray}
   ~ & \\
   ~ & \\
-  \rowcolor{Gray}
   ~ & \\
   ~ & \\
-  \rowcolor{Gray}
   ~ & \\
   ~ & \\
-  \rowcolor{Gray}
   ~ & \\
   ~ & \\
-  \rowcolor{Gray}
   ~ & \\
   ~ & \\
-  \rowcolor{Gray}
   ~ & \\
   \hline
 \end{tabular}
