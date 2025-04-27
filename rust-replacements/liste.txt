@@ -1,0 +1,19 @@
+Notizen zu Ersetzungen von Linux-Kommandos durch Rust-Implementierungen
+
+Basis: 
+Hubert Högl: https://hhoegl.informatik.hs-augsburg.de/pub/lit25/
+
+Weitere Links:
+https://www.tha.de/homes/hhoegl/home/RustTools.html
+
+-
+Bisheriges Werkzeug | Rust-Variante | Zweck
+-
+ls                  | eza           | Inhalte von Verzeichnissen auflisten
+find                | fd            | Dateien und Verzeichnisse finden
+grep                | rg            | nach Inhalten in Dateien suchen
+-                   | starship      | den Kommandozeilen-Prompt einstellen
+history             | atuin         | die Kommandozeilenhistorie verwalten
+screen, tmux        | zellij        | Terminal-Multiplexer
+top, htop           | btm           | Prozessanzeige
+-
