@@ -19,7 +19,7 @@
 
 ## Projektstart 
 
-* Sommer 2024
+* Sommer 2023
 
 ## Was ist der Projektstand
 
@@ -55,6 +55,7 @@
 * Layout mit Stylesheet zur individuellen Anpassung
 
 * Sourcecodeverwaltung mittels Git
+    * verfügbar auf GitHub (https://github.com/hofmannedv/cheatsheets)
 
 * aufwendig:
     * Konsistenz der Übersetzungen
