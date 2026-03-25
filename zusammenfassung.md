@@ -1,30 +1,27 @@
-= Projekt Cheatsheets =
+# Projekt Cheatsheets
 
-== Worum geht es ==
+## Worum geht es
 
 * Lernmaterialien zu erstellen ist aufwendig
 * ... diese zu pflegen und aktuell zu halten, noch mehr
-* Negativbeispiel: 
-  Bücher zu LPI
-* Positivbeispiel: 
-  Python4DataScience (https://www.python4data.science/)
+* Negativbeispiel: Bücher zu LPI
+* Positivbeispiel: Python4DataScience (https://www.python4data.science/)
 
 * Ziel des Projekts: 
-** lesbare und möglichst fehlerfreie Unterlagen zu 
-   Linux-Grundlagen, Paketverwaltung und Werkzeugen
-** frei verfügbar in digitaler Form
-** Vereinheitlichung von Notizen und anderen Materialien
+  ** lesbare und möglichst fehlerfreie Unterlagen zu Linux-Grundlagen, Paketverwaltung und Werkzeugen
+  ** frei verfügbar in digitaler Form
+  ** Vereinheitlichung von Notizen und anderen Materialien
 
-== Wer ist daran beteiligt ==
+## Wer ist daran beteiligt
 
 * ich: Inhalt, Layout und Übersetzungen
 * Korrekturleser: inhaltliche Prüfung und Übersetzungen
 
-== Projektstart ===
+## Projektstart 
 
 * Sommer 2024
 
-== Was ist der Projektstand ==
+## Was ist der Projektstand
 
 * Materialien zum ...
 ** Texteditor Vi/Vim
@@ -42,13 +39,13 @@
 ** digital als PDF
 ** auf Papier als Print on Demand via Amazon mit Seiten für Notizen
 
-== Was fehlt noch ==
+## Was fehlt noch
 
 * Tastenkürzel für die Webbrowser Chromium und Links
 * Aufrufe für das Versionskontrollsystem Git
 * Reimplementierungen der UNIX/Linux-Werkzeuge in Rust
 
-== Cheatsheets: Aufzucht und Pflege ==
+## Cheatsheets: Aufzucht und Pflege
 
 * Basis: Textsatzsystem LaTeX 
 ** lokal
